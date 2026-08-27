@@ -163,8 +163,6 @@ const translations: Record<Language, Translations> = {
     },
     mobileCta: "Descargar la App (APK)",
   },
-};obileCta: "Descargar la App",
-  },
 };
 
 /* Real Vector SVG Flags */
