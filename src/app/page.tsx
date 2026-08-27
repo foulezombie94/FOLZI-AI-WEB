@@ -484,7 +484,7 @@ export default function Home() {
 
               {/* Android Direct APK Download Badge */}
               <a
-                href="/folzi-ai.apk"
+                href="https://github.com/foulezombie94/FOLZI-AI-WEB/releases/download/v1.0.0/Folzi-AI.apk"
                 download="Folzi-AI.apk"
                 className="inline-flex items-center gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-2xl bg-white/15 hover:bg-white/25 backdrop-blur-xl text-white hover:scale-105 active:scale-95 transition-all duration-200 shadow-2xl w-fit border border-white/30 select-none group"
               >

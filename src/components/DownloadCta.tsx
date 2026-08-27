@@ -33,7 +33,7 @@ export default function DownloadCta() {
             {/* 3D Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
               <a
-                href="/folzi-ai.apk"
+                href="https://github.com/foulezombie94/FOLZI-AI-WEB/releases/download/v1.0.0/Folzi-AI.apk"
                 download="Folzi-AI.apk"
                 className="btn-3d w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-brand-500 text-white font-black text-base hover:scale-105 transition-all shadow-xl shadow-purple-600/30"
               >
