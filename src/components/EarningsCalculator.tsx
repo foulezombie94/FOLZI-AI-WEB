@@ -86,7 +86,7 @@ export default function EarningsCalculator() {
               {/* Slider for count */}
               <div className="space-y-3 pt-2">
                 <div className="flex items-center justify-between">
-                  <label className="text-xs font-bold uppercase tracking-wider text-[#A88BFF] font-mono">
+                  <label htmlFor="items-count-slider" className="text-xs font-bold uppercase tracking-wider text-[#A88BFF] font-mono cursor-pointer">
                     Articles non portés :
                   </label>
                   <span className="px-3.5 py-1 rounded-full bg-[#7C5CFC]/20 text-[#D4C9FF] font-mono font-bold text-sm border border-[#A88BFF]/30">
@@ -95,12 +95,19 @@ export default function EarningsCalculator() {
                 </div>
 
                 <input
+                  id="items-count-slider"
+                  name="itemsCount"
                   type="range"
                   min="2"
                   max="40"
                   value={itemCount}
                   onChange={(e) => setItemCount(Number(e.target.value))}
-                  className="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#7C5CFC]"
+                  aria-label="Nombre d'articles non portés à estimer"
+                  aria-valuemin={2}
+                  aria-valuemax={40}
+                  aria-valuenow={itemCount}
+                  aria-valuetext={`${itemCount} articles`}
+                  className="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#7C5CFC] focus:outline-none focus:ring-2 focus:ring-[#7C5CFC]"
                 />
                 
                 <div className="flex justify-between text-[11px] font-mono text-slate-500 font-bold">
