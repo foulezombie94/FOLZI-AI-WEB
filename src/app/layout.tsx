@@ -77,6 +77,13 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -137,14 +144,8 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="fr" className="w-full bg-[#06040A] text-white">
+    <html lang="fr" className={`w-full bg-[#06040A] text-white ${inter.className}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Silkscreen:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

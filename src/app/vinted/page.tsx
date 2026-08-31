@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Sparkles, ArrowLeft, Download, Hash, Tag, TrendingUp, ShieldCheck, CheckCircle2, Zap } from "lucide-react";
 
@@ -95,6 +95,44 @@ export default function VintedLanding() {
             <p className="text-xs text-slate-400 leading-relaxed">
               Détails précis sur l&apos;état, les matières et les mesures (aisselle à aisselle) pour protéger vos 5 étoiles.
             </p>
+          </div>
+        </div>
+
+        {/* Comparative Table: Manuel vs Folzi AI */}
+        <div className="pt-8 text-left">
+          <h2 className="text-xl font-bold text-white mb-4 text-center">Vente Manuelle vs Folzi AI</h2>
+          <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02]">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="border-b border-white/10 bg-white/[0.04]">
+                  <th className="p-3.5 text-slate-400 font-semibold text-left">Critère</th>
+                  <th className="p-3.5 text-rose-400 font-semibold text-left">Rédaction Manuelle</th>
+                  <th className="p-3.5 text-[#5BE3EB] font-bold text-left">Avec Folzi AI</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5">
+                <tr>
+                  <td className="p-3.5 text-slate-300 font-medium">Temps par annonce</td>
+                  <td className="p-3.5 text-slate-400">10 à 15 minutes</td>
+                  <td className="p-3.5 text-[#5BE3EB] font-bold">1,8 seconde ⚡</td>
+                </tr>
+                <tr>
+                  <td className="p-3.5 text-slate-300 font-medium">Hashtags & SEO Vinted</td>
+                  <td className="p-3.5 text-slate-400">Oubliés ou génériques</td>
+                  <td className="p-3.5 text-[#5BE3EB] font-bold">5 à 7 tags viraux ciblés</td>
+                </tr>
+                <tr>
+                  <td className="p-3.5 text-slate-300 font-medium">Prix de vente</td>
+                  <td className="p-3.5 text-slate-400">Au hasard / sous-évalué</td>
+                  <td className="p-3.5 text-[#5BE3EB] font-bold">Argus comparé à 2 400 ventes</td>
+                </tr>
+                <tr>
+                  <td className="p-3.5 text-slate-300 font-medium">Délai moyen de vente</td>
+                  <td className="p-3.5 text-slate-400">14 à 45 jours</td>
+                  <td className="p-3.5 text-[#5BE3EB] font-bold">Moins de 24 heures</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
