@@ -63,6 +63,22 @@ export const DEMO_ITEMS: DemoItem[] = [
     leboncoinDescription: "Superbe lampe champignon vintage en verre orange. Parfait état de fonctionnement, aucun éclat. Belle pièce de collection décoration vintage / rétro. Envoi très protégé avec double emballage bulle.",
     keywords: ["vintage", "spaceage", "lampe", "deco", "design70s", "orange", "loft"],
     tips: "Ajoutez une photo allumée dans une pièce sombre pour faire ressortir l'ambiance."
+  },
+  {
+    id: "dress",
+    name: "Robe Midi Lin & Broderies",
+    category: "Robes",
+    brand: "Sézane",
+    condition: "Très bon état",
+    estimatedPrice: 85,
+    marketRange: "75 € – 95 €",
+    photoUrl: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=1000&q=85",
+    vintedTitle: "Robe Midi Lin Écru Sézane - Style Quiet Luxury T38",
+    vintedDescription: "Sublime robe midi Sézane en 100% lin écru avec délicates broderies ajourées et boutons en nacre naturelle. Coupe cintrée flatteuse à la taille, tombé fluide. Portée une seule fois pour une cérémonie, état irréprochable sans défaut.",
+    leboncoinTitle: "Robe Sézane Lin Écru Taille 38 - Comme neuve",
+    leboncoinDescription: "Bonjour, je vends cette magnifique robe Sézane en pur lin écru taille 38. Portée une seule fois. Remise en main propre possible ou expédition soignée protégée.",
+    keywords: ["sezane", "quietluxury", "lin", "robemidi", "boheme", "ceremonie", "ecru"],
+    tips: "Les pièces Sézane partent en moins de 6h si le titre contient les mots lin et quiet luxury."
   }
 ];
 
