@@ -194,6 +194,8 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`w-full bg-[#06040A] text-white ${inter.className}`}>
       <head>
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

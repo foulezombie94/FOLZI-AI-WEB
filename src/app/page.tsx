@@ -220,8 +220,16 @@ function SpainFlag({ className = "w-5 h-3.5" }: { className?: string }) {
 export default function Home() {
   const [lang, setLang] = useState<Language>("fr");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const t = translations[lang];
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (menuOpen) {
@@ -248,18 +256,20 @@ export default function Home() {
       <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#06040A] via-[#0D081D] to-[#06040A] select-none flex flex-col justify-between">
         
         {/* Background Video (Desktop only, 0 bytes on mobile) */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Crect fill='%2306040A' width='1600' height='900'/%3E%3C/svg%3E"
-          className="hidden md:block absolute inset-0 h-full w-full object-cover opacity-70 pointer-events-none"
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260803_192301_9231ed6b-c55c-4a48-909c-4ebe11cf2e11.mp4"
-        >
-          <track kind="captions" src="data:text/vtt,WEBVTT" label="Français" default />
-        </video>
+        {isDesktop && (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Crect fill='%2306040A' width='1600' height='900'/%3E%3C/svg%3E"
+            className="absolute inset-0 h-full w-full object-cover opacity-70 pointer-events-none"
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260803_192301_9231ed6b-c55c-4a48-909c-4ebe11cf2e11.mp4"
+          >
+            <track kind="captions" src="data:text/vtt,WEBVTT" label="Français" default />
+          </video>
+        )}
 
         {/* Subtle Violet Ambient Highlights */}
         <div className="absolute top-1/4 left-1/4 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-[#7C5CFC]/20 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none z-0" />
