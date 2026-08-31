@@ -1,18 +1,21 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { ChevronDown, Menu, X, Sparkles, Download, ArrowRight, ShieldCheck, Zap } from "lucide-react";
-import LiveAiDemo from "@/components/LiveAiDemo";
-import FeaturesGrid from "@/components/FeaturesGrid";
-import BeforeAfter from "@/components/BeforeAfter";
-import HowItWorks from "@/components/HowItWorks";
-import MarketplaceTabs from "@/components/MarketplaceTabs";
-import EarningsCalculator from "@/components/EarningsCalculator";
-import PricingSection from "@/components/PricingSection";
-import Testimonials from "@/components/Testimonials";
-import FaqSection from "@/components/FaqSection";
-import DownloadCta from "@/components/DownloadCta";
-import Footer from "@/components/Footer";
+
+// Dynamically split below-the-fold components for instant mobile Speed Index while preserving full SSG SEO
+const LiveAiDemo = dynamic(() => import("@/components/LiveAiDemo"), { ssr: true });
+const FeaturesGrid = dynamic(() => import("@/components/FeaturesGrid"), { ssr: true });
+const BeforeAfter = dynamic(() => import("@/components/BeforeAfter"), { ssr: true });
+const HowItWorks = dynamic(() => import("@/components/HowItWorks"), { ssr: true });
+const MarketplaceTabs = dynamic(() => import("@/components/MarketplaceTabs"), { ssr: true });
+const EarningsCalculator = dynamic(() => import("@/components/EarningsCalculator"), { ssr: true });
+const PricingSection = dynamic(() => import("@/components/PricingSection"), { ssr: true });
+const Testimonials = dynamic(() => import("@/components/Testimonials"), { ssr: true });
+const FaqSection = dynamic(() => import("@/components/FaqSection"), { ssr: true });
+const DownloadCta = dynamic(() => import("@/components/DownloadCta"), { ssr: true });
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 
 type Language = "fr" | "en" | "es";
 
@@ -242,9 +245,9 @@ export default function Home() {
   return (
     <main className="w-full min-h-screen bg-[#06040A] text-white flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-screen w-full overflow-hidden bg-[#06040A] select-none flex flex-col justify-between">
+      <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#06040A] via-[#0D081D] to-[#06040A] select-none flex flex-col justify-between">
         
-        {/* Background Video */}
+        {/* Background Video (Desktop only, 0 bytes on mobile) */}
         <video
           autoPlay
           loop
@@ -252,15 +255,15 @@ export default function Home() {
           playsInline
           preload="metadata"
           poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Crect fill='%2306040A' width='1600' height='900'/%3E%3C/svg%3E"
-          className="absolute inset-0 h-full w-full object-cover opacity-80"
+          className="hidden md:block absolute inset-0 h-full w-full object-cover opacity-70 pointer-events-none"
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260803_192301_9231ed6b-c55c-4a48-909c-4ebe11cf2e11.mp4"
         >
           <track kind="captions" src="data:text/vtt,WEBVTT" label="Français" default />
         </video>
 
         {/* Subtle Violet Ambient Highlights */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#7C5CFC]/20 rounded-full blur-[120px] pointer-events-none z-0" />
-        <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-[#9D7BFF]/15 rounded-full blur-[140px] pointer-events-none z-0" />
+        <div className="absolute top-1/4 left-1/4 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-[#7C5CFC]/20 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none z-0" />
+        <div className="absolute bottom-10 right-10 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-[#9D7BFF]/15 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none z-0" />
 
         {/* Main Foreground Container */}
         <div className="relative z-10 flex flex-col min-h-screen w-full justify-between">
