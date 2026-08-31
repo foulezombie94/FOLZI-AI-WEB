@@ -232,16 +232,17 @@ export default function Home() {
   }, [menuOpen]);
 
   const navLinks = [
-    { label: t.nav.scanner, href: "#scanner", hasDropdown: false },
-    { label: t.nav.features, href: "#features", hasDropdown: false },
-    { label: t.nav.marketplaces, href: "#solutions", hasDropdown: true },
-    { label: t.nav.download, href: "#download", hasDropdown: false },
+    { label: "Vinted IA", href: "/vinted", hasDropdown: false },
+    { label: "Leboncoin IA", href: "/leboncoin", hasDropdown: false },
+    { label: "Argus Prix", href: "/estimation-prix", hasDropdown: false },
+    { label: "Guides Vendeurs", href: "/guides", hasDropdown: false },
+    { label: "Tarifs", href: "#pricing", hasDropdown: false },
   ];
 
   return (
     <main className="w-full min-h-screen bg-[#06040A] text-white flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-screen w-full overflow-hidden bg-black select-none flex flex-col justify-between">
+      <section className="relative min-h-screen w-full overflow-hidden bg-[#06040A] select-none flex flex-col justify-between">
         
         {/* Background Video */}
         <video
@@ -249,7 +250,8 @@ export default function Home() {
           loop
           muted
           playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Crect fill='%2306040A' width='1600' height='900'/%3E%3C/svg%3E"
+          className="absolute inset-0 h-full w-full object-cover opacity-80"
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260803_192301_9231ed6b-c55c-4a48-909c-4ebe11cf2e11.mp4"
         />
 

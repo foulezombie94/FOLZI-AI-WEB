@@ -51,8 +51,9 @@ export default function Footer() {
 
           {/* Col 4: Légal & Sécurité */}
           <div className="space-y-3">
-            <div className="font-bold text-white text-sm">Légal & Confidentialité</div>
+            <div className="font-bold text-white text-sm">Légal & Contact</div>
             <ul className="space-y-2">
+              <li><Link href="/contact" className="hover:text-white transition-colors text-[#C2B3FF] font-medium">Contact & Support 24/7</Link></li>
               <li><Link href="/confidentialite" className="hover:text-white transition-colors">Politique de confidentialité</Link></li>
               <li><Link href="/cgu" className="hover:text-white transition-colors">Conditions Générales (CGU)</Link></li>
               <li><Link href="/cgu" className="hover:text-white transition-colors">Mentions légales</Link></li>
