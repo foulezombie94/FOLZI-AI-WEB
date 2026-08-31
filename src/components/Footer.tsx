@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Sparkles, ShieldCheck, Heart, Github, Twitter } from "lucide-react";
 
 export default function Footer() {
@@ -25,16 +26,16 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Col 2: Produit */}
+          {/* Col 2: Produit & Silos */}
           <div className="space-y-3">
-            <div className="font-bold text-white text-sm">Produit & IA</div>
+            <div className="font-bold text-white text-sm">Produit & Solutions</div>
             <ul className="space-y-2">
-              <li><a href="#scanner" className="hover:text-white transition-colors">Simulateur IA en direct</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Vision par ordinateur</a></li>
-              <li><a href="#before-after" className="hover:text-white transition-colors">Comparateur de ventes</a></li>
-              <li><a href="#calculator" className="hover:text-white transition-colors">Calculateur de dressing</a></li>
-              <li><a href="#pricing" className="hover:text-white transition-colors">Tarifs & 4 crédits offerts</a></li>
-              <li><a href="#download" className="hover:text-white transition-colors">Téléchargement Android (APK)</a></li>
+              <li><Link href="/vinted" className="hover:text-white transition-colors">IA Spéciale Vinted</Link></li>
+              <li><Link href="/leboncoin" className="hover:text-white transition-colors">IA Spéciale Leboncoin</Link></li>
+              <li><Link href="/estimation-prix" className="hover:text-white transition-colors">Argus de Prix & Estimation</Link></li>
+              <li><a href="/#scanner" className="hover:text-white transition-colors">Simulateur IA en direct</a></li>
+              <li><a href="/#pricing" className="hover:text-white transition-colors">Tarifs & 4 crédits offerts</a></li>
+              <li><a href="/folzi-ai.apk" download="Folzi-AI.apk" className="hover:text-white transition-colors">Téléchargement Android (APK)</a></li>
             </ul>
           </div>
 
@@ -42,10 +43,10 @@ export default function Footer() {
           <div className="space-y-3">
             <div className="font-bold text-white text-sm">Légal & Confidentialité</div>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white transition-colors">Politique de confidentialité</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Conditions Générales d’Utilisation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Protection des données (RGPD)</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Mentions légales</a></li>
+              <li><Link href="/confidentialite" className="hover:text-white transition-colors">Politique de confidentialité (RGPD)</Link></li>
+              <li><Link href="/cgu" className="hover:text-white transition-colors">Conditions Générales d’Utilisation</Link></li>
+              <li><Link href="/confidentialite" className="hover:text-white transition-colors">Gestion des données personnelles</Link></li>
+              <li><Link href="/cgu" className="hover:text-white transition-colors">Mentions légales</Link></li>
             </ul>
           </div>
 
