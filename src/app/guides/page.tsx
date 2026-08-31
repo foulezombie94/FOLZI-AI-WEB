@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Sparkles, ArrowLeft, BookOpen, ArrowRight, TrendingUp, Hash } from "lucide-react";
 
@@ -19,11 +19,27 @@ export default function GuidesHubPage() {
       readTime: "4 min",
     },
     {
+      title: "Modèle d'Annonce Leboncoin : Le Texte Parfait pour Vendre en 48h",
+      desc: "Structures types avec formules de politesse, précisions sur les dimensions et options de remise en main propre.",
+      slug: "/guides/modele-annonce-leboncoin",
+      tag: "Leboncoin",
+      tagColor: "bg-[#F56B2A]/20 text-[#FFA071] border-[#F56B2A]/40",
+      readTime: "4 min",
+    },
+    {
       title: "Cote & Argus Sneakers d'Occasion : Comment Estimer Nike, Jordan, New Balance",
       desc: "Évaluez la vraie valeur de vos paires selon l'état d'usure de la semelle et la présence de la boîte d'origine.",
       slug: "/guides/cote-argus-sneakers-vintage",
       tag: "Argus & Sneakers",
       tagColor: "bg-[#34D399]/20 text-[#6EE7B7] border-[#34D399]/40",
+      readTime: "5 min",
+    },
+    {
+      title: "Comment Reconnaître une Pièce Vintage Rare sans Étiquette ?",
+      desc: "Coutures single stitch, zips Talon d'époque et astuces visuelles pour dater vos trouvailles de friperie.",
+      slug: "/guides/comment-detecter-faux-vintage",
+      tag: "Authentification Vintage",
+      tagColor: "bg-[#7C5CFC]/20 text-[#C2B3FF] border-[#7C5CFC]/40",
       readTime: "5 min",
     },
   ];
