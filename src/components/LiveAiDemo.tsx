@@ -99,38 +99,57 @@ export default function LiveAiDemo() {
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            {/* Left: Photo & Scanner Simulation */}
+            {/* Left: iPhone 16 Pro Mockup & Scanner Simulation */}
             <div className="lg:col-span-5 space-y-4">
               
-              <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-slate-900 border border-slate-800">
-                <img
-                  src={selectedItem.photoUrl}
-                  alt={selectedItem.name}
-                  className={`w-full h-full object-cover transition-all duration-700 ${
-                    isScanning ? "scale-105 filter brightness-90" : "scale-100"
-                  }`}
-                />
-
-                {/* Laser animation when scanning */}
-                {isScanning && (
-                  <>
-                    <div className="laser-line animate-laser-scan z-20" />
-                    <div className="absolute inset-0 bg-brand-500/20 backdrop-blur-[1px] z-10" />
-                  </>
-                )}
-
-                {/* Status Overlay */}
-                <div className="absolute top-4 left-4 z-20">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-xs font-black text-brand-300">
-                    <Scan className="w-3.5 h-3.5" />
-                    {isScanning ? "Analyse en cours..." : "Scan terminé"}
-                  </span>
+              {/* iPhone Outer Titanium Chassis */}
+              <div className="relative rounded-[48px] p-3 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-900 border-2 border-slate-600 shadow-2xl shadow-purple-950/50">
+                
+                {/* Dynamic Island Notch */}
+                <div className="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-30 flex items-center justify-between px-3.5 border border-white/10 shadow-md">
+                  <div className="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-700" />
+                  <div className="w-2 h-2 rounded-full bg-[#34D399]/80 animate-pulse shadow-[0_0_8px_#34D399]" />
                 </div>
 
-                {/* Price Tag Overlay */}
-                <div className="absolute bottom-4 right-4 z-20">
-                  <div className="px-3.5 py-1.5 rounded-xl bg-brand-500 text-white font-mono font-black text-sm shadow-lg">
-                    {selectedItem.estimatedPrice} € conseillé
+                {/* iPhone Screen */}
+                <div className="relative aspect-[9/14] sm:aspect-square w-full rounded-[38px] overflow-hidden bg-slate-950 border border-slate-800">
+                  <img
+                    src={selectedItem.photoUrl}
+                    alt={selectedItem.name}
+                    className={`w-full h-full object-cover transition-all duration-700 ${
+                      isScanning ? "scale-105 filter brightness-90" : "scale-100"
+                    }`}
+                  />
+
+                  {/* Laser animation when scanning */}
+                  {isScanning && (
+                    <>
+                      <div className="laser-line animate-laser-scan z-20" />
+                      <div className="absolute inset-0 bg-brand-500/20 backdrop-blur-[1px] z-10" />
+                    </>
+                  )}
+
+                  {/* Viewfinder Target */}
+                  <div className="absolute inset-6 border-2 border-white/20 rounded-2xl z-10 pointer-events-none">
+                    <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[#A88BFF]" />
+                    <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-[#A88BFF]" />
+                    <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-[#A88BFF]" />
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#A88BFF]" />
+                  </div>
+
+                  {/* Status Overlay */}
+                  <div className="absolute top-10 left-4 z-20">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-xs font-black text-brand-300">
+                      <Scan className="w-3.5 h-3.5" />
+                      {isScanning ? "Analyse en cours..." : "Scan terminé"}
+                    </span>
+                  </div>
+
+                  {/* Price Tag Overlay */}
+                  <div className="absolute bottom-4 right-4 z-20">
+                    <div className="px-3.5 py-1.5 rounded-xl bg-brand-500 text-white font-mono font-black text-sm shadow-lg">
+                      {selectedItem.estimatedPrice} € conseillé
+                    </div>
                   </div>
                 </div>
               </div>
