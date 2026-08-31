@@ -34,19 +34,19 @@ export const DEMO_ITEMS: DemoItem[] = [
   },
   {
     id: "sneakers",
-    name: "Baskets New Balance 530",
+    name: "Sneakers Nike Flyknit Racer",
     category: "Chaussures",
-    brand: "New Balance",
+    brand: "Nike",
     condition: "Très bon état",
     estimatedPrice: 65,
     marketRange: "58 € – 75 €",
     photoUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85",
-    vintedTitle: "New Balance 530 White Silver Metallic - Pointure 42",
-    vintedDescription: "New Balance 530 en cuir synthétique et mesh respirant. Modèle ultra recherché avec amorti ABZORB pour un confort absolu. Semelles extérieures en excellent état, boîte d'origine incluse. Nettoyées et désinfectées avant envoi.",
-    leboncoinTitle: "New Balance 530 White/Silver T42 avec boîte",
-    leboncoinDescription: "Paire de New Balance 530 authentiques taille 42. Portées très peu, aucun défaut d'usure. Vendu avec boîte d'origine. Envoi rapide et soigné ou remise en main propre.",
-    keywords: ["newbalance", "nb530", "running", "y2k", "silver", "sneakers", "streetwear"],
-    tips: "Photographier la semelle d'usure et l'étiquette de languette pour rassurer immédiatement les acheteurs."
+    vintedTitle: "Nike Flyknit Racer Rouge Crimson - Pointure 42",
+    vintedDescription: "Paire authentique de Nike Flyknit Racer en maille ultra respirante rouge vif. Amorti Nike Free dynamique, semelle extérieure très peu usée. Modèle léger et confortable, lacets d'origine inclus. Nettoyées avec soin avant expédition.",
+    leboncoinTitle: "Baskets Nike Flyknit Racer T42 Rouge - Très bon état",
+    leboncoinDescription: "Bonjour, je vends cette paire de Nike Flyknit Racer pointure 42 en excellent état. Chaussures très légères et confortables, semelles impeccables. Remise en main propre possible ou expédition soignée.",
+    keywords: ["nike", "flyknit", "running", "rouge", "sneakers", "streetwear", "sportswear"],
+    tips: "Photographier la semelle d'usure et l'étiquette de pointure pour rassurer immédiatement les acheteurs."
   },
   {
     id: "decor",

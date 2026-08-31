@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
-import { Sparkles, Scan, Copy, Check, ShieldCheck, ArrowRight, RefreshCw, Layers, CheckCircle2, TrendingUp, Info } from "lucide-react";
+import { Sparkles, Scan, Copy, Check, ShieldCheck, RefreshCw, Hash, Tag, Flame, Lightbulb, ArrowRight } from "lucide-react";
 import { DEMO_ITEMS, DemoItem } from "@/data/content";
 
 export default function LiveAiDemo() {
-  const [selectedItem, setSelectedItem] = useState<DemoItem>(DEMO_ITEMS[0]);
+  const [selectedItem, setSelectedItem] = useState<DemoItem>(DEMO_ITEMS[1] || DEMO_ITEMS[0]);
   const [isScanning, setIsScanning] = useState(false);
   const [scanStep, setScanStep] = useState(4);
   const [activePlatform, setActivePlatform] = useState<"vinted" | "leboncoin">("vinted");
@@ -18,13 +18,13 @@ export default function LiveAiDemo() {
     setCopied(false);
 
     const steps = [
-      setTimeout(() => setScanStep(1), 400),
-      setTimeout(() => setScanStep(2), 900),
-      setTimeout(() => setScanStep(3), 1400),
+      setTimeout(() => setScanStep(1), 350),
+      setTimeout(() => setScanStep(2), 800),
+      setTimeout(() => setScanStep(3), 1300),
       setTimeout(() => {
         setScanStep(4);
         setIsScanning(false);
-      }, 1900),
+      }, 1800),
     ];
 
     return () => steps.forEach(clearTimeout);
@@ -42,168 +42,177 @@ export default function LiveAiDemo() {
   };
 
   const stepsLabels = [
-    "Analyse de la coupe et des textures...",
-    "Reconnaissance du modèle & état d'usure...",
-    "Comparaison de 2 400+ ventes récentes...",
-    "Rédaction optimisée pour l'algorithme..."
+    "Analyse de la coupe, marque et texture...",
+    "Reconnaissance de l'état d'usure & matière...",
+    "Comparaison de 2 400+ ventes réelles récentes...",
+    "Génération du titre SEO viral et des hashtags..."
   ];
 
   return (
-    <section id="scanner" className="py-24 bg-[#090614] relative overflow-hidden border-t border-white/10">
-      {/* Background Decor */}
-      <div className="absolute pointer-events-none w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#7C5CFC]/15 rounded-full blur-[140px] -z-0" />
+    <section id="scanner" className="py-24 bg-[#06040A] relative overflow-hidden border-t border-white/10 select-none">
+      
+      {/* Background Ambient Glows */}
+      <div className="absolute pointer-events-none w-[650px] h-[650px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#7C5CFC]/15 rounded-full blur-[160px] -z-0" />
+      <div className="absolute pointer-events-none w-[450px] h-[450px] top-1/4 right-10 bg-[#09B1BA]/10 rounded-full blur-[140px] -z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C5CFC]/20 border border-[#A88BFF]/40 text-[#D4C9FF] font-bold text-xs uppercase tracking-wider font-mono">
             <Sparkles className="w-4 h-4 text-[#A88BFF]" />
-            <span>Simulateur Interactif</span>
+            <span>Simulateur Interactif en Direct</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Testez l’IA en direct. <span className="gradient-purple-text">C’est bluffant.</span>
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-[1.15]">
+            Testez l’IA sur vos articles. <span className="gradient-purple-text">Résultat en 1,8 seconde.</span>
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg font-normal">
-            Choisissez un article ci-dessous et observez comment Folzi AI génère une annonce complète et son prix idéal en moins de 2 secondes.
+          <p className="text-slate-300 text-base sm:text-lg font-normal max-w-2xl mx-auto">
+            Cliquez sur un article ci-dessous pour voir la vitesse à laquelle Folzi AI analyse la photo et génère une annonce complète prête à publier.
           </p>
         </div>
 
-        {/* 3D Item Selector Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-3.5 mb-12">
+        {/* Item Selector Pills */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
           {DEMO_ITEMS.map((item) => {
-            const isSelected = selectedItem.id === item.id && !isScanning;
+            const isSelected = selectedItem.id === item.id;
             return (
               <button
                 key={item.id}
+                type="button"
                 onClick={() => startScan(item)}
-                className={`flex items-center gap-3 px-6 py-3.5 rounded-2xl font-bold text-sm transition-all shadow-lg ${
+                className={`flex items-center gap-3 px-5 py-3 rounded-2xl font-bold text-xs sm:text-sm transition-all duration-200 border ${
                   isSelected
-                    ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-purple-600/30 scale-105 border border-white/30"
-                    : "bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10"
+                    ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white border-white/40 shadow-lg shadow-purple-600/30 scale-105"
+                    : "bg-white/[0.04] text-slate-300 hover:bg-white/[0.08] hover:text-white border-white/10"
                 }`}
               >
                 <img
                   src={item.photoUrl}
                   alt={item.name}
-                  className="w-7 h-7 rounded-lg object-cover"
+                  className="w-7 h-7 rounded-lg object-cover border border-white/20"
                 />
                 <span>{item.name}</span>
+                {isSelected && <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34D399]" />}
               </button>
             );
           })}
         </div>
 
-        {/* Interactive Demo Terminal */}
-        <div className="max-w-5xl mx-auto rounded-[36px] bg-[#0E0A21]/90 text-white p-6 sm:p-8 lg:p-10 shadow-2xl shadow-purple-950/40 border border-white/15 backdrop-blur-xl">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Main Terminal Card */}
+        <div className="max-w-5xl mx-auto rounded-[32px] bg-[#0C081D]/90 border border-white/15 p-5 sm:p-8 lg:p-10 shadow-[0_25px_70px_rgba(0,0,0,0.6)] backdrop-blur-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
-            {/* Left: iPhone 16 Pro Mockup & Scanner Simulation */}
-            <div className="lg:col-span-5 space-y-4">
+            {/* Left Column: AI Vision Scanner HUD */}
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
               
-              {/* iPhone Outer Titanium Chassis */}
-              <div className="relative rounded-[48px] p-3 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-900 border-2 border-slate-600 shadow-2xl shadow-purple-950/50">
+              <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-black border border-white/15 shadow-2xl group">
                 
-                {/* Dynamic Island Notch */}
-                <div className="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-30 flex items-center justify-between px-3.5 border border-white/10 shadow-md">
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-700" />
-                  <div className="w-2 h-2 rounded-full bg-[#34D399]/80 animate-pulse shadow-[0_0_8px_#34D399]" />
+                {/* Photo with subtle zoom on scan */}
+                <img
+                  src={selectedItem.photoUrl}
+                  alt={selectedItem.name}
+                  className={`w-full h-full object-cover transition-transform duration-700 ${
+                    isScanning ? "scale-105 brightness-90" : "scale-100"
+                  }`}
+                />
+
+                {/* Laser Scanning Animation */}
+                {isScanning && (
+                  <>
+                    <div className="laser-line animate-laser-scan z-20" />
+                    <div className="absolute inset-0 bg-brand-500/20 backdrop-blur-[0.5px] z-10" />
+                  </>
+                )}
+
+                {/* HUD Viewfinder Reticle Brackets */}
+                <div className="absolute inset-5 pointer-events-none z-15">
+                  <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-[#A88BFF]" />
+                  <div className="absolute top-0 right-0 w-5 h-5 border-t-2 border-r-2 border-[#A88BFF]" />
+                  <div className="absolute bottom-0 left-0 w-5 h-5 border-b-2 border-l-2 border-[#A88BFF]" />
+                  <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-[#A88BFF]" />
                 </div>
 
-                {/* iPhone Screen */}
-                <div className="relative aspect-[9/14] sm:aspect-square w-full rounded-[38px] overflow-hidden bg-slate-950 border border-slate-800">
-                  <img
-                    src={selectedItem.photoUrl}
-                    alt={selectedItem.name}
-                    className={`w-full h-full object-cover transition-all duration-700 ${
-                      isScanning ? "scale-105 filter brightness-90" : "scale-100"
-                    }`}
-                  />
-
-                  {/* Laser animation when scanning */}
-                  {isScanning && (
-                    <>
-                      <div className="laser-line animate-laser-scan z-20" />
-                      <div className="absolute inset-0 bg-brand-500/20 backdrop-blur-[1px] z-10" />
-                    </>
-                  )}
-
-                  {/* Viewfinder Target */}
-                  <div className="absolute inset-6 border-2 border-white/20 rounded-2xl z-10 pointer-events-none">
-                    <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[#A88BFF]" />
-                    <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-[#A88BFF]" />
-                    <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-[#A88BFF]" />
-                    <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#A88BFF]" />
+                {/* Top HUD Badge: Live AI Vision Status */}
+                <div className="absolute top-3.5 left-3.5 right-3.5 z-20 flex items-center justify-between pointer-events-none">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] font-bold text-white shadow-lg">
+                    <span className={`w-2 h-2 rounded-full ${isScanning ? "bg-amber-400 animate-ping" : "bg-[#34D399] shadow-[0_0_8px_#34D399]"}`} />
+                    <span className="font-mono">{isScanning ? "Scan IA en cours..." : "Scan IA terminé"}</span>
                   </div>
-
-                  {/* Status Overlay */}
-                  <div className="absolute top-10 left-4 z-20">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-xs font-black text-brand-300">
-                      <Scan className="w-3.5 h-3.5" />
-                      {isScanning ? "Analyse en cours..." : "Scan terminé"}
-                    </span>
-                  </div>
-
-                  {/* Price Tag Overlay */}
-                  <div className="absolute bottom-4 right-4 z-20">
-                    <div className="px-3.5 py-1.5 rounded-xl bg-brand-500 text-white font-mono font-black text-sm shadow-lg">
-                      {selectedItem.estimatedPrice} € conseillé
-                    </div>
+                  <div className="px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono text-slate-300">
+                    99.2%
                   </div>
                 </div>
+
+                {/* Bottom HUD Badge: Price Estimate */}
+                <div className="absolute bottom-3.5 left-3.5 right-3.5 z-20 flex items-center justify-between pointer-events-none">
+                  <div className="px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/20 text-white font-mono font-bold text-xs flex items-center gap-1.5 shadow-lg">
+                    <Tag className="w-3.5 h-3.5 text-[#A88BFF]" />
+                    <span>{selectedItem.brand}</span>
+                  </div>
+                  <div className="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white font-mono font-black text-xs shadow-lg shadow-purple-600/40 border border-white/20">
+                    {selectedItem.estimatedPrice} € conseillé
+                  </div>
+                </div>
+
               </div>
 
-              {/* 3D Action Trigger Button */}
+              {/* Action Button: Relaunch Scan */}
               <button
+                type="button"
                 onClick={() => startScan(selectedItem)}
                 disabled={isScanning}
-                className="btn-dark-3d w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-slate-900 text-white text-xs font-extrabold disabled:opacity-50 border border-slate-800"
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] text-white text-xs font-bold transition-all border border-white/15 active:scale-98 disabled:opacity-50"
               >
-                <RefreshCw className={`w-3.5 h-3.5 ${isScanning ? "animate-spin" : ""}`} />
-                <span>Relancer l’analyse IA</span>
+                <RefreshCw className={`w-4 h-4 text-[#A88BFF] ${isScanning ? "animate-spin" : ""}`} />
+                <span>{isScanning ? "Analyse en cours..." : "Relancer l’analyse IA"}</span>
               </button>
 
             </div>
 
-            {/* Right: Live Generated Output */}
-            <div className="lg:col-span-7 space-y-6">
+            {/* Right Column: Generated Marketplace Listing */}
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-5">
               
-              {/* Platform Switcher & Copy 3D Button */}
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
-                <div className="flex items-center gap-2">
+              {/* Header Switcher & Copy CTA */}
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
+                
+                {/* Platform Tabs */}
+                <div className="flex items-center gap-2 p-1 rounded-xl bg-black/40 border border-white/10">
                   <button
+                    type="button"
                     onClick={() => setActivePlatform("vinted")}
-                    className={`px-4 py-2 rounded-xl text-xs font-black transition-all ${
+                    className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
                       activePlatform === "vinted"
-                        ? "btn-vinted-3d bg-vinted text-white"
-                        : "bg-slate-900 text-slate-400 hover:text-white border border-slate-800"
+                        ? "bg-[#09B1BA] text-white shadow-md shadow-teal-500/20"
+                        : "text-slate-400 hover:text-white"
                     }`}
                   >
-                    Format Vinted
+                    <Hash className="w-3.5 h-3.5" />
+                    <span>Vinted</span>
                   </button>
                   <button
+                    type="button"
                     onClick={() => setActivePlatform("leboncoin")}
-                    className={`px-4 py-2 rounded-xl text-xs font-black transition-all ${
+                    className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
                       activePlatform === "leboncoin"
-                        ? "btn-leboncoin-3d bg-leboncoin text-white"
-                        : "bg-slate-900 text-slate-400 hover:text-white border border-slate-800"
+                        ? "bg-[#F56B2A] text-white shadow-md shadow-orange-500/20"
+                        : "text-slate-400 hover:text-white"
                     }`}
                   >
-                    Format Leboncoin
+                    <span>Leboncoin</span>
                   </button>
                 </div>
 
-                {/* 3D Copy Button */}
+                {/* High Contrast Copy Button */}
                 <button
+                  type="button"
                   onClick={copyToClipboard}
                   disabled={isScanning}
-                  className="btn-3d inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-500 text-white text-xs font-black disabled:opacity-50"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white text-xs font-bold hover:scale-105 active:scale-95 transition-all shadow-md shadow-purple-600/30 border border-white/20 disabled:opacity-50"
                 >
                   {copied ? (
                     <>
                       <Check className="w-4 h-4 text-emerald-300 stroke-[3]" />
-                      <span>Annonce copiée !</span>
+                      <span>Copié dans le presse-papier !</span>
                     </>
                   ) : (
                     <>
@@ -212,68 +221,67 @@ export default function LiveAiDemo() {
                     </>
                   )}
                 </button>
+
               </div>
 
-              {/* Progress Steps when scanning */}
+              {/* Live Scan Progression State */}
               {isScanning ? (
-                <div className="space-y-4 py-8">
-                  <div className="flex items-center gap-3 text-brand-300 font-extrabold text-sm">
-                    <Sparkles className="w-5 h-5 animate-spin" />
+                <div className="py-12 space-y-4 text-center my-auto">
+                  <div className="inline-flex items-center gap-2 text-[#D4C9FF] font-bold text-sm">
+                    <Sparkles className="w-4 h-4 text-[#A88BFF] animate-spin" />
                     <span>{stepsLabels[Math.min(scanStep, stepsLabels.length - 1)]}</span>
                   </div>
-                  <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div className="w-full max-w-md mx-auto h-2 bg-white/10 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-brand-500 transition-all duration-300"
+                      className="h-full bg-gradient-to-r from-[#7C5CFC] to-[#34D399] transition-all duration-300"
                       style={{ width: `${(scanStep / 4) * 100}%` }}
                     />
                   </div>
                 </div>
               ) : (
-                /* Generated Content Card */
-                <div className="space-y-5">
+                /* Generated Content Blocks */
+                <div className="space-y-4">
                   
-                  {/* Generated Title */}
+                  {/* Title Block */}
                   <div className="space-y-1.5">
-                    <div className="text-[11px] uppercase font-mono font-bold text-slate-400 tracking-wider flex items-center justify-between">
-                      <span>Titre optimisé</span>
-                      <span className="text-emerald-400 font-mono font-bold">Score SEO : 99/100</span>
+                    <div className="flex items-center justify-between text-[11px] font-mono font-bold text-slate-400">
+                      <span>TITRE OPTIMISÉ</span>
+                      <span className="text-[#34D399] font-mono">SCORE SEO : 99/100</span>
                     </div>
-                    <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 font-extrabold text-white text-base font-sans">
+                    <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10 font-bold text-white text-sm sm:text-base leading-snug">
                       {activePlatform === "vinted" ? selectedItem.vintedTitle : selectedItem.leboncoinTitle}
                     </div>
                   </div>
 
-                  {/* Generated Description */}
+                  {/* Description Block */}
                   <div className="space-y-1.5">
-                    <div className="text-[11px] uppercase font-mono font-bold text-slate-400 tracking-wider">
-                      Description persuasive
+                    <div className="text-[11px] font-mono font-bold text-slate-400">
+                      DESCRIPTION PERSUASIVE
                     </div>
-                    <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-sm leading-relaxed whitespace-pre-line font-normal">
+                    <div className="p-4 rounded-xl bg-white/[0.04] border border-white/10 text-slate-200 text-xs sm:text-sm leading-relaxed whitespace-pre-line">
                       {activePlatform === "vinted" ? selectedItem.vintedDescription : selectedItem.leboncoinDescription}
                     </div>
                   </div>
 
-                  {/* Pricing and Keywords Row */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* 2 Stats Badges */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     
-                    {/* Price Advice */}
-                    <div className="p-3.5 rounded-xl bg-brand-500/15 border border-brand-500/30 space-y-1">
-                      <div className="text-[11px] font-bold text-brand-300 uppercase font-mono">
+                    <div className="p-3 rounded-xl bg-[#7C5CFC]/10 border border-[#7C5CFC]/25 space-y-0.5">
+                      <div className="text-[10px] font-bold text-[#D4C9FF] uppercase font-mono">
                         Estimation Marché
                       </div>
-                      <div className="text-lg font-black text-white font-mono flex items-center gap-2">
+                      <div className="text-base font-black text-white font-mono flex items-center gap-2">
                         {selectedItem.estimatedPrice} €
-                        <span className="text-xs font-medium text-slate-300">
+                        <span className="text-[11px] font-normal text-slate-400">
                           (Fourchette : {selectedItem.marketRange})
                         </span>
                       </div>
                     </div>
 
-                    {/* Quality & Ban-Check */}
-                    <div className="p-3.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 space-y-1">
-                      <div className="text-[11px] font-bold text-emerald-400 uppercase flex items-center gap-1 font-mono">
-                        <ShieldCheck className="w-3.5 h-3.5" />
-                        Conformité CGU
+                    <div className="p-3 rounded-xl bg-[#34D399]/10 border border-[#34D399]/25 space-y-0.5">
+                      <div className="text-[10px] font-bold text-[#6EE7B7] uppercase font-mono flex items-center gap-1">
+                        <ShieldCheck className="w-3.5 h-3.5 text-[#34D399]" />
+                        <span>Conformité CGU</span>
                       </div>
                       <div className="text-xs font-bold text-slate-200">
                         0 mot interdit détecté · 100% sûr
@@ -282,27 +290,29 @@ export default function LiveAiDemo() {
 
                   </div>
 
-                  {/* Keywords (Tags) */}
-                  <div className="space-y-2">
-                    <div className="text-[11px] uppercase font-mono font-bold text-slate-400 tracking-wider">
-                      Mots-clés stratégiques générés
+                  {/* Strategic Hashtags / Tags */}
+                  <div className="space-y-1.5">
+                    <div className="text-[11px] font-mono font-bold text-slate-400">
+                      MOTS-CLÉS STRATÉGIQUES GÉNÉRÉS
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedItem.keywords.map((kw) => (
+                    <div className="flex flex-wrap gap-1.5">
+                      {selectedItem.keywords.map((tag) => (
                         <span
-                          key={kw}
-                          className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-brand-300 text-xs font-mono font-semibold"
+                          key={tag}
+                          className="px-2.5 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-[#C2B3FF] text-xs font-mono font-semibold"
                         >
-                          #{kw}
+                          #{tag}
                         </span>
                       ))}
                     </div>
                   </div>
 
-                  {/* Pro Tip */}
-                  <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-slate-900/80 text-xs text-slate-300 border border-slate-800">
-                    <Info className="w-4 h-4 text-brand-400 shrink-0 mt-0.5" />
-                    <span><strong>Conseil Vendeur :</strong> {selectedItem.tips}</span>
+                  {/* Pro Tip Card */}
+                  <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200/90 flex items-start gap-2.5">
+                    <Lightbulb className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <p className="leading-relaxed">
+                      <strong className="text-amber-300">Conseil Vendeur :</strong> {selectedItem.tips}
+                    </p>
                   </div>
 
                 </div>
@@ -311,7 +321,6 @@ export default function LiveAiDemo() {
             </div>
 
           </div>
-
         </div>
 
       </div>
