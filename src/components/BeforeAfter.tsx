@@ -142,6 +142,48 @@ export default function BeforeAfter() {
 
         </div>
 
+        {/* Global Performance Comparison Table */}
+        <div className="max-w-5xl mx-auto mt-12">
+          <div className="overflow-x-auto rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-xl p-2 sm:p-4">
+            <table className="w-full text-xs text-left">
+              <thead>
+                <tr className="border-b border-white/10 bg-white/[0.03]">
+                  <th className="p-4 text-slate-400 font-semibold">Fonctionnalité &amp; Résultat</th>
+                  <th className="p-4 text-rose-400 font-semibold">Rédaction Manuelle</th>
+                  <th className="p-4 text-[#5BE3EB] font-bold">Avec Folzi AI</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5">
+                <tr>
+                  <td className="p-4 text-slate-200 font-medium">Temps moyen par annonce</td>
+                  <td className="p-4 text-slate-400">10 à 15 minutes</td>
+                  <td className="p-4 text-[#5BE3EB] font-bold">1,8 seconde ⚡</td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-slate-200 font-medium">Hashtags &amp; Visibilité Algorithmique</td>
+                  <td className="p-4 text-slate-400">Oubliés ou génériques</td>
+                  <td className="p-4 text-[#5BE3EB] font-bold">5 à 7 tags viraux ciblés (#Y2K, #QuietLuxury)</td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-slate-200 font-medium">Précision de l&apos;Argus de Prix</td>
+                  <td className="p-4 text-slate-400">Au hasard / sous-évalué (-40%)</td>
+                  <td className="p-4 text-[#5BE3EB] font-bold">Optimisé sur 2 400+ ventes réelles</td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-slate-200 font-medium">Litiges &amp; Questions d&apos;Acheteurs</td>
+                  <td className="p-4 text-slate-400">Fréquents (manque de mesures)</td>
+                  <td className="p-4 text-[#5BE3EB] font-bold">0 litige (mesures aisselle à aisselle incluses)</td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-slate-200 font-medium">Délai moyen de vente</td>
+                  <td className="p-4 text-slate-400">14 à 45 jours</td>
+                  <td className="p-4 text-[#5BE3EB] font-bold">Moins de 24 à 48 heures</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
     </section>
   );
