@@ -79,7 +79,7 @@ export const FEATURES = [
     icon: "Sparkles",
     tag: "Rédaction Persuasive",
     title: "Titres & Descriptions qui font vendre",
-    description: "Fini la corvée d'écriture. VendMoi rédige des annonces professionnelles et captivantes avec les mots-clés exacts que les acheteurs tapent dans la barre de recherche.",
+    description: "Fini la corvée d'écriture. Folzi AI rédige des annonces professionnelles et captivantes avec les mots-clés exacts que les acheteurs tapent dans la barre de recherche.",
     gradient: "from-brand-500 to-purple-600",
     highlight: "+240% de clics"
   },
@@ -190,7 +190,7 @@ export const TESTIMONIALS = [
     role: "Top Vendeuse Vinted (500+ évaluations)",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
     rating: 5,
-    text: "Je passais au moins 15 minutes par vêtement pour mesurer, trouver le modèle et taper l'annonce. Avec VendMoi, je prends 1 photo et l'annonce est générée en 2 secondes. J'ai vendu 42 articles la semaine dernière !"
+    text: "Je passais au moins 15 minutes par vêtement pour mesurer, trouver le modèle et taper l'annonce. Avec Folzi AI, je prends 1 photo et l'annonce est générée en 2 secondes. J'ai vendu 42 articles la semaine dernière !"
   },
   {
     name: "Lucas R.",
@@ -217,20 +217,20 @@ export const STATS = [
 
 export const FAQS = [
   {
-    question: "Comment fonctionne le scanner IA de VendMoi ?",
+    question: "Comment fonctionne le scanner IA de Folzi AI ?",
     answer: "Vous prenez simplement votre vêtement ou objet en photo avec l'application. Notre modèle de vision par ordinateur analyse instantanément la silhouette, les textures, les logos et l'état général pour rédiger une annonce complète optimisée pour les moteurs de recherche de Vinted et Leboncoin."
   },
   {
     question: "L'application fonctionne-t-elle sur iPhone et Android ?",
-    answer: "Oui, VendMoi est 100% compatible avec iOS (iPhone) et Android. Elle tire parti des fonctionnalités natives de votre appareil : caméra haute définition, retour haptique, mode sombre et trousseau sécurisé pour protéger vos données."
+    answer: "Oui, Folzi AI est 100% compatible avec iOS (iPhone) et Android. Elle tire parti des fonctionnalités natives de votre appareil : caméra haute définition, retour haptique, mode sombre et trousseau sécurisé pour protéger vos données."
   },
   {
     question: "Comment sont calculées les estimations de prix ?",
-    answer: "VendMoi compare votre article avec des milliers de ventes réelles récentes de la même marque, catégorie et état. L'IA vous propose un prix qui maximise votre profit tout en garantissant une vente rapide sous 48 à 72 heures."
+    answer: "Folzi AI compare votre article avec des milliers de ventes réelles récentes de la même marque, catégorie et état. L'IA vous propose un prix qui maximise votre profit tout en garantissant une vente rapide sous 48 à 72 heures."
   },
   {
     question: "Puis-je modifier l'annonce avant de la publier ?",
-    answer: "Absolument ! VendMoi vous propose un écran d'édition complet où vous pouvez ajuster le titre, la description, les mots-clés, la catégorie, la taille et le prix avant de copier le texte."
+    answer: "Absolument ! Folzi AI vous propose un écran d'édition complet où vous pouvez ajuster le titre, la description, les mots-clés, la catégorie, la taille et le prix avant de copier le texte."
   },
   {
     question: "Les crédits sont-ils renouvelés automatiquement ?",

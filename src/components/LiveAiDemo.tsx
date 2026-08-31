@@ -49,23 +49,23 @@ export default function LiveAiDemo() {
   ];
 
   return (
-    <section id="demo" className="py-24 bg-white relative overflow-hidden">
+    <section id="scanner" className="py-24 bg-[#090614] relative overflow-hidden border-t border-white/10">
       {/* Background Decor */}
-      <div className="absolute pointer-events-none w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-500/10 rounded-full blur-3xl -z-0" />
+      <div className="absolute pointer-events-none w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#7C5CFC]/15 rounded-full blur-[140px] -z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-600 font-extrabold text-xs uppercase tracking-wider">
-            <Sparkles className="w-4 h-4 text-brand-500" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C5CFC]/20 border border-[#A88BFF]/40 text-[#D4C9FF] font-bold text-xs uppercase tracking-wider font-mono">
+            <Sparkles className="w-4 h-4 text-[#A88BFF]" />
             <span>Simulateur Interactif</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-ink tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             Testez l’IA en direct. <span className="gradient-purple-text">C’est bluffant.</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg font-normal">
-            Choisissez un article ci-dessous et observez comment VendMoi génère une annonce complète et son prix idéal en quelques secondes.
+          <p className="text-slate-300 text-base sm:text-lg font-normal">
+            Choisissez un article ci-dessous et observez comment Folzi AI génère une annonce complète et son prix idéal en moins de 2 secondes.
           </p>
         </div>
 
@@ -77,10 +77,10 @@ export default function LiveAiDemo() {
               <button
                 key={item.id}
                 onClick={() => startScan(item)}
-                className={`flex items-center gap-3 px-6 py-3.5 rounded-2xl font-black text-sm transition-all ${
+                className={`flex items-center gap-3 px-6 py-3.5 rounded-2xl font-bold text-sm transition-all shadow-lg ${
                   isSelected
-                    ? "btn-pill-3d-active bg-brand-500 text-white"
-                    : "btn-pill-3d bg-slate-100 text-slate-800 hover:bg-slate-200"
+                    ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-purple-600/30 scale-105 border border-white/30"
+                    : "bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10"
                 }`}
               >
                 <img
@@ -95,7 +95,7 @@ export default function LiveAiDemo() {
         </div>
 
         {/* Interactive Demo Terminal */}
-        <div className="max-w-5xl mx-auto rounded-[36px] bg-slate-950 text-white p-6 sm:p-8 lg:p-10 shadow-2xl shadow-brand-950/20 border border-slate-800">
+        <div className="max-w-5xl mx-auto rounded-[36px] bg-[#0E0A21]/90 text-white p-6 sm:p-8 lg:p-10 shadow-2xl shadow-purple-950/40 border border-white/15 backdrop-blur-xl">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             

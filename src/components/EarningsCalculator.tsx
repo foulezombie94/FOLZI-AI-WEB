@@ -19,22 +19,22 @@ export default function EarningsCalculator() {
   const timeSavedMinutes = (itemCount * 18) % 60;
 
   return (
-    <section id="calculator" className="py-20 bg-white relative overflow-hidden">
+    <section id="calculator" className="py-20 bg-[#06040A] relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="rounded-[40px] bg-gradient-to-br from-brand-50/80 via-white to-purple-50/60 border-2 border-brand-100 p-8 sm:p-12 shadow-xl shadow-brand-500/5 relative">
+        <div className="rounded-[40px] bg-[#0E0A21]/90 border border-white/15 p-8 sm:p-12 shadow-2xl shadow-purple-950/40 relative backdrop-blur-xl">
           
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100/70 text-brand-700 font-extrabold text-xs uppercase tracking-wider font-mono">
-              <Calculator className="w-4 h-4 text-brand-600" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C5CFC]/20 border border-[#A88BFF]/40 text-[#D4C9FF] font-bold text-xs uppercase tracking-wider font-mono">
+              <Calculator className="w-4 h-4 text-[#A88BFF]" />
               <span>Calculateur de Dressing</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-ink tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
               Combien d’argent dort dans votre placard ?
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base font-normal">
-              Ajustez le curseur et découvrez combien vous pouvez encaisser en quelques jours grâce au scanner IA de VendMoi.
+            <p className="text-slate-300 text-sm sm:text-base font-normal">
+              Ajustez le curseur et découvrez combien vous pouvez encaisser en quelques jours grâce au scanner IA de Folzi AI.
             </p>
           </div>
 
@@ -42,40 +42,40 @@ export default function EarningsCalculator() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Controls (Left) */}
-            <div className="lg:col-span-7 space-y-6 bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm">
+            <div className="lg:col-span-7 space-y-6 bg-white/[0.03] p-6 sm:p-8 rounded-3xl border border-white/10 shadow-inner">
               
-              {/* Type of items 3D tabs */}
+              {/* Type of items tabs */}
               <div className="space-y-2.5">
-                <label className="text-xs font-black uppercase tracking-wider text-slate-500 font-mono">
+                <label className="text-xs font-bold uppercase tracking-wider text-[#A88BFF] font-mono">
                   Type de vêtements / objets :
                 </label>
                 <div className="grid grid-cols-3 gap-2.5">
                   <button
                     onClick={() => setItemType("standard")}
-                    className={`py-3 px-3 rounded-2xl text-xs font-black transition-all ${
+                    className={`py-3 px-3 rounded-2xl text-xs font-bold transition-all ${
                       itemType === "standard"
-                        ? "btn-pill-3d-active bg-brand-500 text-white"
-                        : "btn-pill-3d bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200"
+                        ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-lg shadow-purple-600/30 scale-105 border border-white/30"
+                        : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10"
                     }`}
                   >
                     Classique
                   </button>
                   <button
                     onClick={() => setItemType("vintage")}
-                    className={`py-3 px-3 rounded-2xl text-xs font-black transition-all ${
+                    className={`py-3 px-3 rounded-2xl text-xs font-bold transition-all ${
                       itemType === "vintage"
-                        ? "btn-pill-3d-active bg-brand-500 text-white"
-                        : "btn-pill-3d bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200"
+                        ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-lg shadow-purple-600/30 scale-105 border border-white/30"
+                        : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10"
                     }`}
                   >
                     Vintage
                   </button>
                   <button
                     onClick={() => setItemType("premium")}
-                    className={`py-3 px-3 rounded-2xl text-xs font-black transition-all ${
+                    className={`py-3 px-3 rounded-2xl text-xs font-bold transition-all ${
                       itemType === "premium"
-                        ? "btn-pill-3d-active bg-brand-500 text-white"
-                        : "btn-pill-3d bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200"
+                        ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-lg shadow-purple-600/30 scale-105 border border-white/30"
+                        : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10"
                     }`}
                   >
                     Sneakers / Luxe
@@ -86,10 +86,10 @@ export default function EarningsCalculator() {
               {/* Slider for count */}
               <div className="space-y-3 pt-2">
                 <div className="flex items-center justify-between">
-                  <label className="text-xs font-black uppercase tracking-wider text-slate-500 font-mono">
+                  <label className="text-xs font-bold uppercase tracking-wider text-[#A88BFF] font-mono">
                     Articles non portés :
                   </label>
-                  <span className="px-3.5 py-1 rounded-full bg-brand-50 text-brand-600 font-mono font-black text-sm border border-brand-200">
+                  <span className="px-3.5 py-1 rounded-full bg-[#7C5CFC]/20 text-[#D4C9FF] font-mono font-bold text-sm border border-[#A88BFF]/30">
                     {itemCount} articles
                   </span>
                 </div>
@@ -98,27 +98,14 @@ export default function EarningsCalculator() {
                   type="range"
                   min="2"
                   max="40"
-                  step="1"
                   value={itemCount}
                   onChange={(e) => setItemCount(Number(e.target.value))}
-                  className="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                  className="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#7C5CFC]"
                 />
-
-                <div className="flex justify-between text-[11px] font-bold text-slate-400 font-mono">
-                  <span>2 articles</span>
+                
+                <div className="flex justify-between text-[11px] font-mono text-slate-500 font-bold">
+                  <span>2 articles (Tri rapide)</span>
                   <span>20 articles</span>
-                  <span>40+ articles</span>
-                </div>
-              </div>
-
-              {/* Sub-benefits checklist */}
-              <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 text-xs text-slate-600 font-bold">
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                  <span>Vente 3x plus rapide</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
                   <span>Prix optimisé sans perte</span>
                 </div>
               </div>

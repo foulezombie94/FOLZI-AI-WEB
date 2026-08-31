@@ -1,7 +1,18 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ChevronDown, Menu, X, Sparkles, Download } from "lucide-react";
+import { ChevronDown, Menu, X, Sparkles, Download, ArrowRight, ShieldCheck, Zap } from "lucide-react";
+import LiveAiDemo from "@/components/LiveAiDemo";
+import FeaturesGrid from "@/components/FeaturesGrid";
+import BeforeAfter from "@/components/BeforeAfter";
+import HowItWorks from "@/components/HowItWorks";
+import MarketplaceTabs from "@/components/MarketplaceTabs";
+import EarningsCalculator from "@/components/EarningsCalculator";
+import PricingSection from "@/components/PricingSection";
+import Testimonials from "@/components/Testimonials";
+import FaqSection from "@/components/FaqSection";
+import DownloadCta from "@/components/DownloadCta";
+import Footer from "@/components/Footer";
 
 type Language = "fr" | "en" | "es";
 
@@ -228,387 +239,374 @@ export default function Home() {
   ];
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black select-none">
-      
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover"
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260803_192301_9231ed6b-c55c-4a48-909c-4ebe11cf2e11.mp4"
-      />
-
-      {/* Subtle Violet Ambient Highlights */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#7C5CFC]/20 rounded-full blur-[120px] pointer-events-none z-0" />
-      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-[#9D7BFF]/15 rounded-full blur-[140px] pointer-events-none z-0" />
-
-      {/* Main Foreground Container */}
-      <div className="relative z-10 flex flex-col h-full w-full">
+    <main className="w-full min-h-screen bg-[#06040A] text-white flex flex-col">
+      {/* Hero Section */}
+      <section className="relative min-h-screen w-full overflow-hidden bg-black select-none flex flex-col justify-between">
         
-        {/* Navigation Top Bar */}
-        <header className="w-full px-5 py-5 sm:px-8 sm:py-6 lg:px-12 flex items-center justify-between">
-          
-          {/* Brand Logo - Folzi AI */}
-          <a href="#" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#7C5CFC] to-[#A88BFF] flex items-center justify-center text-white shadow-lg shadow-purple-600/30 group-hover:scale-105 transition-transform">
-              <Sparkles className="w-4 h-4 fill-white" />
-            </div>
-            <span className="text-xl font-bold text-[#010101] lg:text-white tracking-tight transition-colors">
-              Folzi <span className="font-light text-sm text-[#7C5CFC] lg:text-[#D4C9FF] uppercase font-mono">AI</span>
-            </span>
-          </a>
-
-          {/* Desktop Navigation & Actions */}
-          <div className="hidden md:flex items-center gap-3">
-            
-            {/* Glass Pill Nav Cluster */}
-            <nav className="rounded-full bg-white/12 border border-white/25 px-2 py-1.5 backdrop-blur-xl flex items-center gap-1 shadow-lg shadow-black/10">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="rounded-full px-4 py-1.5 text-sm font-medium text-white/90 hover:bg-white/15 hover:text-white transition-all inline-flex items-center gap-1"
-                >
-                  <span>{link.label}</span>
-                  {link.hasDropdown && <ChevronDown className="w-3.5 h-3.5 opacity-80" />}
-                </a>
-              ))}
-            </nav>
-
-            {/* Direct 3-Flag Segmented Switcher (Instant 1-Click Translation) */}
-            <div className="flex items-center rounded-full bg-white/12 border border-white/25 p-1 backdrop-blur-xl shadow-md gap-0.5">
-              <button
-                type="button"
-                onClick={() => setLang("fr")}
-                className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  lang === "fr"
-                    ? "bg-white text-black shadow-md scale-105"
-                    : "text-white/80 hover:bg-white/10 hover:text-white"
-                }`}
-                title="Passer en Français"
-              >
-                <FranceFlag className="w-4 h-2.5" />
-                <span className="font-mono">FR</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setLang("en")}
-                className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  lang === "en"
-                    ? "bg-white text-black shadow-md scale-105"
-                    : "text-white/80 hover:bg-white/10 hover:text-white"
-                }`}
-                title="Switch to English"
-              >
-                <UKFlag className="w-4 h-2.5" />
-                <span className="font-mono">EN</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setLang("es")}
-                className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs font-bold transition-all ${
-                  lang === "es"
-                    ? "bg-white text-black shadow-md scale-105"
-                    : "text-white/80 hover:bg-white/10 hover:text-white"
-                }`}
-                title="Cambiar a Español"
-              >
-                <SpainFlag className="w-4 h-2.5" />
-                <span className="font-mono">ES</span>
-              </button>
-            </div>
-
-            {/* Separate Installer Pill */}
-            <a
-              href="#download"
-              className="rounded-full px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] hover:opacity-95 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-purple-600/30 border border-white/20"
-            >
-              {t.nav.install}
-            </a>
-
-          </div>
-
-          {/* Mobile Right Controls: 3-Flag Segmented Switcher + Hamburger */}
-          <div className="md:hidden flex items-center gap-2">
-            
-            {/* Mobile 3-Flag Selector */}
-            <div className="flex items-center rounded-full bg-white/15 border border-white/20 p-0.5 backdrop-blur-lg gap-0.5">
-              <button
-                type="button"
-                onClick={() => setLang("fr")}
-                className={`p-1.5 rounded-full transition-all ${
-                  lang === "fr" ? "bg-white shadow-sm scale-110" : "opacity-70 hover:opacity-100"
-                }`}
-                title="Français"
-              >
-                <FranceFlag className="w-4 h-2.5" />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setLang("en")}
-                className={`p-1.5 rounded-full transition-all ${
-                  lang === "en" ? "bg-white shadow-sm scale-110" : "opacity-70 hover:opacity-100"
-                }`}
-                title="English"
-              >
-                <UKFlag className="w-4 h-2.5" />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setLang("es")}
-                className={`p-1.5 rounded-full transition-all ${
-                  lang === "es" ? "bg-white shadow-sm scale-110" : "opacity-70 hover:opacity-100"
-                }`}
-                title="Español"
-              >
-                <SpainFlag className="w-4 h-2.5" />
-              </button>
-            </div>
-
-            {/* Mobile Hamburger Button */}
-            <button
-              type="button"
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="h-10 w-10 rounded-full bg-white/15 border border-white/20 backdrop-blur-lg flex items-center justify-center relative z-50 text-[#010101] lg:text-white focus:outline-none"
-              aria-label="Toggle navigation menu"
-            >
-              <Menu
-                className={`w-5 h-5 absolute transition-all duration-300 ${
-                  menuOpen ? "rotate-90 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"
-                }`}
-              />
-              <X
-                className={`w-5 h-5 absolute transition-all duration-300 ${
-                  menuOpen ? "rotate-0 scale-100 opacity-100" : "-rotate-90 scale-0 opacity-0"
-                }`}
-              />
-            </button>
-
-          </div>
-
-        </header>
-
-        {/* Mobile Backdrop Overlay */}
-        <div
-          onClick={() => setMenuOpen(false)}
-          className={`fixed inset-0 z-40 bg-black/80 backdrop-blur-md transition-opacity duration-300 md:hidden ${
-            menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260803_192301_9231ed6b-c55c-4a48-909c-4ebe11cf2e11.mp4"
         />
 
-        {/* Mobile Slide-in Drawer */}
-        <div
-          className={`fixed right-0 top-0 z-40 h-full w-72 bg-[#0E0924]/95 border-l border-white/15 backdrop-blur-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col md:hidden ${
-            menuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          {/* Mobile Links */}
-          <div className="px-6 pt-24 flex flex-col gap-2">
-            {navLinks.map((link, index) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                style={{
-                  transitionDelay: menuOpen ? `${(index + 1) * 60}ms` : "0ms",
-                }}
-                className={`rounded-xl px-4 py-3.5 text-base font-medium text-white/90 hover:bg-white/10 hover:text-white transition-all duration-300 flex items-center justify-between ${
-                  menuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6"
-                }`}
-              >
-                <span>{link.label}</span>
-                {link.hasDropdown && <ChevronDown className="w-4 h-4 opacity-70" />}
-              </a>
-            ))}
-          </div>
+        {/* Subtle Violet Ambient Highlights */}
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#7C5CFC]/20 rounded-full blur-[120px] pointer-events-none z-0" />
+        <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-[#9D7BFF]/15 rounded-full blur-[140px] pointer-events-none z-0" />
 
-          {/* Mobile Bottom CTA */}
-          <div className="mt-auto px-6 pb-10">
-            <a
-              href="#download"
-              onClick={() => setMenuOpen(false)}
-              style={{
-                transitionDelay: menuOpen ? "300ms" : "0ms",
-              }}
-              className={`w-full rounded-2xl py-3.5 text-sm font-bold text-white bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] hover:opacity-90 transition-all duration-400 shadow-xl shadow-purple-600/30 flex items-center justify-center border border-white/20 ${
-                menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              {t.mobileCta}
-            </a>
-          </div>
-        </div>
-
-        {/* Main Content (Pinned to Bottom with mt-auto) */}
-        <div className="mt-auto px-5 pb-8 sm:px-8 sm:pb-12 lg:px-12 lg:pb-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 sm:gap-8">
+        {/* Main Foreground Container */}
+        <div className="relative z-10 flex flex-col min-h-screen w-full justify-between">
           
-          {/* Left Side: Headline + Apple Store Download Button */}
-          <div className="flex flex-col">
-            <h1 className="text-3xl sm:text-4xl lg:text-[3.35rem] font-semibold leading-[1.1] tracking-tight text-[#010101] lg:text-white max-w-2xl transition-colors">
-              {t.headline}
-            </h1>
+          {/* Navigation Top Bar */}
+          <header className="w-full px-5 py-5 sm:px-8 sm:py-6 lg:px-12 flex items-center justify-between">
+            
+            {/* Brand Logo - Folzi AI */}
+            <a href="#" className="flex items-center gap-2.5 group">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#7C5CFC] to-[#A88BFF] flex items-center justify-center text-white shadow-lg shadow-purple-600/30 group-hover:scale-105 transition-transform">
+                <Sparkles className="w-4 h-4 fill-white" />
+              </div>
+              <span className="text-xl font-bold text-white tracking-tight transition-colors">
+                Folzi <span className="font-light text-sm text-[#D4C9FF] uppercase font-mono">AI</span>
+              </span>
+            </a>
 
-            {/* Download Badges: App Store & Android APK */}
-            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3.5">
-              {/* Apple Store Download Badge */}
-              <a
-                href="#download"
-                className="inline-flex items-center gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-2xl bg-white text-black hover:bg-neutral-100 hover:scale-105 active:scale-95 transition-all duration-200 shadow-2xl w-fit border border-black/15 select-none group"
-              >
-                {/* Official Apple Logo SVG */}
-                <svg
-                  viewBox="0 0 384 512"
-                  width="22"
-                  height="28"
-                  className="fill-black shrink-0 group-hover:scale-105 transition-transform"
+            {/* Desktop Navigation & Actions */}
+            <div className="hidden md:flex items-center gap-3">
+              
+              {/* Glass Pill Nav Cluster */}
+              <nav className="rounded-full bg-white/12 border border-white/25 px-2 py-1.5 backdrop-blur-xl flex items-center gap-1 shadow-lg shadow-black/10">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="rounded-full px-4 py-1.5 text-sm font-medium text-white/90 hover:bg-white/15 hover:text-white transition-all inline-flex items-center gap-1"
+                  >
+                    <span>{link.label}</span>
+                    {link.hasDropdown && <ChevronDown className="w-3.5 h-3.5 opacity-80" />}
+                  </a>
+                ))}
+              </nav>
+
+              {/* Direct 3-Flag Segmented Switcher (Instant 1-Click Translation) */}
+              <div className="flex items-center gap-1 bg-white/12 border border-white/25 backdrop-blur-xl rounded-full p-1 shadow-lg shadow-black/10">
+                <button
+                  type="button"
+                  onClick={() => setLang("fr")}
+                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold transition-all ${
+                    lang === "fr"
+                      ? "bg-white text-black shadow-md scale-105"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  }`}
+                  title="Passer en Français"
                 >
-                  <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
-                </svg>
+                  <FranceFlag className="w-4 h-3" />
+                  <span>FR</span>
+                </button>
 
-                {/* Badge Text */}
-                <div className="flex flex-col text-left leading-tight">
-                  <span className="text-[10px] sm:text-[11px] font-normal tracking-tight text-neutral-800">
-                    {t.appStore.downloadOn}
-                  </span>
-                  <span className="text-lg sm:text-xl font-bold tracking-tight text-black font-sans -mt-0.5">
-                    {t.appStore.appStore}
-                  </span>
-                </div>
-              </a>
+                <button
+                  type="button"
+                  onClick={() => setLang("en")}
+                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold transition-all ${
+                    lang === "en"
+                      ? "bg-white text-black shadow-md scale-105"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  }`}
+                  title="Switch to English"
+                >
+                  <UKFlag className="w-4 h-3" />
+                  <span>EN</span>
+                </button>
 
-              {/* Android Direct APK Download Badge */}
+                <button
+                  type="button"
+                  onClick={() => setLang("es")}
+                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold transition-all ${
+                    lang === "es"
+                      ? "bg-white text-black shadow-md scale-105"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  }`}
+                  title="Cambiar a Español"
+                >
+                  <SpainFlag className="w-4 h-3" />
+                  <span>ES</span>
+                </button>
+              </div>
+
+              {/* Download Direct APK Button */}
               <a
                 href="/folzi-ai.apk"
                 download="Folzi-AI.apk"
-                className="inline-flex items-center gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-2xl bg-white/15 hover:bg-white/25 backdrop-blur-xl text-white hover:scale-105 active:scale-95 transition-all duration-200 shadow-2xl w-fit border border-white/30 select-none group"
+                className="rounded-full bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white px-5 py-2 text-sm font-semibold hover:scale-105 active:scale-95 transition-all shadow-lg shadow-purple-600/30 border border-white/20 inline-flex items-center gap-2"
               >
-                {/* Official Android Robot SVG */}
-                <svg
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  className="fill-[#3DDC84] shrink-0 group-hover:scale-110 transition-transform"
-                >
-                  <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.996-3.4572c.1557-.2697.0633-.6141-.2064-.7698-.2696-.1557-.6141-.0633-.7698.2064l-2.0231 3.5042c-1.442-.659-3.0566-1.031-4.7782-1.031-1.7216 0-3.3362.372-4.7782 1.031L5.3007 5.301c-.1557-.2697-.5002-.3621-.7698-.2064-.2697.1557-.3621.5001-.2064.7698l1.996 3.4572C2.6889 11.2867.24 15.1129.04 19.64h23.92c-.2-4.5271-2.6489-8.3533-6.0785-10.3186" />
-                </svg>
-
-                {/* Badge Text */}
-                <div className="flex flex-col text-left leading-tight">
-                  <span className="text-[10px] sm:text-[11px] font-normal tracking-tight text-white/80">
-                    {t.apk.downloadFor}
-                  </span>
-                  <span className="text-lg sm:text-xl font-bold tracking-tight text-white font-sans -mt-0.5 flex items-center gap-1.5">
-                    {t.apk.androidApk}
-                    <Download className="w-4 h-4 text-[#3DDC84] group-hover:translate-y-0.5 transition-transform" />
-                  </span>
-                </div>
+                <Download className="w-4 h-4" />
+                <span>{t.nav.install}</span>
               </a>
+
             </div>
+
+            {/* Mobile Actions: Flag Switcher & Hamburger Menu */}
+            <div className="flex md:hidden items-center gap-2">
+              <div className="flex items-center gap-0.5 bg-black/40 border border-white/20 backdrop-blur-md rounded-full p-0.5">
+                <button
+                  type="button"
+                  onClick={() => setLang("fr")}
+                  className={`p-1 rounded-full ${lang === "fr" ? "bg-white/25" : "opacity-60"}`}
+                  aria-label="Français"
+                >
+                  <FranceFlag className="w-4 h-3" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLang("en")}
+                  className={`p-1 rounded-full ${lang === "en" ? "bg-white/25" : "opacity-60"}`}
+                  aria-label="English"
+                >
+                  <UKFlag className="w-4 h-3" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLang("es")}
+                  className={`p-1 rounded-full ${lang === "es" ? "bg-white/25" : "opacity-60"}`}
+                  aria-label="Español"
+                >
+                  <SpainFlag className="w-4 h-3" />
+                </button>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="w-10 h-10 rounded-full bg-black/40 border border-white/20 backdrop-blur-md flex items-center justify-center text-white"
+                aria-label="Toggle menu"
+              >
+                {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
+
+          </header>
+
+          {/* Center Main Headline */}
+          <div className="w-full px-6 sm:px-12 flex flex-col items-center justify-center text-center my-auto py-8">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white max-w-4xl leading-[1.1] drop-shadow-2xl">
+              {t.headline}
+            </h1>
           </div>
 
-          {/* Right Side: Two Elegant Glass Cards (Violet & Blanc) */}
-          <div className="flex flex-col gap-4 sm:flex-row lg:w-auto lg:gap-5">
+          {/* Bottom Row */}
+          <div className="w-full px-5 pb-8 sm:px-8 sm:pb-10 lg:px-12 flex flex-col md:flex-row items-center md:items-end justify-between gap-6">
             
-            {/* Card 1: Scanner Intelligent IA */}
-            <div className="rounded-[24px] bg-white/12 backdrop-blur-2xl p-6 sm:w-72 flex flex-col justify-between border border-white/25 shadow-[0_20px_50px_rgba(124,92,252,0.2)] relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-28 h-28 bg-[#7C5CFC]/20 rounded-full blur-2xl pointer-events-none" />
+            {/* Left Column: Download Badges */}
+            <div className="flex flex-col gap-3 w-full sm:w-auto items-center sm:items-start">
+              
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
+                {/* 1. Android APK Direct Download Badge */}
+                <a
+                  href="/folzi-ai.apk"
+                  download="Folzi-AI.apk"
+                  className="rounded-[18px] bg-gradient-to-br from-[#7C5CFC]/90 via-[#5B2FFF]/90 to-[#4018D4]/90 backdrop-blur-xl border border-white/30 px-5 py-2.5 flex items-center gap-3.5 hover:scale-105 active:scale-95 transition-all shadow-[0_10px_30px_rgba(124,92,252,0.4)] group"
+                >
+                  <div className="w-8 h-8 rounded-xl bg-white/15 flex items-center justify-center border border-white/20 group-hover:bg-white/25 transition-colors">
+                    <Download className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <span className="text-[10px] text-white/90 uppercase tracking-wider font-semibold font-mono">
+                      {t.apk.downloadFor}
+                    </span>
+                    <span className="text-sm font-bold text-white tracking-tight flex items-center gap-1.5">
+                      <span>{t.apk.androidApk}</span>
+                      <span className="text-[10px] bg-emerald-400 text-black px-1.5 py-0.2 rounded font-mono font-black uppercase">
+                        Direct
+                      </span>
+                    </span>
+                  </div>
+                </a>
 
-              <div className="space-y-3 relative z-10">
-                {/* Top Badge & Metric */}
-                <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full bg-[#7C5CFC]/30 border border-[#A88BFF]/40 text-[#E5DEFF] text-[10px] font-bold uppercase tracking-wider font-mono">
-                    {t.card1.badge}
-                  </span>
-                  <span className="text-2xl font-bold tracking-tight text-white font-mono">
-                    {t.card1.time}
-                  </span>
-                </div>
-
-                {/* Card Title */}
-                <h3 className="text-base font-bold text-white tracking-tight">
-                  {t.card1.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-xs leading-relaxed text-white/80">
-                  {t.card1.desc}
-                </p>
-
-                {/* Detection tags */}
-                <div className="flex flex-wrap gap-1.5 pt-1">
-                  <span className="px-2.5 py-0.5 rounded-md bg-white/10 border border-white/15 text-[11px] font-medium text-white/90">
-                    {t.card1.tag1}
-                  </span>
-                  <span className="px-2.5 py-0.5 rounded-md bg-white/10 border border-white/15 text-[11px] font-medium text-white/90">
-                    {t.card1.tag2}
-                  </span>
-                </div>
+                {/* 2. Apple App Store Badge */}
+                <a
+                  href="#download"
+                  className="rounded-[18px] bg-white/12 backdrop-blur-xl border border-white/25 px-5 py-2.5 flex items-center gap-3.5 hover:bg-white/20 transition-all shadow-lg shadow-black/20 group"
+                >
+                  <svg className="w-7 h-7 text-white fill-current shrink-0 group-hover:scale-105 transition-transform" viewBox="0 0 170 170">
+                    <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.69-7.85-11.96-14.43-6.19-9.56-11.07-20.7-14.63-33.43-3.56-12.72-5.34-24.31-5.34-34.77 0-16.19 4.39-29.35 13.18-39.48 8.78-10.13 19.34-15.34 31.67-15.62 4.47 0 9.77 1.25 15.91 3.76 6.13 2.5 10.12 3.81 11.96 3.91 1.45-.1 5.56-1.44 12.33-4.02 6.77-2.58 12.19-3.75 16.27-3.52 10.37.52 19.16 4.34 26.38 11.45 7.22 7.12 11.83 15.77 13.84 25.96-9.14 5.53-13.62 13.25-13.43 23.16.19 8.24 3.35 15.22 9.48 20.93 6.13 5.71 13.48 9.07 22.05 10.07-2.01 6.19-4.5 12.28-7.48 18.27zm-32.99-106.6c0-7.81 2.87-15.02 8.6-21.65 5.74-6.62 12.87-10.62 21.4-12 0 1.09.05 2.12.15 3.09.11.97.11 1.95 0 2.94-.43 8.04-3.48 15.37-9.16 22-5.68 6.63-12.83 10.45-21.45 11.46-.33-1.95-.5-3.89-.5-5.84z"/>
+                  </svg>
+                  <div className="flex flex-col text-left">
+                    <span className="text-[10px] text-white/70 uppercase tracking-wider font-semibold font-mono">
+                      {t.appStore.downloadOn}
+                    </span>
+                    <span className="text-sm font-bold text-white tracking-tight">
+                      {t.appStore.appStore}
+                    </span>
+                  </div>
+                </a>
               </div>
 
-              {/* Status footer */}
-              <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between text-[11px] text-white/70 relative z-10">
-                <span className="text-[#C2B3FF] font-medium font-mono">{t.card1.footer1}</span>
-                <span className="text-white/40">·</span>
-                <span className="text-white/80">{t.card1.footer2}</span>
+              {/* Trust Badge */}
+              <div className="flex items-center gap-2 text-xs font-mono font-medium text-white/80 pl-1">
+                <span className="w-2 h-2 rounded-full bg-[#34D399] shadow-[0_0_10px_#34D399]" />
+                <span>Installation directe · Prêt à l’emploi</span>
               </div>
             </div>
 
-            {/* Card 2: Annonce prête en 1 clic */}
-            <div className="rounded-[24px] bg-white/12 backdrop-blur-2xl p-6 sm:w-72 flex flex-col justify-between border border-white/25 shadow-[0_20px_50px_rgba(124,92,252,0.2)] relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-28 h-28 bg-[#5B2FFF]/20 rounded-full blur-2xl pointer-events-none" />
+            {/* Right Column: 2 Glass Feature Badges */}
+            <div className="hidden lg:flex items-center gap-4">
+              
+              {/* Card 1: Reconnaissance Visuelle */}
+              <div className="rounded-[24px] bg-white/12 backdrop-blur-2xl p-6 sm:w-72 flex flex-col justify-between border border-white/25 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-28 h-28 bg-[#7C5CFC]/20 rounded-full blur-2xl pointer-events-none" />
 
-              <div className="space-y-3 relative z-10">
-                {/* Top Badge & Live Indicator */}
-                <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full bg-[#7C5CFC]/30 border border-[#A88BFF]/40 text-[#E5DEFF] text-[10px] font-bold uppercase tracking-wider font-mono">
-                    {t.card2.badge}
-                  </span>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#A88BFF] shadow-[0_0_8px_#A88BFF]" />
-                    <span className="text-[10px] font-bold text-white/80 uppercase font-mono">{t.card2.status}</span>
+                <div className="space-y-3 relative z-10">
+                  {/* Top Badge & Time */}
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 rounded-full bg-[#7C5CFC]/30 border border-[#A88BFF]/40 text-[#E5DEFF] text-[10px] font-bold uppercase tracking-wider font-mono">
+                      {t.card1.badge}
+                    </span>
+                    <span className="text-[11px] font-bold text-[#A88BFF] font-mono">{t.card1.time}</span>
+                  </div>
+
+                  {/* Card Title */}
+                  <h3 className="text-base font-bold text-white tracking-tight">
+                    {t.card1.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-xs leading-relaxed text-white/80">
+                    {t.card1.desc}
+                  </p>
+
+                  {/* Output pill tags */}
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    <span className="px-2.5 py-0.5 rounded-md bg-white/10 border border-white/15 text-[11px] font-medium text-white/90">
+                      {t.card1.tag1}
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-md bg-white/10 border border-white/15 text-[11px] font-medium text-white/90">
+                      {t.card1.tag2}
+                    </span>
                   </div>
                 </div>
 
-                {/* Card Title */}
-                <h3 className="text-base font-bold text-white tracking-tight">
-                  {t.card2.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-xs leading-relaxed text-white/80">
-                  {t.card2.desc}
-                </p>
-
-                {/* Output pill tags */}
-                <div className="flex flex-wrap gap-1.5 pt-1">
-                  <span className="px-2.5 py-0.5 rounded-md bg-white/10 border border-white/15 text-[11px] font-medium text-white/90">
-                    {t.card2.tag1}
-                  </span>
-                  <span className="px-2.5 py-0.5 rounded-md bg-white/10 border border-white/15 text-[11px] font-medium text-white/90">
-                    {t.card2.tag2}
-                  </span>
+                {/* Status footer */}
+                <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between text-[11px] text-white/70 relative z-10">
+                  <span className="text-[#C2B3FF] font-medium font-mono">{t.card1.footer1}</span>
+                  <span className="text-white/40">·</span>
+                  <span className="text-white/80">{t.card1.footer2}</span>
                 </div>
               </div>
 
-              {/* Free Credits Badge Footer */}
-              <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between text-[11px] text-white/80 relative z-10">
-                <span className="font-bold text-[#E5DEFF] font-mono">{t.card2.footer1}</span>
-                <span className="text-white/50 text-[10px]">{t.card2.footer2}</span>
+              {/* Card 2: Annonce prête en 1 clic */}
+              <div className="rounded-[24px] bg-white/12 backdrop-blur-2xl p-6 sm:w-72 flex flex-col justify-between border border-white/25 shadow-[0_20px_50px_rgba(124,92,252,0.2)] relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-28 h-28 bg-[#5B2FFF]/20 rounded-full blur-2xl pointer-events-none" />
+
+                <div className="space-y-3 relative z-10">
+                  {/* Top Badge & Live Indicator */}
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 rounded-full bg-[#7C5CFC]/30 border border-[#A88BFF]/40 text-[#E5DEFF] text-[10px] font-bold uppercase tracking-wider font-mono">
+                      {t.card2.badge}
+                    </span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#A88BFF] shadow-[0_0_8px_#A88BFF]" />
+                      <span className="text-[10px] font-bold text-white/80 uppercase font-mono">{t.card2.status}</span>
+                    </div>
+                  </div>
+
+                  {/* Card Title */}
+                  <h3 className="text-base font-bold text-white tracking-tight">
+                    {t.card2.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-xs leading-relaxed text-white/80">
+                    {t.card2.desc}
+                  </p>
+
+                  {/* Output pill tags */}
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    <span className="px-2.5 py-0.5 rounded-md bg-white/10 border border-white/15 text-[11px] font-medium text-white/90">
+                      {t.card2.tag1}
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-md bg-white/10 border border-white/15 text-[11px] font-medium text-white/90">
+                      {t.card2.tag2}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Free Credits Badge Footer */}
+                <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between text-[11px] text-white/80 relative z-10">
+                  <span className="font-bold text-[#E5DEFF] font-mono">{t.card2.footer1}</span>
+                  <span className="text-white/50 text-[10px]">{t.card2.footer2}</span>
+                </div>
               </div>
+
             </div>
 
           </div>
 
         </div>
 
-      </div>
+      </section>
 
-    </section>
+      {/* Ecosystem Logos Band */}
+      <section className="w-full bg-[#080511] border-y border-white/10 py-8 px-4 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
+            <Sparkles className="w-4 h-4 text-[#A88BFF]" />
+            <span>Compatible avec vos plateformes préférées :</span>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm font-bold text-slate-300">
+            <span className="flex items-center gap-2 hover:text-[#09B1BA] transition-colors">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#09B1BA]" /> Vinted
+            </span>
+            <span className="flex items-center gap-2 hover:text-[#F56B2A] transition-colors">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#F56B2A]" /> Leboncoin
+            </span>
+            <span className="flex items-center gap-2 hover:text-[#00C49F] transition-colors">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00C49F]" /> Wallapop
+            </span>
+            <span className="flex items-center gap-2 hover:text-[#FF2A6D] transition-colors">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF2A6D]" /> Vestiaire Collective
+            </span>
+            <span className="flex items-center gap-2 hover:text-[#E53238] transition-colors">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#E53238]" /> eBay
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Live AI Simulator */}
+      <LiveAiDemo />
+
+      {/* Core AI Capabilities Bento Grid */}
+      <FeaturesGrid />
+
+      {/* Before / After Performance Comparison */}
+      <BeforeAfter />
+
+      {/* How It Works - 3 Step Process */}
+      <HowItWorks />
+
+      {/* Marketplace Intelligence (Vinted vs Leboncoin) */}
+      <MarketplaceTabs />
+
+      {/* Wardrobe Earnings Calculator */}
+      <EarningsCalculator />
+
+      {/* Real Seller Reviews & Testimonials */}
+      <Testimonials />
+
+      {/* Transparent Pricing & Credits */}
+      <PricingSection />
+
+      {/* Interactive FAQ Accordion */}
+      <FaqSection />
+
+      {/* Grand Finale Download CTA with QR Code */}
+      <DownloadCta />
+
+      {/* Luxury Footer */}
+      <Footer />
+    </main>
   );
 }
