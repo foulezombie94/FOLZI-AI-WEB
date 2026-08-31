@@ -250,10 +250,13 @@ export default function Home() {
           loop
           muted
           playsInline
+          preload="metadata"
           poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Crect fill='%2306040A' width='1600' height='900'/%3E%3C/svg%3E"
           className="absolute inset-0 h-full w-full object-cover opacity-80"
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260803_192301_9231ed6b-c55c-4a48-909c-4ebe11cf2e11.mp4"
-        />
+        >
+          <track kind="captions" src="data:text/vtt,WEBVTT" label="Français" default />
+        </video>
 
         {/* Subtle Violet Ambient Highlights */}
         <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#7C5CFC]/20 rounded-full blur-[120px] pointer-events-none z-0" />
@@ -537,7 +540,7 @@ export default function Home() {
                 {/* Free Credits Badge Footer */}
                 <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between text-[11px] text-white/80 relative z-10">
                   <span className="font-bold text-[#E5DEFF] font-mono">{t.card2.footer1}</span>
-                  <span className="text-white/50 text-[10px]">{t.card2.footer2}</span>
+                  <span className="text-white/75 text-[10px]">{t.card2.footer2}</span>
                 </div>
               </div>
 

@@ -12,6 +12,7 @@ export interface DemoItem {
   leboncoinTitle: string;
   leboncoinDescription: string;
   keywords: string[];
+  thumbnailUrl: string;
   tips: string;
 }
 
@@ -24,7 +25,8 @@ export const DEMO_ITEMS: DemoItem[] = [
     condition: "Très bon état",
     estimatedPrice: 48,
     marketRange: "42 € – 55 €",
-    photoUrl: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=85",
+    photoUrl: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&q=80",
+    thumbnailUrl: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=96&q=75",
     vintedTitle: "Veste Workwear Vintage Kaki Carhartt - Coupe Boxy M",
     vintedDescription: "Veste de travail vintage en toile de coton épaisse de qualité supérieure. Coupe droite intemporelle, poches utilitaires plaquées et boutons métalliques siglés. Pièce authentique sans accroc ni tâche. Idéale pour look streetwear / workwear mi-saison.",
     leboncoinTitle: "Veste Carhartt Vintage taille M - État impeccable",
@@ -40,7 +42,8 @@ export const DEMO_ITEMS: DemoItem[] = [
     condition: "Très bon état",
     estimatedPrice: 65,
     marketRange: "58 € – 75 €",
-    photoUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85",
+    photoUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+    thumbnailUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=96&q=75",
     vintedTitle: "Nike Flyknit Racer Rouge Crimson - Pointure 42",
     vintedDescription: "Paire authentique de Nike Flyknit Racer en maille ultra respirante rouge vif. Amorti Nike Free dynamique, semelle extérieure très peu usée. Modèle léger et confortable, lacets d'origine inclus. Nettoyées avec soin avant expédition.",
     leboncoinTitle: "Baskets Nike Flyknit Racer T42 Rouge - Très bon état",
@@ -56,7 +59,8 @@ export const DEMO_ITEMS: DemoItem[] = [
     condition: "Parfait état",
     estimatedPrice: 75,
     marketRange: "65 € – 90 €",
-    photoUrl: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=1000&q=85",
+    photoUrl: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80",
+    thumbnailUrl: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=96&q=75",
     vintedTitle: "Lampe Champignon Vintage Verre Opaque Orange 70s",
     vintedDescription: "Magnifique lampe d'ambiance forme champignon typique du design space age des années 70. Verre soufflé teinté orange vif, éclairage chaleureux tamisé. Câblage électrique vérifié et parfaitement fonctionnel.",
     leboncoinTitle: "Lampe à poser vintage champignon orange 70s",
@@ -72,7 +76,8 @@ export const DEMO_ITEMS: DemoItem[] = [
     condition: "Très bon état",
     estimatedPrice: 85,
     marketRange: "75 € – 95 €",
-    photoUrl: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=1000&q=85",
+    photoUrl: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=600&q=80",
+    thumbnailUrl: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=96&q=75",
     vintedTitle: "Robe Midi Lin Écru Sézane - Style Quiet Luxury T38",
     vintedDescription: "Sublime robe midi Sézane en 100% lin écru avec délicates broderies ajourées et boutons en nacre naturelle. Coupe cintrée flatteuse à la taille, tombé fluide. Portée une seule fois pour une cérémonie, état irréprochable sans défaut.",
     leboncoinTitle: "Robe Sézane Lin Écru Taille 38 - Comme neuve",
@@ -204,21 +209,21 @@ export const TESTIMONIALS = [
   {
     name: "Camille D.",
     role: "Top Vendeuse Vinted (500+ évaluations)",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=96&q=75",
     rating: 5,
     text: "Je passais au moins 15 minutes par vêtement pour mesurer, trouver le modèle et taper l'annonce. Avec Folzi AI, je prends 1 photo et l'annonce est générée en 2 secondes. J'ai vendu 42 articles la semaine dernière !"
   },
   {
     name: "Lucas R.",
     role: "Revendeur Sneakers & Vintage",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&q=75",
     rating: 5,
     text: "L'estimation de prix est bluffante. L'IA m'a suggéré de vendre un blouson vintage à 65 € alors que j'allais le mettre à 35 €. Vendu en 4 heures sans négociation. L'abonnement Pro est rentabilisé dès le premier jour."
   },
   {
     name: "Élodie & Marc",
     role: "Vente Maison & Dressing Familial",
-    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=96&q=75",
     rating: 5,
     text: "La clarté des descriptions et les hashtags générés automatiquement nous ont permis d'avoir 3 fois plus de vues sur Leboncoin. Plus besoin de se casser la tête !"
   }

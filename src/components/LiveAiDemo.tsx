@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { Sparkles, Scan, Copy, Check, ShieldCheck, RefreshCw, Hash, Tag, Flame, Lightbulb, ArrowRight } from "lucide-react";
@@ -87,8 +87,12 @@ export default function LiveAiDemo() {
                 }`}
               >
                 <img
-                  src={item.photoUrl}
+                  src={item.thumbnailUrl || item.photoUrl}
                   alt={item.name}
+                  width={28}
+                  height={28}
+                  loading="lazy"
+                  decoding="async"
                   className="w-7 h-7 rounded-lg object-cover border border-white/20"
                 />
                 <span>{item.name}</span>
@@ -111,6 +115,9 @@ export default function LiveAiDemo() {
                 <img
                   src={selectedItem.photoUrl}
                   alt={selectedItem.name}
+                  width={500}
+                  height={500}
+                  decoding="async"
                   className={`w-full h-full object-cover transition-transform duration-700 ${
                     isScanning ? "scale-105 brightness-90" : "scale-100"
                   }`}
