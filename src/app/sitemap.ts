@@ -37,6 +37,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/guides`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/guides/comment-vendre-sur-vinted`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/guides/cote-argus-sneakers-vintage`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/cgu`,
       lastModified,
       changeFrequency: "monthly",
@@ -50,4 +68,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 }
+
 

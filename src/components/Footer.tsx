@@ -39,13 +39,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Légal & Sécurité */}
+          {/* Col 3: Guides & Ressources */}
+          <div className="space-y-3">
+            <div className="font-bold text-white text-sm">Guides & Stratégies</div>
+            <ul className="space-y-2">
+              <li><Link href="/guides" className="hover:text-white transition-colors">Centre de ressources</Link></li>
+              <li><Link href="/guides/comment-vendre-sur-vinted" className="hover:text-white transition-colors">Comment vendre sur Vinted</Link></li>
+              <li><Link href="/guides/cote-argus-sneakers-vintage" className="hover:text-white transition-colors">Argus Sneakers & Vintage</Link></li>
+            </ul>
+          </div>
+
+          {/* Col 4: Légal & Sécurité */}
           <div className="space-y-3">
             <div className="font-bold text-white text-sm">Légal & Confidentialité</div>
             <ul className="space-y-2">
-              <li><Link href="/confidentialite" className="hover:text-white transition-colors">Politique de confidentialité (RGPD)</Link></li>
-              <li><Link href="/cgu" className="hover:text-white transition-colors">Conditions Générales d’Utilisation</Link></li>
-              <li><Link href="/confidentialite" className="hover:text-white transition-colors">Gestion des données personnelles</Link></li>
+              <li><Link href="/confidentialite" className="hover:text-white transition-colors">Politique de confidentialité</Link></li>
+              <li><Link href="/cgu" className="hover:text-white transition-colors">Conditions Générales (CGU)</Link></li>
               <li><Link href="/cgu" className="hover:text-white transition-colors">Mentions légales</Link></li>
             </ul>
           </div>
