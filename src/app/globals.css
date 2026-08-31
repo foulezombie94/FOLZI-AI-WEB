@@ -85,3 +85,62 @@
 .font-silkscreen {
   font-family: 'Silkscreen', cursive;
 }
+
+/* YAZIO Tactile 3D Button Style */
+.btn-yazio-3d {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background: #7C5CFC;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 5px 0 #5234C7, 0 10px 20px rgba(124, 92, 252, 0.35);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+}
+
+.btn-yazio-3d:hover {
+  background: #8A6DFD;
+  box-shadow: 0 4px 0 #5234C7, 0 8px 16px rgba(124, 92, 252, 0.4);
+  transform: translateY(1px);
+}
+
+.btn-yazio-3d:active {
+  box-shadow: 0 0 0 #5234C7, 0 2px 5px rgba(124, 92, 252, 0.2);
+  transform: translateY(5px);
+}
+
+.btn-yazio-emerald {
+  background: #10B981;
+  box-shadow: 0 5px 0 #059669, 0 10px 20px rgba(16, 185, 129, 0.35);
+}
+
+.btn-yazio-emerald:hover {
+  background: #34D399;
+  box-shadow: 0 4px 0 #059669, 0 8px 16px rgba(16, 185, 129, 0.4);
+  transform: translateY(1px);
+}
+
+.btn-yazio-emerald:active {
+  box-shadow: 0 0 0 #059669, 0 2px 5px rgba(16, 185, 129, 0.2);
+  transform: translateY(5px);
+}
+
+.btn-yazio-white {
+  background: #FFFFFF;
+  color: #0F0A1C;
+  box-shadow: 0 5px 0 #D1D5DB, 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-yazio-white:hover {
+  background: #F9FAFB;
+  box-shadow: 0 4px 0 #D1D5DB, 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+
+.btn-yazio-white:active {
+  box-shadow: 0 0 0 #D1D5DB, 0 2px 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(5px);
+}
