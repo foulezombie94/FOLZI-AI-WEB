@@ -243,7 +243,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="w-full min-h-screen bg-[#06040A] text-white flex flex-col">
+    <main id="main-content" className="w-full min-h-screen bg-[#06040A] text-white flex flex-col">
       {/* Hero Section */}
       <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#06040A] via-[#0D081D] to-[#06040A] select-none flex flex-col justify-between">
         

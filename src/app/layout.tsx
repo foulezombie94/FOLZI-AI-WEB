@@ -217,7 +217,14 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="w-full min-h-screen bg-[#06040A] text-white antialiased">
+      <body className="w-full min-h-screen bg-[#06040A] text-white antialiased selection:bg-[#7C5CFC]/40 selection:text-white">
+        {/* Accessible Skip to Main Content Link */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-5 focus:py-2.5 focus:bg-[#7C5CFC] focus:text-white focus:rounded-xl focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white text-xs font-mono uppercase tracking-wider font-bold"
+        >
+          Aller au contenu principal
+        </a>
         {children}
       </body>
     </html>
