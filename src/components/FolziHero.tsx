@@ -51,7 +51,7 @@ function LaurelSmall({ className = "w-8 h-12 fill-[#A88BFF]" }: { className?: st
   );
 }
 
-export default function YazioHero() {
+export default function FolziHero() {
   const [lang, setLang] = useState<"fr" | "en" | "es">("fr");
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -66,7 +66,7 @@ export default function YazioHero() {
   return (
     <section id="hero" className="relative bg-gradient-to-b from-[#140C32] via-[#0B071B] to-[#06040A] pt-6 pb-20 overflow-hidden">
       
-      {/* Background ambient radial glows (YAZIO soft aesthetic) */}
+      {/* Background ambient radial glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#7C5CFC]/20 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-40 right-10 w-[400px] h-[400px] bg-[#34D399]/10 rounded-full blur-[130px] pointer-events-none" />
 
@@ -126,7 +126,7 @@ export default function YazioHero() {
             <a
               href="/folzi-ai.apk"
               download="Folzi-AI.apk"
-              className="btn-yazio-3d px-5 py-2.5 text-xs font-bold tracking-wider uppercase font-mono"
+              className="btn-tactile-3d px-5 py-2.5 text-xs font-bold tracking-wider uppercase font-mono"
             >
               <span>Essayer maintenant</span>
             </a>
@@ -161,7 +161,7 @@ export default function YazioHero() {
               <a
                 href="/folzi-ai.apk"
                 download="Folzi-AI.apk"
-                className="btn-yazio-3d w-full py-3.5 text-sm font-bold uppercase font-mono"
+                className="btn-tactile-3d w-full py-3.5 text-sm font-bold uppercase font-mono"
               >
                 <span>Télécharger l&apos;application (APK)</span>
               </a>
@@ -169,14 +169,9 @@ export default function YazioHero() {
           </div>
         )}
 
-        {/* Main Hero Header (YAZIO Style) */}
-        <div className="text-center max-w-4xl mx-auto space-y-5 pt-4 pb-12">
+        {/* Main Hero Header */}
+        <div className="text-center max-w-4xl mx-auto space-y-6 pt-6 pb-12">
           
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C5CFC]/20 border border-[#A88BFF]/40 text-[#D4C9FF] font-bold text-xs uppercase tracking-wider font-mono">
-            <Sparkles className="w-4 h-4 text-[#A88BFF]" />
-            <span>Studio d&apos;Intelligence Artificielle Vendeur</span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08]">
             Appli pour booster vos ventes <span className="gradient-purple-text">Vinted & Leboncoin</span>
           </h1>
@@ -190,7 +185,7 @@ export default function YazioHero() {
             <a
               href="/folzi-ai.apk"
               download="Folzi-AI.apk"
-              className="btn-yazio-3d w-full sm:w-auto px-10 py-4 text-base font-black shadow-2xl tracking-wide uppercase font-mono"
+              className="btn-tactile-3d w-full sm:w-auto px-10 py-4 text-base font-black shadow-2xl tracking-wide uppercase font-mono"
             >
               <span>Essayer maintenant (APK Gratuit)</span>
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -206,7 +201,7 @@ export default function YazioHero() {
 
         </div>
 
-        {/* Triple Phone App Showcase (Exact YAZIO Layout) */}
+        {/* Triple Phone App Showcase */}
         <div id="app-showcase" className="mt-8 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             
@@ -293,7 +288,7 @@ export default function YazioHero() {
           </div>
         </div>
 
-        {/* Social Proof Metric Laurels (Exact YAZIO pattern) */}
+        {/* Social Proof Metric Laurels */}
         <div className="py-12 border-y border-white/10 mb-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center justify-center max-w-4xl mx-auto">
             
@@ -336,7 +331,7 @@ export default function YazioHero() {
           </div>
         </div>
 
-        {/* Press / Platforms Logo Bar (Exact YAZIO "Également vu dans / Compatible avec") */}
+        {/* Press / Platforms Logo Bar */}
         <div className="text-center space-y-4">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
             Compatible avec vos plateformes préférées :

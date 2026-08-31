@@ -2,11 +2,11 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-import YazioHero from "@/components/YazioHero";
-import YazioBenefits from "@/components/YazioBenefits";
-import YazioKeyFigures from "@/components/YazioKeyFigures";
-import YazioSuccessStory from "@/components/YazioSuccessStory";
-import YazioMoreFeatures from "@/components/YazioMoreFeatures";
+import FolziHero from "@/components/FolziHero";
+import FolziBenefits from "@/components/FolziBenefits";
+import FolziKeyFigures from "@/components/FolziKeyFigures";
+import FolziSuccessStory from "@/components/FolziSuccessStory";
+import FolziMoreFeatures from "@/components/FolziMoreFeatures";
 
 // Dynamically split interactive tools & below-the-fold sections
 const LiveAiDemo = dynamic(() => import("@/components/LiveAiDemo"), { ssr: true });
@@ -23,11 +23,11 @@ export default function Home() {
   return (
     <main id="main-content" className="min-h-screen bg-[#06040A] text-white">
       
-      {/* 1. YAZIO Style Hero: Capsule Navbar + Punchy Headline + 3D CTA + Triple Phone App Showcase + Laurel Metrics + Platform Badges */}
-      <YazioHero />
+      {/* 1. Hero: Capsule Navbar + Punchy Headline + 3D CTA + Triple Phone App Showcase + Laurel Metrics + Platform Badges */}
+      <FolziHero />
 
-      {/* 2. YAZIO Style Benefits: 3 Large Cards with Green Checkmark Icons & Lifestyle Imagery */}
-      <YazioBenefits />
+      {/* 2. Benefits: 3 Large Cards with Green Checkmark Icons & Lifestyle Imagery */}
+      <FolziBenefits />
 
       {/* 3. Interactive Live AI Simulator */}
       <LiveAiDemo />
@@ -35,11 +35,11 @@ export default function Home() {
       {/* 4. Core Features Showcase: 3 Large Discovery Cards */}
       <FeaturesGrid />
 
-      {/* 5. YAZIO Style Key Figures in Green Laurel Wreaths: 98,7%, 1,8s, +240% */}
-      <YazioKeyFigures />
+      {/* 5. Key Figures in Green Laurel Wreaths: 98,7%, 1,8s, +240% */}
+      <FolziKeyFigures />
 
-      {/* 6. YAZIO Style Success Story: Split Photo Transformation Card (+1 840 €) */}
-      <YazioSuccessStory />
+      {/* 6. Success Story: Split Photo Transformation Card (+1 840 €) */}
+      <FolziSuccessStory />
 
       {/* 7. Wardrobe Earnings Calculator with Slider & WebMCP */}
       <EarningsCalculator />
@@ -51,7 +51,7 @@ export default function Home() {
       <Testimonials />
 
       {/* 10. Secondary Discovery Features: Smart adding, Keywords database, Multi-platform */}
-      <YazioMoreFeatures />
+      <FolziMoreFeatures />
 
       {/* 11. Transparent Pricing & Credits */}
       <PricingSection />

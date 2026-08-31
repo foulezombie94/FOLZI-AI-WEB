@@ -10,10 +10,6 @@ export default function BeforeAfter() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C5CFC]/20 border border-[#A88BFF]/40 text-[#D4C9FF] font-bold text-xs uppercase tracking-wider font-mono">
-            <TrendingUp className="w-4 h-4 text-[#A88BFF]" />
-            <span>Impact Direct sur vos Ventes</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             La différence entre <span className="text-slate-500">attendre des mois</span> et <span className="gradient-purple-text">vendre en 24h</span>.
           </h2>

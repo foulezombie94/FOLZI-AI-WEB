@@ -44,7 +44,7 @@ export default function Hero() {
               Prenez 1 photo. Notre intelligence artificielle rédige l’annonce parfaite, trouve les mots-clés tendances et estime le prix exact pour vendre en 24h.
             </p>
 
-            {/* CTA Buttons (YAZIO Style 3D Press Button) */}
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <a
                 href="#download"

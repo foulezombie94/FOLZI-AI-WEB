@@ -17,11 +17,6 @@ export default function DownloadCta() {
           
           {/* Left Text */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C5CFC]/20 border border-[#A88BFF]/40 text-[#D4C9FF] font-bold text-xs uppercase tracking-wider font-mono">
-              <Sparkles className="w-4 h-4 text-[#A88BFF]" />
-              <span>Disponible dès aujourd’hui</span>
-            </div>
-
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1]">
               Prêt à vendre <span className="gradient-purple-text">plus vite et plus cher</span> ?
             </h2>

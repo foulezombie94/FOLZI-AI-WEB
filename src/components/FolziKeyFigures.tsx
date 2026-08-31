@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import React from "react";
-import { Sparkles } from "lucide-react";
 
 function LaurelLeft() {
   return (
@@ -23,7 +22,7 @@ function LaurelRight() {
   );
 }
 
-export default function YazioKeyFigures() {
+export default function FolziKeyFigures() {
   const figures = [
     {
       stat: "98,7%",
@@ -56,7 +55,7 @@ export default function YazioKeyFigures() {
           </p>
         </div>
 
-        {/* 3 Giant Metric Columns with Laurels (Exact YAZIO pattern) */}
+        {/* 3 Giant Metric Columns with Laurels */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-center justify-center">
           {figures.map((fig, idx) => (
             <div key={idx} className="flex flex-col items-center text-center relative group px-4">

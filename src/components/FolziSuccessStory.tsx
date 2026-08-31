@@ -1,9 +1,9 @@
 ﻿"use client";
 
 import React from "react";
-import { Sparkles, ArrowRight, Quote, CheckCircle2 } from "lucide-react";
+import { Quote, CheckCircle2 } from "lucide-react";
 
-export default function YazioSuccessStory() {
+export default function FolziSuccessStory() {
   return (
     <section id="success-story" className="py-24 bg-[#06040A] relative overflow-hidden border-t border-white/10">
       {/* Background ambient lighting */}
@@ -13,10 +13,6 @@ export default function YazioSuccessStory() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#34D399]/20 border border-[#34D399]/40 text-[#34D399] font-bold text-xs uppercase tracking-wider font-mono">
-            <Sparkles className="w-4 h-4 text-[#34D399]" />
-            <span>Histoire de Réussite Vendeur</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             Sarah a encaissé <span className="text-[#34D399]">+1 840 €</span> en 14 jours avec Folzi AI
           </h2>
@@ -25,7 +21,7 @@ export default function YazioSuccessStory() {
           </p>
         </div>
 
-        {/* Split Before / After Card (Exact YAZIO pattern) */}
+        {/* Split Before / After Card */}
         <div className="rounded-[36px] bg-[#0E0A21]/90 border border-white/15 p-6 sm:p-10 shadow-2xl backdrop-blur-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Left: Split Photos with Giant Green Badge */}
@@ -62,7 +58,7 @@ export default function YazioSuccessStory() {
                 </div>
               </div>
 
-              {/* Centered YAZIO Result Badge */}
+              {/* Centered Result Badge */}
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-2.5 rounded-2xl bg-black/90 border-2 border-[#34D399] shadow-[0_0_25px_rgba(52,211,153,0.4)] text-center">
                 <span className="text-2xl sm:text-3xl font-black font-mono text-[#34D399] tracking-tight">
                   +1 840 €
@@ -100,7 +96,7 @@ export default function YazioSuccessStory() {
               <a
                 href="/folzi-ai.apk"
                 download="Folzi-AI.apk"
-                className="btn-yazio-3d px-5 py-3 text-xs font-bold uppercase font-mono tracking-wider"
+                className="btn-tactile-3d px-5 py-3 text-xs font-bold uppercase font-mono tracking-wider"
               >
                 <span>Faire comme Sarah</span>
               </a>

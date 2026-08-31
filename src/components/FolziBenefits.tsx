@@ -1,9 +1,9 @@
 ﻿"use client";
 
 import React from "react";
-import { CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
-export default function YazioBenefits() {
+export default function FolziBenefits() {
   const benefits = [
     {
       title: "Prenez 1 seule photo pour identifier instantanément marque, matière et coupe",
@@ -34,11 +34,6 @@ export default function YazioBenefits() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C5CFC]/20 border border-[#A88BFF]/40 text-[#D4C9FF] font-bold text-xs uppercase tracking-wider font-mono">
-            <Sparkles className="w-4 h-4 text-[#A88BFF]" />
-            <span>Simplicité & Rapidité</span>
-          </div>
-          
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             Lancez le studio Folzi AI <span className="gradient-purple-text">dès aujourd&apos;hui !</span>
           </h2>
@@ -51,7 +46,7 @@ export default function YazioBenefits() {
             <a
               href="/folzi-ai.apk"
               download="Folzi-AI.apk"
-              className="btn-yazio-3d px-8 py-4 text-sm sm:text-base font-bold shadow-xl tracking-wide uppercase font-mono"
+              className="btn-tactile-3d px-8 py-4 text-sm sm:text-base font-bold shadow-xl tracking-wide uppercase font-mono"
             >
               <span>Essayer maintenant (Gratuit)</span>
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -59,7 +54,7 @@ export default function YazioBenefits() {
           </div>
         </div>
 
-        {/* 3 Large Benefit Cards (YAZIO style) */}
+        {/* 3 Large Benefit Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {benefits.map((b, i) => (
             <div

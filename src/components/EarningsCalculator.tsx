@@ -29,10 +29,6 @@ export default function EarningsCalculator() {
           
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C5CFC]/20 border border-[#A88BFF]/40 text-[#D4C9FF] font-bold text-xs uppercase tracking-wider font-mono">
-              <Calculator className="w-4 h-4 text-[#A88BFF]" />
-              <span>Calculateur de Dressing</span>
-            </div>
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
               Combien d’argent dort dans <span className="gradient-purple-text">votre placard</span> ?
             </h2>

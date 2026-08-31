@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { ScanLine, Sparkles, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
@@ -37,10 +37,6 @@ export default function FeaturesGrid() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C5CFC]/20 border border-[#A88BFF]/40 text-[#D4C9FF] font-bold text-xs uppercase tracking-wider font-mono">
-            <Sparkles className="w-4 h-4 text-[#A88BFF]" />
-            <span>Technologies de Pointe</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             Découvrez le studio <span className="gradient-purple-text">Folzi AI</span>
           </h2>
@@ -49,7 +45,7 @@ export default function FeaturesGrid() {
           </p>
         </div>
 
-        {/* 3 Large Discovery Cards (Exact YAZIO pattern) */}
+        {/* 3 Large Discovery Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {discoveryCards.map((card, idx) => (
             <div

@@ -17,10 +17,6 @@ export default function FaqSection() {
         
         {/* Header */}
         <div className="text-center space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C5CFC]/20 border border-[#A88BFF]/40 text-[#D4C9FF] font-bold text-xs uppercase tracking-wider font-mono">
-            <HelpCircle className="w-4 h-4 text-[#A88BFF]" />
-            <span>Questions Fréquentes</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             Tout ce que vous devez savoir.
           </h2>
