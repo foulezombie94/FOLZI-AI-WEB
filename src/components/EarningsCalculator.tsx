@@ -19,8 +19,11 @@ export default function EarningsCalculator() {
   const timeSavedMinutes = (itemCount * 18) % 60;
 
   return (
-    <section id="calculator" className="py-20 bg-[#06040A] relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="calculator" className="py-24 bg-[#06040A] relative overflow-hidden">
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#7C5CFC]/15 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="rounded-[40px] bg-[#0E0A21]/90 border border-white/15 p-8 sm:p-12 shadow-2xl shadow-purple-950/40 relative backdrop-blur-xl">
           
@@ -31,7 +34,7 @@ export default function EarningsCalculator() {
               <span>Calculateur de Dressing</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-              Combien d’argent dort dans votre placard ?
+              Combien d’argent dort dans <span className="gradient-purple-text">votre placard</span> ?
             </h2>
             <p className="text-slate-300 text-sm sm:text-base font-normal">
               Ajustez le curseur et découvrez combien vous pouvez encaisser en quelques jours grâce au scanner IA de Folzi AI.
@@ -46,7 +49,7 @@ export default function EarningsCalculator() {
               data-webmcp-tool="calculate_wardrobe_earnings"
               data-webmcp-description="Calculate potential resale earnings on Vinted and Leboncoin based on the number of items and wardrobe type."
               onSubmit={(e) => e.preventDefault()}
-              className="lg:col-span-7 space-y-6 bg-white/[0.03] p-6 sm:p-8 rounded-3xl border border-white/10 shadow-inner"
+              className="lg:col-span-7 space-y-6 bg-white/[0.02] p-6 sm:p-8 rounded-3xl border border-white/10 shadow-inner backdrop-blur-md"
             >
               
               {/* Type of items tabs */}
@@ -103,7 +106,7 @@ export default function EarningsCalculator() {
                   <label htmlFor="items-count-slider" className="text-xs font-bold uppercase tracking-wider text-[#A88BFF] font-mono cursor-pointer">
                     Articles non portés :
                   </label>
-                  <span className="px-3.5 py-1 rounded-full bg-[#7C5CFC]/20 text-[#D4C9FF] font-mono font-bold text-sm border border-[#A88BFF]/30">
+                  <span className="px-3.5 py-1 rounded-full bg-[#7C5CFC]/20 text-[#E5DEFF] font-mono font-bold text-sm border border-[#A88BFF]/40">
                     {itemCount} articles
                   </span>
                 </div>
@@ -129,18 +132,18 @@ export default function EarningsCalculator() {
                 <div className="flex justify-between text-[11px] font-mono text-slate-400 font-bold">
                   <span>2 articles (Tri rapide)</span>
                   <span>20 articles</span>
-                  <span>Prix optimisé sans perte</span>
+                  <span className="text-[#34D399]">Prix optimisé sans perte</span>
                 </div>
               </div>
 
             </form>
 
             {/* Big Results Card (Right) */}
-            <div className="lg:col-span-5 rounded-3xl bg-slate-950 text-white p-8 space-y-6 shadow-2xl shadow-brand-950/25 flex flex-col justify-between text-center relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="lg:col-span-5 rounded-3xl bg-gradient-to-br from-[#130D2E] to-[#0A0718] border-2 border-[#7C5CFC]/50 text-white p-8 space-y-6 shadow-2xl shadow-purple-950/60 flex flex-col justify-between text-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#7C5CFC]/20 rounded-full blur-2xl pointer-events-none" />
 
-              <div className="space-y-2">
-                <div className="text-xs font-black text-brand-300 uppercase tracking-wider font-mono">
+              <div className="space-y-2 relative z-10">
+                <div className="text-xs font-bold text-[#D4C9FF] uppercase tracking-wider font-mono">
                   Gain Potentiel Estimé
                 </div>
                 <div className="text-5xl sm:text-6xl font-black font-mono tracking-tight text-white">
@@ -151,11 +154,11 @@ export default function EarningsCalculator() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 py-4 border-y border-slate-800 text-left">
+              <div className="grid grid-cols-2 gap-3 py-4 border-y border-white/10 text-left relative z-10">
                 <div className="space-y-0.5">
                   <div className="text-[11px] text-slate-400 font-bold flex items-center gap-1 font-mono">
-                    <Clock className="w-3.5 h-3.5 text-brand-400" />
-                    Temps gagné
+                    <Clock className="w-3.5 h-3.5 text-[#A88BFF]" />
+                    <span>Temps gagné</span>
                   </div>
                   <div className="text-sm font-black text-slate-200 font-mono">
                     ~{timeSavedHours}h{timeSavedMinutes > 0 ? timeSavedMinutes : ""}
@@ -164,10 +167,10 @@ export default function EarningsCalculator() {
 
                 <div className="space-y-0.5">
                   <div className="text-[11px] text-slate-400 font-bold flex items-center gap-1 font-mono">
-                    <TrendingUp className="w-3.5 h-3.5 text-emerald-400" />
-                    Délai moyen
+                    <TrendingUp className="w-3.5 h-3.5 text-[#34D399]" />
+                    <span>Délai moyen</span>
                   </div>
-                  <div className="text-sm font-black text-emerald-400 font-mono">
+                  <div className="text-sm font-black text-[#34D399] font-mono">
                     24h à 48h
                   </div>
                 </div>
@@ -176,7 +179,7 @@ export default function EarningsCalculator() {
               {/* 3D Action Button */}
               <a
                 href="#download"
-                className="btn-3d w-full py-4 rounded-2xl bg-brand-500 text-white font-black text-sm flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-xl shadow-purple-600/40 hover:scale-105 transition-all font-mono uppercase tracking-wider relative z-10"
               >
                 <span>Scanner mes {itemCount} articles</span>
                 <ArrowRight className="w-4 h-4" />

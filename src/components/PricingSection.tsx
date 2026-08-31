@@ -154,13 +154,13 @@ export default function PricingSection() {
         </div>
 
         {/* Guarantee */}
-        <div className="mt-12 text-center text-xs font-bold text-slate-500 flex items-center justify-center gap-6">
+        <div className="mt-12 text-center text-xs font-bold text-slate-400 flex items-center justify-center gap-6">
           <span className="flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 text-brand-500" />
-            Paiement 100% sécurisé via App Store & Google Play
+            <ShieldCheck className="w-4 h-4 text-[#34D399]" />
+            <span>Paiement 100% sécurisé via App Store & Google Play</span>
           </span>
-          <span className="hidden sm:inline-block">·</span>
-          <span>Annulation à tout moment en 1 clic</span>
+          <span className="hidden sm:inline-block text-slate-600">·</span>
+          <span className="text-slate-300">Annulation à tout moment en 1 clic</span>
         </div>
 
       </div>

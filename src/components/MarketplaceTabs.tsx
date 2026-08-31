@@ -1,13 +1,30 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, Sparkles, Tag, ShieldCheck, MapPin, Hash, ArrowRight } from "lucide-react";
+import { Check, Sparkles, Tag, ShieldCheck, MapPin, Hash, ArrowRight, Copy } from "lucide-react";
 
 export default function MarketplaceTabs() {
   const [platform, setPlatform] = useState<"vinted" | "leboncoin">("vinted");
+  const [copied, setCopied] = useState(false);
+
+  const sampleTexts = {
+    vinted: "Veste authentique en toile de coton lourd. Poches zippées, boutons gravés. Mesures aisselle à aisselle : 54 cm. Envoi sous 24h. #carhartt #vintage #workwear",
+    leboncoin: "Bonjour, je vends cette veste Carhartt originale en parfait état. Aucun accroc, fermeture impeccable. Visible sur place ou expédition rapide. N’hésitez pas !",
+  };
+
+  const handleCopy = () => {
+    if (typeof window !== "undefined") {
+      navigator.clipboard.writeText(sampleTexts[platform]);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
     <section id="solutions" className="py-24 bg-[#06040A] relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#7C5CFC]/10 rounded-full blur-[140px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
@@ -19,14 +36,14 @@ export default function MarketplaceTabs() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             Deux plateformes. <span className="gradient-purple-text">Deux stratégies gagnantes.</span>
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg font-normal">
+          <p className="text-slate-300 text-base sm:text-lg font-normal max-w-2xl mx-auto">
             On ne vend pas sur Vinted comme sur Leboncoin. Folzi AI adapte le vocabulaire, la structure et les signaux de confiance selon l&apos;endroit où vous publiez.
           </p>
         </div>
 
         {/* 3D Platform Selector */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex p-1.5 rounded-2xl bg-white/[0.04] border border-white/10 gap-2 backdrop-blur-xl">
+          <div className="inline-flex p-1.5 rounded-2xl bg-white/[0.04] border border-white/10 gap-2 backdrop-blur-xl shadow-lg">
             <button
               onClick={() => setPlatform("vinted")}
               className={`flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm transition-all ${
@@ -110,33 +127,45 @@ export default function MarketplaceTabs() {
           </div>
 
           {/* Right Simulated Card Preview */}
-          <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 space-y-4">
+          <div className="p-6 rounded-3xl bg-white/[0.03] border border-white/10 space-y-4 shadow-xl">
             <div className="flex items-center justify-between pb-3 border-b border-white/10">
               <span className="text-xs font-mono font-bold text-slate-400">Aperçu de la rédaction</span>
-              <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded-full ${
-                platform === "vinted" ? "bg-[#09B1BA]/20 text-[#09B1BA]" : "bg-[#F56B2A]/20 text-[#F56B2A]"
+              <span className={`text-xs font-mono font-bold px-2.5 py-0.5 rounded-full ${
+                platform === "vinted" ? "bg-[#09B1BA]/20 text-[#5BE3EB] border border-[#09B1BA]/40" : "bg-[#F56B2A]/20 text-[#FFA071] border border-[#F56B2A]/40"
               }`}>
                 Prêt à coller
               </span>
             </div>
 
             <div className="space-y-2 text-xs">
-              <div className="font-bold text-white">
+              <div className="font-bold text-white text-sm">
                 {platform === "vinted"
                   ? "Veste Carhartt WIP Detroit Kaki - Vintage Boxy M"
                   : "Veste Carhartt Vintage taille M - Remise en main propre ou envoi"}
               </div>
               <div className="text-[#34D399] font-bold font-mono">Prix conseillé : 48 €</div>
-              <p className="text-slate-300 leading-relaxed italic bg-white/[0.02] p-3 rounded-xl border border-white/5">
-                {platform === "vinted"
-                  ? "Veste authentique en toile de coton lourd. Poches zippées, boutons gravés. Mesures aisselle à aisselle : 54 cm. Envoi sous 24h. #carhartt #vintage #workwear"
-                  : "Bonjour, je vends cette veste Carhartt originale en parfait état. Aucun accroc, fermeture impeccable. Visible sur place ou expédition rapide. N’hésitez pas !"}
+              <p className="text-slate-300 leading-relaxed italic bg-white/[0.02] p-3.5 rounded-2xl border border-white/5 font-sans">
+                &ldquo;{sampleTexts[platform]}&rdquo;
               </p>
             </div>
 
-            <div className="text-[11px] text-center font-bold text-[#D4C9FF] bg-[#7C5CFC]/20 py-2.5 rounded-xl border border-[#A88BFF]/30 font-mono">
-              ✓ Copiez en 1 clic et collez directement dans {platform === "vinted" ? "Vinted" : "Leboncoin"}
-            </div>
+            <button
+              type="button"
+              onClick={handleCopy}
+              className="w-full text-xs text-center font-bold text-white bg-[#7C5CFC]/30 hover:bg-[#7C5CFC]/50 py-3 rounded-xl border border-[#A88BFF]/40 font-mono transition-all flex items-center justify-center gap-2"
+            >
+              {copied ? (
+                <>
+                  <Check className="w-4 h-4 text-emerald-400" />
+                  <span className="text-emerald-300">Texte copié dans le presse-papier !</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4 text-[#A88BFF]" />
+                  <span>Copier en 1 clic pour {platform === "vinted" ? "Vinted" : "Leboncoin"}</span>
+                </>
+              )}
+            </button>
           </div>
 
         </div>

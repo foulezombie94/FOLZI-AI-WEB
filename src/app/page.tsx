@@ -566,29 +566,35 @@ export default function Home() {
       </section>
 
       {/* Ecosystem Logos Band */}
-      <section className="w-full bg-[#080511] border-y border-white/10 py-8 px-4 overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
+      <section className="w-full bg-[#080511] border-y border-white/10 py-10 px-4 overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7C5CFC]/5 to-transparent pointer-events-none" />
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
+          <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
             <Sparkles className="w-4 h-4 text-[#A88BFF]" />
             <span>Compatible avec vos plateformes préférées :</span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm font-bold text-slate-300">
-            <span className="flex items-center gap-2 hover:text-[#09B1BA] transition-colors">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#09B1BA]" /> Vinted
-            </span>
-            <span className="flex items-center gap-2 hover:text-[#F56B2A] transition-colors">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#F56B2A]" /> Leboncoin
-            </span>
-            <span className="flex items-center gap-2 hover:text-[#00C49F] transition-colors">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#00C49F]" /> Wallapop
-            </span>
-            <span className="flex items-center gap-2 hover:text-[#FF2A6D] transition-colors">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#FF2A6D]" /> Vestiaire Collective
-            </span>
-            <span className="flex items-center gap-2 hover:text-[#E53238] transition-colors">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#E53238]" /> eBay
-            </span>
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#09B1BA]/10 hover:bg-[#09B1BA]/20 border border-[#09B1BA]/30 text-white font-bold text-xs sm:text-sm transition-all shadow-sm hover:scale-105">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#09B1BA] shadow-[0_0_8px_#09B1BA]" />
+              <span className="tracking-wide">Vinted</span>
+            </div>
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#F56B2A]/10 hover:bg-[#F56B2A]/20 border border-[#F56B2A]/30 text-white font-bold text-xs sm:text-sm transition-all shadow-sm hover:scale-105">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#F56B2A] shadow-[0_0_8px_#F56B2A]" />
+              <span className="tracking-wide">Leboncoin</span>
+            </div>
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#00C49F]/10 hover:bg-[#00C49F]/20 border border-[#00C49F]/30 text-white font-bold text-xs sm:text-sm transition-all shadow-sm hover:scale-105">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00C49F] shadow-[0_0_8px_#00C49F]" />
+              <span className="tracking-wide">Wallapop</span>
+            </div>
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#FF2A6D]/10 hover:bg-[#FF2A6D]/20 border border-[#FF2A6D]/30 text-white font-bold text-xs sm:text-sm transition-all shadow-sm hover:scale-105">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF2A6D] shadow-[0_0_8px_#FF2A6D]" />
+              <span className="tracking-wide">Vestiaire Collective</span>
+            </div>
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#0064D2]/10 hover:bg-[#0064D2]/20 border border-[#0064D2]/30 text-white font-bold text-xs sm:text-sm transition-all shadow-sm hover:scale-105">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#0064D2] shadow-[0_0_8px_#0064D2]" />
+              <span className="tracking-wide">eBay</span>
+            </div>
           </div>
         </div>
       </section>
