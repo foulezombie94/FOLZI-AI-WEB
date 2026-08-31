@@ -151,12 +151,70 @@ export default function RootLayout({
     ],
   };
 
+  const webMcpData = {
+    schema_version: "v1",
+    tools: [
+      {
+        name: "calculate_wardrobe_earnings",
+        description: "Calculates estimated resale earnings on Vinted and Leboncoin based on wardrobe item count and clothing category.",
+        parameters: {
+          type: "object",
+          properties: {
+            itemCount: {
+              type: "integer",
+              minimum: 2,
+              maximum: 40,
+              description: "Number of unused clothing items to estimate.",
+            },
+            dressingType: {
+              type: "string",
+              enum: ["standard", "vintage", "premium"],
+              description: "Category of garments: standard (18€/item), vintage (38€/item), or premium/sneakers (75€/item).",
+            },
+          },
+          required: ["itemCount", "dressingType"],
+        },
+      },
+      {
+        name: "submit_contact_inquiry",
+        description: "Submits a support inquiry, question, or partnership request to the Folzi AI team.",
+        parameters: {
+          type: "object",
+          properties: {
+            fullName: { type: "string", description: "Sender's name." },
+            emailAddress: { type: "string", format: "email", description: "Sender's email address." },
+            message: { type: "string", description: "Support or partnership message content." },
+          },
+          required: ["fullName", "emailAddress", "message"],
+        },
+      },
+    ],
+  };
+
   return (
     <html lang="fr" className={`w-full bg-[#06040A] text-white ${inter.className}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <script
+          type="application/webmcp+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webMcpData) }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined') {
+                window.__webmcp_tools__ = ${JSON.stringify(webMcpData.tools)};
+                if (navigator.modelContext && typeof navigator.modelContext.registerTool === 'function') {
+                  ${JSON.stringify(webMcpData.tools)}.forEach(function(tool) {
+                    try { navigator.modelContext.registerTool(tool); } catch(e) {}
+                  });
+                }
+              }
+            `,
+          }}
         />
       </head>
       <body className="w-full min-h-screen bg-[#06040A] text-white antialiased">

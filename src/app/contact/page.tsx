@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Sparkles, ArrowLeft, Mail, MessageSquare, ShieldCheck, Clock, Send } from "lucide-react";
 
@@ -76,6 +76,75 @@ export default function ContactPage() {
             </span>
           </div>
         </div>
+
+        {/* WebMCP Interactive Contact Form */}
+        <form
+          data-webmcp-tool="submit_contact_inquiry"
+          data-webmcp-description="Submits a support inquiry, question, or partnership request to the Folzi AI team."
+          action="mailto:contact@folzi-ai.com"
+          method="post"
+          encType="text/plain"
+          className="p-6 sm:p-8 rounded-3xl bg-white/[0.03] border border-white/10 space-y-4 text-left backdrop-blur-xl"
+        >
+          <div className="flex items-center gap-2 text-sm font-bold text-[#E5DEFF]">
+            <Send className="w-4 h-4 text-[#A88BFF]" />
+            <span>Formulaire de Message Direct</span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <label htmlFor="contact-name" className="text-xs font-bold text-slate-300 font-mono">
+                Nom complet :
+              </label>
+              <input
+                id="contact-name"
+                name="fullName"
+                type="text"
+                required
+                placeholder="ex. Alex Martin"
+                data-webmcp-field="fullName"
+                className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#7C5CFC]"
+              />
+            </div>
+
+            <div className="space-y-1.5">
+              <label htmlFor="contact-email" className="text-xs font-bold text-slate-300 font-mono">
+                Email :
+              </label>
+              <input
+                id="contact-email"
+                name="emailAddress"
+                type="email"
+                required
+                placeholder="votre@email.com"
+                data-webmcp-field="emailAddress"
+                className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#7C5CFC]"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-1.5">
+            <label htmlFor="contact-message" className="text-xs font-bold text-slate-300 font-mono">
+              Message ou Question :
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              rows={3}
+              required
+              placeholder="Expliquez-nous votre besoin ou posez votre question..."
+              data-webmcp-field="message"
+              className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#7C5CFC]"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white font-bold text-xs font-mono uppercase tracking-wider shadow-lg shadow-purple-600/30 hover:scale-[1.02] transition-all"
+          >
+            Envoyer le message
+          </button>
+        </form>
       </div>
 
       <footer className="max-w-7xl mx-auto w-full px-5 py-8 border-t border-white/10 text-center text-xs text-slate-500">

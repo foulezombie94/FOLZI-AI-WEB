@@ -42,7 +42,12 @@ export default function EarningsCalculator() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Controls (Left) */}
-            <div className="lg:col-span-7 space-y-6 bg-white/[0.03] p-6 sm:p-8 rounded-3xl border border-white/10 shadow-inner">
+            <form
+              data-webmcp-tool="calculate_wardrobe_earnings"
+              data-webmcp-description="Calculate potential resale earnings on Vinted and Leboncoin based on the number of items and wardrobe type."
+              onSubmit={(e) => e.preventDefault()}
+              className="lg:col-span-7 space-y-6 bg-white/[0.03] p-6 sm:p-8 rounded-3xl border border-white/10 shadow-inner"
+            >
               
               {/* Type of items tabs */}
               <div className="space-y-2.5">
@@ -51,7 +56,10 @@ export default function EarningsCalculator() {
                 </label>
                 <div className="grid grid-cols-3 gap-2.5">
                   <button
+                    type="button"
                     onClick={() => setItemType("standard")}
+                    data-webmcp-field="dressingType"
+                    data-webmcp-value="standard"
                     className={`py-3 px-3 rounded-2xl text-xs font-bold transition-all ${
                       itemType === "standard"
                         ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-lg shadow-purple-600/30 scale-105 border border-white/30"
@@ -61,7 +69,10 @@ export default function EarningsCalculator() {
                     Classique
                   </button>
                   <button
+                    type="button"
                     onClick={() => setItemType("vintage")}
+                    data-webmcp-field="dressingType"
+                    data-webmcp-value="vintage"
                     className={`py-3 px-3 rounded-2xl text-xs font-bold transition-all ${
                       itemType === "vintage"
                         ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-lg shadow-purple-600/30 scale-105 border border-white/30"
@@ -71,7 +82,10 @@ export default function EarningsCalculator() {
                     Vintage
                   </button>
                   <button
+                    type="button"
                     onClick={() => setItemType("premium")}
+                    data-webmcp-field="dressingType"
+                    data-webmcp-value="premium"
                     className={`py-3 px-3 rounded-2xl text-xs font-bold transition-all ${
                       itemType === "premium"
                         ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-lg shadow-purple-600/30 scale-105 border border-white/30"
@@ -107,17 +121,19 @@ export default function EarningsCalculator() {
                   aria-valuemax={40}
                   aria-valuenow={itemCount}
                   aria-valuetext={`${itemCount} articles`}
+                  data-webmcp-field="itemCount"
+                  data-webmcp-type="number"
                   className="w-full h-3 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#7C5CFC] focus:outline-none focus:ring-2 focus:ring-[#7C5CFC]"
                 />
                 
-                <div className="flex justify-between text-[11px] font-mono text-slate-500 font-bold">
+                <div className="flex justify-between text-[11px] font-mono text-slate-400 font-bold">
                   <span>2 articles (Tri rapide)</span>
                   <span>20 articles</span>
                   <span>Prix optimisé sans perte</span>
                 </div>
               </div>
 
-            </div>
+            </form>
 
             {/* Big Results Card (Right) */}
             <div className="lg:col-span-5 rounded-3xl bg-slate-950 text-white p-8 space-y-6 shadow-2xl shadow-brand-950/25 flex flex-col justify-between text-center relative overflow-hidden">
