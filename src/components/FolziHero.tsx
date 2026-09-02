@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { Sparkles, Download, ArrowRight, CheckCircle2, ChevronDown, Menu, X, Star, ShieldCheck, Zap } from "lucide-react";
@@ -73,11 +73,11 @@ export default function FolziHero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Floating Capsule Header */}
-        <header className="w-full py-4 px-4 sm:px-6 rounded-3xl bg-white/[0.04] border border-white/15 backdrop-blur-2xl flex items-center justify-between shadow-2xl mb-14">
+        <header className="w-full py-4 px-4 sm:px-6 rounded-3xl bg-white/[0.04] border border-white/15 border-b-2 border-b-white/20 backdrop-blur-2xl flex items-center justify-between shadow-[0_8px_0_#0A0618] shadow-black/40 mb-14">
           
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#7C5CFC] to-[#A88BFF] flex items-center justify-center text-white shadow-lg shadow-purple-600/40 group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#7C5CFC] to-[#A88BFF] flex items-center justify-center text-white shadow-[0_4px_0_#5234C7] group-hover:scale-105 transition-transform">
               <Sparkles className="w-4 h-4 fill-white" />
             </div>
             <span className="text-xl font-black text-white tracking-tight">
@@ -86,7 +86,7 @@ export default function FolziHero() {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1 bg-white/[0.04] border border-white/10 rounded-full p-1.5 px-3">
+          <nav className="hidden md:flex items-center gap-1 bg-white/[0.04] border border-white/10 rounded-full p-1.5 px-3 shadow-inner">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -100,12 +100,12 @@ export default function FolziHero() {
 
           {/* Right Actions: Lang Switcher + 3D CTA Button */}
           <div className="hidden md:flex items-center gap-3">
-            <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1">
+            <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1 shadow-inner">
               <button
                 type="button"
                 onClick={() => setLang("fr")}
-                className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold transition-all ${
-                  lang === "fr" ? "bg-white text-black" : "text-slate-300 hover:text-white"
+                className={`badge-3d px-2.5 py-1 text-xs font-bold ${
+                  lang === "fr" ? "bg-white text-black shadow-[0_3px_0_#CBD5E1]" : "text-slate-300 hover:text-white bg-transparent shadow-none"
                 }`}
               >
                 <FranceFlag className="w-3.5 h-2.5" />
@@ -114,8 +114,8 @@ export default function FolziHero() {
               <button
                 type="button"
                 onClick={() => setLang("en")}
-                className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold transition-all ${
-                  lang === "en" ? "bg-white text-black" : "text-slate-300 hover:text-white"
+                className={`badge-3d px-2.5 py-1 text-xs font-bold ${
+                  lang === "en" ? "bg-white text-black shadow-[0_3px_0_#CBD5E1]" : "text-slate-300 hover:text-white bg-transparent shadow-none"
                 }`}
               >
                 <UKFlag className="w-3.5 h-2.5" />
@@ -136,7 +136,7 @@ export default function FolziHero() {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 rounded-xl bg-white/10 text-white"
+              className="p-2 rounded-xl bg-white/10 text-white badge-3d"
               aria-label="Menu"
             >
               {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -146,7 +146,7 @@ export default function FolziHero() {
 
         {/* Mobile Dropdown */}
         {menuOpen && (
-          <div className="md:hidden mb-8 p-6 rounded-3xl bg-[#0E0A21] border border-white/15 space-y-4 text-center">
+          <div className="md:hidden mb-8 p-6 rounded-3xl bg-[#0E0A21] border border-white/15 card-3d space-y-4 text-center">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -180,12 +180,12 @@ export default function FolziHero() {
             La meilleure appli de scan visuel et de rédaction automatique sur smartphone pour vendre en 24h sans négocier.
           </p>
 
-          {/* Big Tactile 3D Action Button */}
+          {/* Big Tactile 3D Action Buttons */}
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/folzi-ai.apk"
               download="Folzi-AI.apk"
-              className="btn-tactile-3d w-full sm:w-auto px-10 py-4 text-base font-black shadow-2xl tracking-wide uppercase font-mono"
+              className="btn-tactile-3d w-full sm:w-auto px-10 py-4 text-base font-black tracking-wide uppercase font-mono"
             >
               <span>Essayer maintenant (APK Gratuit)</span>
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -193,7 +193,7 @@ export default function FolziHero() {
 
             <a
               href="#scanner"
-              className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/[0.04] hover:bg-white/10 text-white font-bold text-sm border border-white/15 backdrop-blur-xl transition-all"
+              className="btn-tactile-dark w-full sm:w-auto px-8 py-4 text-sm font-bold tracking-wide uppercase font-mono"
             >
               <span>Tester le simulateur en direct</span>
             </a>
@@ -201,24 +201,24 @@ export default function FolziHero() {
 
         </div>
 
-        {/* Triple Phone App Showcase */}
+        {/* Triple Phone App Showcase (with High-Definition 3D Tactile Frame) */}
         <div id="app-showcase" className="mt-8 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             
             {/* Phone 1: AI Vision Scan */}
-            <div className="rounded-[36px] bg-[#0E0A21]/95 border-2 border-white/15 p-6 shadow-2xl shadow-purple-950/40 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+            <div className="card-3d-phone rounded-[36px] bg-[#0E0A21]/95 border-2 border-white/15 p-6 relative overflow-hidden group">
               <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
                 <span className="text-[11px] font-mono font-bold text-[#A88BFF] uppercase">1. Scan IA Vision</span>
-                <span className="px-2 py-0.5 rounded-full bg-[#34D399]/20 text-[#34D399] text-[10px] font-mono font-bold">1,8 sec</span>
+                <span className="badge-3d px-2.5 py-0.5 rounded-full bg-[#34D399]/20 text-[#34D399] border border-[#34D399]/30 text-[10px] font-mono font-bold shadow-[0_2px_0_rgba(52,211,153,0.3)]">1,8 sec</span>
               </div>
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-black/60 border border-white/10 mb-4">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-black/60 border border-white/10 mb-4 shadow-inner">
                 <img
                   src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=80"
                   alt="Veste en cuir vintage scannée par IA"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/20 text-left space-y-1">
+                <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/20 text-left space-y-1 shadow-[0_4px_0_rgba(0,0,0,0.5)]">
                   <div className="text-xs font-bold text-white">Veste Perfecto Cuir 90s</div>
                   <div className="text-[10px] text-[#34D399] font-mono">100% Cuir Véritable · Très bon état</div>
                 </div>
@@ -229,12 +229,12 @@ export default function FolziHero() {
             </div>
 
             {/* Phone 2: Instant SEO Copywriting */}
-            <div className="rounded-[36px] bg-gradient-to-b from-[#1E124A] to-[#0E0A21] border-2 border-[#7C5CFC] p-6 shadow-2xl shadow-purple-600/20 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 md:-translate-y-4">
+            <div className="card-3d-featured rounded-[36px] p-6 relative overflow-hidden group md:-translate-y-4">
               <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
                 <span className="text-[11px] font-mono font-bold text-[#D4C9FF] uppercase">2. Rédaction Virale</span>
-                <span className="px-2 py-0.5 rounded-full bg-[#7C5CFC]/30 text-white text-[10px] font-mono font-bold">1-Clic</span>
+                <span className="badge-3d px-2.5 py-0.5 rounded-full bg-[#7C5CFC]/40 text-white border border-white/30 text-[10px] font-mono font-bold shadow-[0_2px_0_#5234C7]">1-Clic</span>
               </div>
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-black/60 border border-white/15 mb-4 p-4 flex flex-col justify-between text-left text-xs">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-black/60 border border-white/15 mb-4 p-4 flex flex-col justify-between text-left text-xs shadow-inner">
                 <div className="space-y-2">
                   <div className="text-[10px] font-mono font-bold text-[#A88BFF]">TITRE OPTIMISÉ SEO :</div>
                   <div className="font-bold text-white text-xs leading-snug">Veste Perfecto Cuir Vintage Boxy M Noir - Pièce Authentique 90s</div>
@@ -243,7 +243,7 @@ export default function FolziHero() {
                     &ldquo;Superbe perfecto en cuir lourd. Fermetures YKK d&apos;origine, doublure satinée. Envoi sous 24h.#vintage #leather #y2k&rdquo;
                   </div>
                 </div>
-                <div className="w-full py-2 rounded-lg bg-[#7C5CFC] text-white text-center font-mono font-bold text-[11px] shadow-md">
+                <div className="w-full py-2.5 rounded-xl bg-[#7C5CFC] text-white text-center font-mono font-bold text-[11px] shadow-[0_4px_0_#5234C7]">
                   ✓ Prêt à coller sur Vinted
                 </div>
               </div>
@@ -253,12 +253,12 @@ export default function FolziHero() {
             </div>
 
             {/* Phone 3: Dynamic Price Valuation */}
-            <div className="rounded-[36px] bg-[#0E0A21]/95 border-2 border-white/15 p-6 shadow-2xl shadow-purple-950/40 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+            <div className="card-3d-phone rounded-[36px] bg-[#0E0A21]/95 border-2 border-white/15 p-6 relative overflow-hidden group">
               <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
                 <span className="text-[11px] font-mono font-bold text-[#34D399] uppercase">3. Argus & Vente Express</span>
-                <span className="px-2 py-0.5 rounded-full bg-[#34D399]/20 text-[#34D399] text-[10px] font-mono font-bold">24h à 48h</span>
+                <span className="badge-3d px-2.5 py-0.5 rounded-full bg-[#34D399]/20 text-[#34D399] border border-[#34D399]/30 text-[10px] font-mono font-bold shadow-[0_2px_0_rgba(52,211,153,0.3)]">24h à 48h</span>
               </div>
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-black/60 border border-white/10 mb-4 p-5 flex flex-col justify-between text-center">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-black/60 border border-white/10 mb-4 p-5 flex flex-col justify-between text-center shadow-inner">
                 <div className="space-y-1">
                   <span className="text-[10px] font-mono font-bold uppercase text-slate-400">Estimation Argus Réel</span>
                   <div className="text-4xl font-black font-mono text-white pt-1">68,00 €</div>
@@ -276,7 +276,7 @@ export default function FolziHero() {
                   </div>
                 </div>
 
-                <div className="w-full py-2 rounded-lg bg-[#34D399] text-black text-center font-mono font-bold text-[11px] shadow-md">
+                <div className="w-full py-2.5 rounded-xl bg-[#34D399] text-black text-center font-mono font-bold text-[11px] shadow-[0_4px_0_#059669]">
                   Vendu en 24h sans négocier
                 </div>
               </div>
@@ -288,12 +288,12 @@ export default function FolziHero() {
           </div>
         </div>
 
-        {/* Social Proof Metric Laurels */}
-        <div className="py-12 border-y border-white/10 mb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center justify-center max-w-4xl mx-auto">
+        {/* Social Proof Metric Laurels (3D Tactile Cards) */}
+        <div className="py-10 border-y border-white/10 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
             
             {/* Stat 1 */}
-            <div className="flex flex-col items-center text-center relative group">
+            <div className="card-3d p-6 flex flex-col items-center text-center group">
               <div className="flex items-center gap-2">
                 <LaurelSmall />
                 <span className="text-2xl sm:text-3xl font-black font-mono text-white group-hover:text-[#A88BFF] transition-colors">
@@ -301,11 +301,11 @@ export default function FolziHero() {
                 </span>
                 <LaurelSmall className="w-8 h-12 fill-[#A88BFF] transform -scale-x-100" />
               </div>
-              <span className="text-xs text-slate-400 font-medium mt-1">Vendeurs satisfaits</span>
+              <span className="text-xs text-slate-300 font-medium mt-1">Vendeurs satisfaits</span>
             </div>
 
             {/* Stat 2 */}
-            <div className="flex flex-col items-center text-center relative group">
+            <div className="card-3d p-6 flex flex-col items-center text-center group">
               <div className="flex items-center gap-2">
                 <LaurelSmall />
                 <span className="text-2xl sm:text-3xl font-black font-mono text-white group-hover:text-[#A88BFF] transition-colors">
@@ -313,11 +313,11 @@ export default function FolziHero() {
                 </span>
                 <LaurelSmall className="w-8 h-12 fill-[#A88BFF] transform -scale-x-100" />
               </div>
-              <span className="text-xs text-slate-400 font-medium mt-1">Note de l&apos;App Store & Play</span>
+              <span className="text-xs text-slate-300 font-medium mt-1">Note de l&apos;App Store & Play</span>
             </div>
 
             {/* Stat 3 */}
-            <div className="flex flex-col items-center text-center relative group">
+            <div className="card-3d p-6 flex flex-col items-center text-center group">
               <div className="flex items-center gap-2">
                 <LaurelSmall />
                 <span className="text-2xl sm:text-3xl font-black font-mono text-white group-hover:text-[#A88BFF] transition-colors">
@@ -325,36 +325,36 @@ export default function FolziHero() {
                 </span>
                 <LaurelSmall className="w-8 h-12 fill-[#A88BFF] transform -scale-x-100" />
               </div>
-              <span className="text-xs text-slate-400 font-medium mt-1">Annonces optimisées</span>
+              <span className="text-xs text-slate-300 font-medium mt-1">Annonces optimisées</span>
             </div>
 
           </div>
         </div>
 
-        {/* Press / Platforms Logo Bar */}
+        {/* Press / Platforms 3D Tactile Badges */}
         <div className="text-center space-y-4">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
             Compatible avec vos plateformes préférées :
           </span>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-[#09B1BA]/10 border border-[#09B1BA]/30 text-white font-bold text-xs sm:text-sm shadow-sm hover:scale-105 transition-transform">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#09B1BA]" />
+            <div className="badge-3d px-5 py-2.5 rounded-2xl bg-[#09B1BA]/15 border border-[#09B1BA]/40 border-b-2 border-b-[#09B1BA] text-white font-bold text-xs sm:text-sm shadow-[0_4px_0_rgba(9,177,186,0.35)]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#09B1BA] shadow-[0_0_8px_#09B1BA]" />
               <span>Vinted</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-[#F56B2A]/10 border border-[#F56B2A]/30 text-white font-bold text-xs sm:text-sm shadow-sm hover:scale-105 transition-transform">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#F56B2A]" />
+            <div className="badge-3d px-5 py-2.5 rounded-2xl bg-[#F56B2A]/15 border border-[#F56B2A]/40 border-b-2 border-b-[#F56B2A] text-white font-bold text-xs sm:text-sm shadow-[0_4px_0_rgba(245,107,42,0.35)]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#F56B2A] shadow-[0_0_8px_#F56B2A]" />
               <span>Leboncoin</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-[#00C49F]/10 border border-[#00C49F]/30 text-white font-bold text-xs sm:text-sm shadow-sm hover:scale-105 transition-transform">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#00C49F]" />
+            <div className="badge-3d px-5 py-2.5 rounded-2xl bg-[#00C49F]/15 border border-[#00C49F]/40 border-b-2 border-b-[#00C49F] text-white font-bold text-xs sm:text-sm shadow-[0_4px_0_rgba(0,196,159,0.35)]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00C49F] shadow-[0_0_8px_#00C49F]" />
               <span>Wallapop</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-[#FF2A6D]/10 border border-[#FF2A6D]/30 text-white font-bold text-xs sm:text-sm shadow-sm hover:scale-105 transition-transform">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#FF2A6D]" />
+            <div className="badge-3d px-5 py-2.5 rounded-2xl bg-[#FF2A6D]/15 border border-[#FF2A6D]/40 border-b-2 border-b-[#FF2A6D] text-white font-bold text-xs sm:text-sm shadow-[0_4px_0_rgba(255,42,109,0.35)]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF2A6D] shadow-[0_0_8px_#FF2A6D]" />
               <span>Vestiaire Collective</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-[#0064D2]/10 border border-[#0064D2]/30 text-white font-bold text-xs sm:text-sm shadow-sm hover:scale-105 transition-transform">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#0064D2]" />
+            <div className="badge-3d px-5 py-2.5 rounded-2xl bg-[#0064D2]/15 border border-[#0064D2]/40 border-b-2 border-b-[#0064D2] text-white font-bold text-xs sm:text-sm shadow-[0_4px_0_rgba(0,100,210,0.35)]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#0064D2] shadow-[0_0_8px_#0064D2]" />
               <span>eBay</span>
             </div>
           </div>

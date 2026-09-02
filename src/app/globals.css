@@ -96,14 +96,15 @@
   background: #7C5CFC;
   color: #ffffff;
   font-weight: 700;
-  box-shadow: 0 5px 0 #5234C7, 0 10px 20px rgba(124, 92, 252, 0.35);
+  box-shadow: 0 5px 0 #5234C7, 0 12px 24px rgba(124, 92, 252, 0.35);
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(0);
+  cursor: pointer;
 }
 
 .btn-tactile-3d:hover {
   background: #8A6DFD;
-  box-shadow: 0 4px 0 #5234C7, 0 8px 16px rgba(124, 92, 252, 0.4);
+  box-shadow: 0 4px 0 #5234C7, 0 8px 16px rgba(124, 92, 252, 0.45);
   transform: translateY(1px);
 }
 
@@ -112,14 +113,52 @@
   transform: translateY(5px);
 }
 
+.btn-tactile-dark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 5px 0 #180D38, 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  cursor: pointer;
+}
+
+.btn-tactile-dark:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(168, 139, 255, 0.4);
+  box-shadow: 0 4px 0 #180D38, 0 8px 16px rgba(124, 92, 252, 0.25);
+  transform: translateY(1px);
+}
+
+.btn-tactile-dark:active {
+  box-shadow: 0 0 0 #180D38, 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(5px);
+}
+
 .btn-tactile-emerald {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
   background: #10B981;
-  box-shadow: 0 5px 0 #059669, 0 10px 20px rgba(16, 185, 129, 0.35);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 5px 0 #059669, 0 12px 24px rgba(16, 185, 129, 0.35);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  cursor: pointer;
 }
 
 .btn-tactile-emerald:hover {
   background: #34D399;
-  box-shadow: 0 4px 0 #059669, 0 8px 16px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 4px 0 #059669, 0 8px 16px rgba(16, 185, 129, 0.45);
   transform: translateY(1px);
 }
 
@@ -129,18 +168,91 @@
 }
 
 .btn-tactile-white {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
   background: #FFFFFF;
   color: #0F0A1C;
-  box-shadow: 0 5px 0 #D1D5DB, 0 10px 20px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+  box-shadow: 0 5px 0 #CBD5E1, 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  cursor: pointer;
 }
 
 .btn-tactile-white:hover {
-  background: #F9FAFB;
-  box-shadow: 0 4px 0 #D1D5DB, 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: #F8FAFC;
+  box-shadow: 0 4px 0 #CBD5E1, 0 8px 16px rgba(0, 0, 0, 0.25);
   transform: translateY(1px);
 }
 
 .btn-tactile-white:active {
-  box-shadow: 0 0 0 #D1D5DB, 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 #CBD5E1, 0 2px 5px rgba(0, 0, 0, 0.1);
   transform: translateY(5px);
+}
+
+/* 3D Tactile Card System */
+.card-3d {
+  position: relative;
+  border-radius: 1.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 4px solid rgba(124, 92, 252, 0.3);
+  box-shadow: 0 8px 0 #0A0618, 0 20px 35px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-3d:hover {
+  transform: translateY(-4px);
+  border-bottom-color: rgba(168, 139, 255, 0.6);
+  box-shadow: 0 12px 0 #0A0618, 0 28px 45px -10px rgba(124, 92, 252, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.card-3d-featured {
+  position: relative;
+  border-radius: 2rem;
+  background: linear-gradient(180deg, rgba(30, 18, 74, 0.9) 0%, rgba(14, 10, 33, 0.95) 100%);
+  border: 2px solid #7C5CFC;
+  border-bottom: 5px solid #5234C7;
+  box-shadow: 0 10px 0 #140C2C, 0 25px 50px -10px rgba(124, 92, 252, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-3d-featured:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 0 #140C2C, 0 32px 60px -10px rgba(124, 92, 252, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* 3D Phone Mockup Elevation */
+.card-3d-phone {
+  box-shadow: 0 10px 0 #140C2C, 0 25px 45px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-3d-phone:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 0 #140C2C, 0 35px 60px -10px rgba(124, 92, 252, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Tactile 3D Badges & Pills */
+.badge-3d {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.badge-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.badge-3d:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
 }

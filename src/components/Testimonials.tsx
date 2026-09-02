@@ -24,7 +24,7 @@ export default function Testimonials() {
           {TESTIMONIALS.map((testimonial, idx) => (
             <div
               key={idx}
-              className="rounded-3xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 hover:border-[#A88BFF]/40 p-8 shadow-xl shadow-black/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between space-y-6 backdrop-blur-xl"
+              className="card-3d p-8 flex flex-col justify-between space-y-6 backdrop-blur-xl group cursor-pointer"
             >
               <div className="space-y-4">
                 {/* Stars */}

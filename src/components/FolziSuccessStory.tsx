@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { Quote, CheckCircle2 } from "lucide-react";
@@ -22,11 +22,11 @@ export default function FolziSuccessStory() {
         </div>
 
         {/* Split Before / After Card */}
-        <div className="rounded-[36px] bg-[#0E0A21]/90 border border-white/15 p-6 sm:p-10 shadow-2xl backdrop-blur-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="card-3d p-6 sm:p-10 backdrop-blur-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Left: Split Photos with Giant Green Badge */}
           <div className="lg:col-span-6 flex flex-col justify-center">
-            <div className="relative aspect-square sm:aspect-[4/3] w-full rounded-2xl overflow-hidden border border-white/15 shadow-xl flex gap-1.5 p-1.5 bg-black/40">
+            <div className="relative aspect-square sm:aspect-[4/3] w-full rounded-2xl overflow-hidden border border-white/15 shadow-2xl flex gap-1.5 p-1.5 bg-black/40">
               
               {/* Photo Before */}
               <div className="relative w-1/2 h-full rounded-xl overflow-hidden group">
@@ -35,7 +35,7 @@ export default function FolziSuccessStory() {
                   alt="Dressing avant Folzi AI"
                   className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/80 text-[10px] font-bold font-mono text-rose-300 uppercase border border-rose-500/30">
+                <div className="badge-3d absolute top-3 left-3 px-2.5 py-1 text-[10px] font-bold font-mono text-rose-300 uppercase bg-black/80 border border-rose-500/30">
                   Avant
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-[11px] font-medium text-slate-300 bg-black/60 backdrop-blur-sm p-2 rounded-lg">
@@ -50,7 +50,7 @@ export default function FolziSuccessStory() {
                   alt="Dressing après Folzi AI"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-[#34D399]/90 text-[10px] font-bold font-mono text-black uppercase shadow-md">
+                <div className="badge-3d absolute top-3 right-3 px-2.5 py-1 text-[10px] font-bold font-mono text-black uppercase bg-[#34D399] shadow-[0_3px_0_#059669]">
                   Après
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-[11px] font-medium text-[#D4C9FF] bg-black/60 backdrop-blur-sm p-2 rounded-lg">
@@ -58,8 +58,8 @@ export default function FolziSuccessStory() {
                 </div>
               </div>
 
-              {/* Centered Result Badge */}
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-2.5 rounded-2xl bg-black/90 border-2 border-[#34D399] shadow-[0_0_25px_rgba(52,211,153,0.4)] text-center">
+              {/* Centered Result 3D Badge */}
+              <div className="badge-3d absolute bottom-6 left-1/2 -translate-x-1/2 px-7 py-3 rounded-2xl bg-black/95 border-2 border-[#34D399] shadow-[0_6px_0_#059669] text-center">
                 <span className="text-2xl sm:text-3xl font-black font-mono text-[#34D399] tracking-tight">
                   +1 840 €
                 </span>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 
@@ -56,24 +56,24 @@ export default function FolziKeyFigures() {
         </div>
 
         {/* 3 Giant Metric Columns with Laurels */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-center justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-center">
           {figures.map((fig, idx) => (
-            <div key={idx} className="flex flex-col items-center text-center relative group px-4">
+            <div key={idx} className="card-3d p-8 flex flex-col items-center text-center group">
               
               {/* Stat with Laurel Wreaths */}
-              <div className="flex items-center justify-center gap-2 sm:gap-4 mb-3">
+              <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4">
                 <LaurelLeft />
-                <span className="text-4xl sm:text-6xl font-black font-mono tracking-tight text-white group-hover:text-[#34D399] transition-colors">
+                <span className="text-4xl sm:text-5xl font-black font-mono tracking-tight text-white group-hover:text-[#34D399] transition-colors">
                   {fig.stat}
                 </span>
                 <LaurelRight />
               </div>
 
               {/* Title & Desc */}
-              <h3 className="text-base sm:text-lg font-bold text-white tracking-tight mb-1">
+              <h3 className="text-base sm:text-lg font-bold text-white tracking-tight mb-2">
                 {fig.title}
               </h3>
-              <p className="text-xs sm:text-sm text-slate-400 max-w-xs font-normal">
+              <p className="text-xs sm:text-sm text-slate-400 max-w-xs font-normal leading-relaxed">
                 {fig.desc}
               </p>
 

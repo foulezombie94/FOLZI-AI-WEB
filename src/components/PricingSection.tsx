@@ -26,23 +26,23 @@ export default function PricingSection() {
 
         {/* 3D Billing Period Toggle (Monthly vs Yearly) */}
         <div className="flex items-center justify-center mb-16">
-          <div className="inline-flex items-center p-1.5 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-xl gap-2">
+          <div className="inline-flex items-center p-2 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-xl gap-3 shadow-inner">
             <button
               onClick={() => setBillingPeriod("monthly")}
-              className={`px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
+              className={`badge-3d px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm ${
                 billingPeriod === "monthly"
-                  ? "bg-white text-black shadow-lg"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-white text-black shadow-[0_3px_0_#CBD5E1]"
+                  : "text-slate-400 hover:text-white bg-transparent shadow-none"
               }`}
             >
               Paiement Mensuel
             </button>
             <button
               onClick={() => setBillingPeriod("yearly")}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
+              className={`badge-3d flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm ${
                 billingPeriod === "yearly"
-                  ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-lg shadow-purple-600/30"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-[#7C5CFC] text-white shadow-[0_3px_0_#5234C7]"
+                  : "text-slate-400 hover:text-white bg-transparent shadow-none"
               }`}
             >
               <span>Paiement Annuel</span>
@@ -62,15 +62,15 @@ export default function PricingSection() {
             return (
               <div
                 key={tier.id}
-                className={`relative rounded-[36px] p-8 flex flex-col justify-between transition-all duration-300 backdrop-blur-xl ${
+                className={`relative p-8 flex flex-col justify-between backdrop-blur-xl ${
                   tier.popular
-                    ? "bg-[#0E0A21]/95 border-2 border-[#7C5CFC] shadow-2xl shadow-purple-950/50 lg:-translate-y-3"
-                    : "bg-white/[0.03] border border-white/10 hover:border-white/25 shadow-xl shadow-black/40"
+                    ? "card-3d-featured lg:-translate-y-3"
+                    : "card-3d"
                 }`}
               >
                 {/* Popular Badge */}
                 {tier.badge && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white font-bold text-xs shadow-lg shadow-purple-600/30 uppercase tracking-wider font-mono flex items-center gap-1.5 border border-white/20">
+                  <div className="badge-3d absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full bg-[#7C5CFC] text-white font-bold text-xs shadow-[0_3px_0_#5234C7] uppercase tracking-wider font-mono flex items-center gap-1.5 border border-white/20">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>{tier.badge}</span>
                   </div>
@@ -133,14 +133,14 @@ export default function PricingSection() {
                   <a
                     href="/folzi-ai.apk"
                     download="Folzi-AI.apk"
-                    className={`w-full inline-flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-sm transition-all shadow-lg ${
+                    className={`w-full font-mono uppercase tracking-wider text-xs ${
                       tier.popular
-                        ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white hover:scale-105 shadow-purple-600/30 border border-white/20"
-                        : "bg-white/10 hover:bg-white/20 text-white border border-white/15"
+                        ? "btn-tactile-3d py-4"
+                        : "btn-tactile-dark py-4"
                     }`}
                   >
                     <span>{tier.cta}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 ml-2" />
                   </a>
                 </div>
 

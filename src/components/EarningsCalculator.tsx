@@ -25,7 +25,7 @@ export default function EarningsCalculator() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="rounded-[40px] bg-[#0E0A21]/90 border border-white/15 p-8 sm:p-12 shadow-2xl shadow-purple-950/40 relative backdrop-blur-xl">
+        <div className="card-3d p-8 sm:p-12 shadow-[0_12px_0_#0A0618] relative backdrop-blur-xl">
           
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-10">
@@ -59,10 +59,10 @@ export default function EarningsCalculator() {
                     onClick={() => setItemType("standard")}
                     data-webmcp-field="dressingType"
                     data-webmcp-value="standard"
-                    className={`py-3 px-3 rounded-2xl text-xs font-bold transition-all ${
+                    className={`badge-3d justify-center py-3 px-3 rounded-2xl text-xs font-bold ${
                       itemType === "standard"
-                        ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-lg shadow-purple-600/30 scale-105 border border-white/30"
-                        : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10"
+                        ? "bg-[#7C5CFC] text-white shadow-[0_4px_0_#5234C7] scale-105 border border-white/30"
+                        : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10 shadow-[0_3px_0_#0A0618]"
                     }`}
                   >
                     Classique
@@ -72,10 +72,10 @@ export default function EarningsCalculator() {
                     onClick={() => setItemType("vintage")}
                     data-webmcp-field="dressingType"
                     data-webmcp-value="vintage"
-                    className={`py-3 px-3 rounded-2xl text-xs font-bold transition-all ${
+                    className={`badge-3d justify-center py-3 px-3 rounded-2xl text-xs font-bold ${
                       itemType === "vintage"
-                        ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-lg shadow-purple-600/30 scale-105 border border-white/30"
-                        : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10"
+                        ? "bg-[#7C5CFC] text-white shadow-[0_4px_0_#5234C7] scale-105 border border-white/30"
+                        : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10 shadow-[0_3px_0_#0A0618]"
                     }`}
                   >
                     Vintage
@@ -85,10 +85,10 @@ export default function EarningsCalculator() {
                     onClick={() => setItemType("premium")}
                     data-webmcp-field="dressingType"
                     data-webmcp-value="premium"
-                    className={`py-3 px-3 rounded-2xl text-xs font-bold transition-all ${
+                    className={`badge-3d justify-center py-3 px-3 rounded-2xl text-xs font-bold ${
                       itemType === "premium"
-                        ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white shadow-lg shadow-purple-600/30 scale-105 border border-white/30"
-                        : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10"
+                        ? "bg-[#7C5CFC] text-white shadow-[0_4px_0_#5234C7] scale-105 border border-white/30"
+                        : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10 shadow-[0_3px_0_#0A0618]"
                     }`}
                   >
                     Sneakers / Luxe
@@ -102,7 +102,7 @@ export default function EarningsCalculator() {
                   <label htmlFor="items-count-slider" className="text-xs font-bold uppercase tracking-wider text-[#A88BFF] font-mono cursor-pointer">
                     Articles non portés :
                   </label>
-                  <span className="px-3.5 py-1 rounded-full bg-[#7C5CFC]/20 text-[#E5DEFF] font-mono font-bold text-sm border border-[#A88BFF]/40">
+                  <span className="badge-3d px-3.5 py-1 text-[#E5DEFF] font-mono font-bold text-sm bg-[#7C5CFC]/25 border border-[#A88BFF]/40 shadow-[0_2px_0_#5234C7]">
                     {itemCount} articles
                   </span>
                 </div>
@@ -134,8 +134,8 @@ export default function EarningsCalculator() {
 
             </form>
 
-            {/* Big Results Card (Right) */}
-            <div className="lg:col-span-5 rounded-3xl bg-gradient-to-br from-[#130D2E] to-[#0A0718] border-2 border-[#7C5CFC]/50 text-white p-8 space-y-6 shadow-2xl shadow-purple-950/60 flex flex-col justify-between text-center relative overflow-hidden">
+            {/* Big Results Card (Right - 3D Featured) */}
+            <div className="lg:col-span-5 card-3d-featured p-8 space-y-6 flex flex-col justify-between text-center relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#7C5CFC]/20 rounded-full blur-2xl pointer-events-none" />
 
               <div className="space-y-2 relative z-10">
@@ -175,10 +175,10 @@ export default function EarningsCalculator() {
               {/* 3D Action Button */}
               <a
                 href="#download"
-                className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-xl shadow-purple-600/40 hover:scale-105 transition-all font-mono uppercase tracking-wider relative z-10"
+                className="btn-tactile-3d w-full py-4 text-sm font-bold uppercase font-mono tracking-wider relative z-10"
               >
                 <span>Scanner mes {itemCount} articles</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 ml-2" />
               </a>
 
             </div>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { CheckCircle2, ArrowRight } from "lucide-react";
@@ -59,12 +59,12 @@ export default function FolziBenefits() {
           {benefits.map((b, i) => (
             <div
               key={i}
-              className="rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-[#A88BFF]/50 p-6 sm:p-7 flex flex-col justify-between space-y-6 backdrop-blur-xl transition-all duration-300 shadow-xl hover:-translate-y-1.5 group"
+              className="card-3d p-6 sm:p-7 flex flex-col justify-between space-y-6 backdrop-blur-xl group cursor-pointer"
             >
               <div className="space-y-4">
                 {/* Header with Green Checkmark */}
                 <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-full bg-[#34D399]/20 border border-[#34D399]/40 flex items-center justify-center shrink-0 text-[#34D399] mt-0.5 shadow-[0_0_12px_rgba(52,211,153,0.3)]">
+                  <div className="w-10 h-10 rounded-2xl bg-[#34D399]/20 border border-[#34D399]/40 flex items-center justify-center shrink-0 text-[#34D399] mt-0.5 shadow-[0_4px_0_rgba(5,150,105,0.4)]">
                     <CheckCircle2 className="w-5 h-5 fill-[#34D399]/20" />
                   </div>
                   <h3 className="text-lg font-bold text-white leading-snug group-hover:text-[#D4C9FF] transition-colors">
@@ -85,7 +85,7 @@ export default function FolziBenefits() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0C081E]/80 via-transparent to-transparent pointer-events-none" />
-                <span className="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[11px] font-bold font-mono text-[#E5DEFF] border border-white/20">
+                <span className="badge-3d absolute bottom-3 left-3 px-3 py-1 text-[11px] font-bold font-mono text-[#E5DEFF] bg-black/80 border border-white/20">
                   {b.tag}
                 </span>
               </div>

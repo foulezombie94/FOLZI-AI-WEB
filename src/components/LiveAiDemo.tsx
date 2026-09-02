@@ -76,10 +76,10 @@ export default function LiveAiDemo() {
                 key={item.id}
                 type="button"
                 onClick={() => startScan(item)}
-                className={`flex items-center gap-3 px-5 py-3 rounded-2xl font-bold text-xs sm:text-sm transition-all duration-200 border ${
+                className={`badge-3d flex items-center gap-3 px-5 py-3 rounded-2xl font-bold text-xs sm:text-sm transition-all duration-200 border ${
                   isSelected
-                    ? "bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white border-white/40 shadow-lg shadow-purple-600/30 scale-105"
-                    : "bg-white/[0.04] text-slate-300 hover:bg-white/[0.08] hover:text-white border-white/10"
+                    ? "bg-[#7C5CFC] text-white border-white/40 shadow-[0_4px_0_#5234C7] scale-105"
+                    : "bg-white/[0.04] text-slate-300 hover:bg-white/[0.08] hover:text-white border-white/10 shadow-[0_3px_0_#0A0618]"
                 }`}
               >
                 <img
@@ -99,7 +99,7 @@ export default function LiveAiDemo() {
         </div>
 
         {/* Main Terminal Card */}
-        <div className="max-w-5xl mx-auto rounded-[32px] bg-[#0C081D]/90 border border-white/15 p-5 sm:p-8 lg:p-10 shadow-[0_25px_70px_rgba(0,0,0,0.6)] backdrop-blur-2xl">
+        <div className="max-w-5xl mx-auto rounded-[32px] bg-[#0C081D]/90 border border-white/15 card-3d p-5 sm:p-8 lg:p-10 shadow-[0_12px_0_#0A0618] backdrop-blur-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
             {/* Left Column: AI Vision Scanner HUD */}
@@ -127,46 +127,41 @@ export default function LiveAiDemo() {
                   </>
                 )}
 
-                {/* HUD Viewfinder Reticle Brackets */}
-                <div className="absolute inset-5 pointer-events-none z-15">
-                  <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-[#A88BFF]" />
-                  <div className="absolute top-0 right-0 w-5 h-5 border-t-2 border-r-2 border-[#A88BFF]" />
-                  <div className="absolute bottom-0 left-0 w-5 h-5 border-b-2 border-l-2 border-[#A88BFF]" />
-                  <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-[#A88BFF]" />
-                </div>
-
                 {/* Top HUD Badge: Live AI Vision Status */}
                 <div className="absolute top-3.5 left-3.5 right-3.5 z-20 flex items-center justify-between pointer-events-none">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] font-bold text-white shadow-lg">
-                    <span className={`w-2 h-2 rounded-full ${isScanning ? "bg-amber-400 animate-ping" : "bg-[#34D399] shadow-[0_0_8px_#34D399]"}`} />
-                    <span className="font-mono">{isScanning ? "Scan IA en cours..." : "Scan IA terminé"}</span>
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                    <span className="font-mono text-[10px] tracking-wider uppercase">Folzi Vision Engine</span>
                   </div>
-                  <div className="px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono text-slate-300">
-                    99.2%
+                  <div className="px-2.5 py-1 rounded-md bg-purple-950/80 border border-purple-500/40 text-[#D4C9FF] text-[10px] font-mono font-bold">
+                    HD SCAN
                   </div>
                 </div>
 
-                {/* Bottom HUD Badge: Price Estimate */}
-                <div className="absolute bottom-3.5 left-3.5 right-3.5 z-20 flex items-center justify-between pointer-events-none">
-                  <div className="px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/20 text-white font-mono font-bold text-xs flex items-center gap-1.5 shadow-lg">
-                    <Tag className="w-3.5 h-3.5 text-[#A88BFF]" />
-                    <span>{selectedItem.brand}</span>
+                {/* Bottom HUD Recognition Overlay */}
+                <div className="absolute bottom-3 left-3 right-3 z-20 p-3 rounded-xl bg-black/85 backdrop-blur-md border border-white/20 text-xs">
+                  <div className="flex items-center justify-between text-[#A88BFF] font-mono text-[10px] mb-1">
+                    <span>IDENTIFICATION MODÈLE</span>
+                    <span className="text-emerald-400 font-bold">98.7% FIABLE</span>
                   </div>
-                  <div className="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white font-mono font-black text-xs shadow-lg shadow-purple-600/40 border border-white/20">
-                    {selectedItem.estimatedPrice} € conseillé
+                  <div className="text-white font-bold truncate">
+                    {selectedItem.name}
+                  </div>
+                  <div className="text-slate-400 text-[11px] font-mono mt-0.5">
+                    {selectedItem.brand}
                   </div>
                 </div>
 
               </div>
 
-              {/* Action Button: Relaunch Scan */}
+              {/* Action Button: Relaunch Scan (Tactile 3D) */}
               <button
                 type="button"
                 onClick={() => startScan(selectedItem)}
                 disabled={isScanning}
-                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] text-white text-xs font-bold transition-all border border-white/15 active:scale-98 disabled:opacity-50"
+                className="btn-tactile-dark w-full py-3.5 text-xs font-bold font-mono uppercase tracking-wider disabled:opacity-50"
               >
-                <RefreshCw className={`w-4 h-4 text-[#A88BFF] ${isScanning ? "animate-spin" : ""}`} />
+                <RefreshCw className={`w-4 h-4 text-[#A88BFF] mr-2 ${isScanning ? "animate-spin" : ""}`} />
                 <span>{isScanning ? "Analyse en cours..." : "Relancer l’analyse IA"}</span>
               </button>
 
@@ -178,15 +173,15 @@ export default function LiveAiDemo() {
               {/* Header Switcher & Copy CTA */}
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
                 
-                {/* Platform Tabs */}
-                <div className="flex items-center gap-2 p-1 rounded-xl bg-black/40 border border-white/10">
+                {/* Platform Tabs (3D Tactile) */}
+                <div className="flex items-center gap-2 p-1 rounded-xl bg-black/40 border border-white/10 shadow-inner">
                   <button
                     type="button"
                     onClick={() => setActivePlatform("vinted")}
-                    className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                    className={`badge-3d px-3.5 py-1.5 rounded-lg text-xs font-bold ${
                       activePlatform === "vinted"
-                        ? "bg-[#09B1BA] text-white shadow-md shadow-teal-500/20"
-                        : "text-slate-400 hover:text-white"
+                        ? "bg-[#09B1BA] text-white shadow-[0_3px_0_#068188]"
+                        : "text-slate-400 hover:text-white bg-transparent shadow-none"
                     }`}
                   >
                     <Hash className="w-3.5 h-3.5" />
@@ -195,36 +190,35 @@ export default function LiveAiDemo() {
                   <button
                     type="button"
                     onClick={() => setActivePlatform("leboncoin")}
-                    className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                    className={`badge-3d px-3.5 py-1.5 rounded-lg text-xs font-bold ${
                       activePlatform === "leboncoin"
-                        ? "bg-[#F56B2A] text-white shadow-md shadow-orange-500/20"
-                        : "text-slate-400 hover:text-white"
+                        ? "bg-[#F56B2A] text-white shadow-[0_3px_0_#C24D14]"
+                        : "text-slate-400 hover:text-white bg-transparent shadow-none"
                     }`}
                   >
                     <span>Leboncoin</span>
                   </button>
                 </div>
 
-                {/* High Contrast Copy Button */}
+                {/* High Contrast Copy Button (Tactile 3D) */}
                 <button
                   type="button"
                   onClick={copyToClipboard}
                   disabled={isScanning}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white text-xs font-bold hover:scale-105 active:scale-95 transition-all shadow-md shadow-purple-600/30 border border-white/20 disabled:opacity-50"
+                  className="btn-tactile-3d px-4 py-2.5 text-xs font-bold disabled:opacity-50 uppercase font-mono tracking-wider"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-4 h-4 text-emerald-300 stroke-[3]" />
+                      <Check className="w-4 h-4 text-emerald-300 stroke-[3] mr-1.5" />
                       <span>Copié dans le presse-papier !</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-4 h-4" />
+                      <Copy className="w-3.5 h-3.5 mr-1.5" />
                       <span>Copier l’annonce</span>
                     </>
                   )}
                 </button>
-
               </div>
 
               {/* Live Scan Progression State */}

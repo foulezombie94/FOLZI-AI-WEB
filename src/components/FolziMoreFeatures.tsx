@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { ArrowRight, Zap, Target, Sliders } from "lucide-react";
@@ -46,7 +46,7 @@ export default function FolziMoreFeatures() {
             return (
               <div
                 key={idx}
-                className="rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-[#A88BFF]/40 p-6 sm:p-7 flex flex-col justify-between space-y-6 backdrop-blur-xl transition-all duration-300 shadow-xl group hover:-translate-y-1.5"
+                className="card-3d p-6 sm:p-7 flex flex-col justify-between space-y-6 backdrop-blur-xl group cursor-pointer"
               >
                 <div className="space-y-4">
                   {/* Photo Banner */}

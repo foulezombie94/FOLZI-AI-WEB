@@ -50,7 +50,7 @@ export default function FeaturesGrid() {
           {discoveryCards.map((card, idx) => (
             <div
               key={idx}
-              className="rounded-3xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/10 hover:border-[#A88BFF]/50 p-6 sm:p-7 flex flex-col justify-between space-y-6 backdrop-blur-xl transition-all duration-300 shadow-xl group hover:-translate-y-1.5"
+              className="card-3d p-6 sm:p-7 flex flex-col justify-between space-y-6 backdrop-blur-xl group cursor-pointer"
             >
               <div className="space-y-4">
                 {/* Photo Banner with Tag */}
@@ -61,7 +61,7 @@ export default function FeaturesGrid() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#06040A]/90 via-transparent to-transparent pointer-events-none" />
-                  <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[10px] font-bold font-mono text-[#E5DEFF] border border-white/20">
+                  <span className="badge-3d absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] font-bold font-mono text-[#E5DEFF] border border-white/20">
                     {card.badge}
                   </span>
                 </div>

@@ -39,13 +39,13 @@ export default function MarketplaceTabs() {
 
         {/* 3D Platform Selector */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex p-1.5 rounded-2xl bg-white/[0.04] border border-white/10 gap-2 backdrop-blur-xl shadow-lg">
+          <div className="inline-flex p-2 rounded-2xl bg-white/[0.04] border border-white/10 gap-3 backdrop-blur-xl shadow-inner">
             <button
               onClick={() => setPlatform("vinted")}
-              className={`flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm transition-all ${
+              className={`badge-3d px-7 py-3.5 rounded-xl font-bold text-sm ${
                 platform === "vinted"
-                  ? "bg-[#09B1BA] text-white shadow-lg shadow-teal-500/30 scale-105"
-                  : "text-slate-400 hover:text-white hover:bg-white/5"
+                  ? "bg-[#09B1BA] text-white shadow-[0_4px_0_#068188] scale-105"
+                  : "text-slate-400 hover:text-white bg-transparent shadow-none"
               }`}
             >
               <span>Vinted</span>
@@ -56,10 +56,10 @@ export default function MarketplaceTabs() {
 
             <button
               onClick={() => setPlatform("leboncoin")}
-              className={`flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm transition-all ${
+              className={`badge-3d px-7 py-3.5 rounded-xl font-bold text-sm ${
                 platform === "leboncoin"
-                  ? "bg-[#F56B2A] text-white shadow-lg shadow-orange-500/30 scale-105"
-                  : "text-slate-400 hover:text-white hover:bg-white/5"
+                  ? "bg-[#F56B2A] text-white shadow-[0_4px_0_#C24D14] scale-105"
+                  : "text-slate-400 hover:text-white bg-transparent shadow-none"
               }`}
             >
               <span>Leboncoin</span>
@@ -71,7 +71,7 @@ export default function MarketplaceTabs() {
         </div>
 
         {/* Feature Highlights Grid for Selected Platform */}
-        <div className="max-w-4xl mx-auto rounded-[36px] p-8 sm:p-10 bg-[#0E0A21]/90 border border-white/15 backdrop-blur-xl shadow-2xl shadow-purple-950/30 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="max-w-4xl mx-auto card-3d p-8 sm:p-10 backdrop-blur-xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           
           <div className="space-y-6">
             <div className="space-y-2">

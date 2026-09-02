@@ -30,7 +30,7 @@ export default function DownloadCta() {
               <a
                 href="/folzi-ai.apk"
                 download="Folzi-AI.apk"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#7C5CFC] to-[#5B2FFF] text-white font-bold text-base hover:scale-105 active:scale-95 transition-all shadow-xl shadow-purple-600/30 border border-white/20"
+                className="btn-tactile-3d w-full sm:w-auto px-8 py-4 text-sm sm:text-base font-bold uppercase font-mono tracking-wider gap-3"
               >
                 <Download className="w-5 h-5" />
                 <span>Télécharger l&apos;application (APK)</span>
@@ -38,7 +38,7 @@ export default function DownloadCta() {
 
               <button
                 onClick={() => setShowQr(!showQr)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-white/10 hover:bg-white/15 text-slate-200 font-bold text-base border border-white/15 backdrop-blur-xl transition-all"
+                className="btn-tactile-dark w-full sm:w-auto px-6 py-4 text-sm sm:text-base font-bold uppercase font-mono tracking-wider gap-2.5"
               >
                 <QrCode className="w-5 h-5 text-[#A88BFF]" />
                 <span>{showQr ? "Masquer le QR Code" : "Scanner le QR Code"}</span>
@@ -65,7 +65,7 @@ export default function DownloadCta() {
 
           {/* Right: Interactive QR Code Display Card */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="p-8 sm:p-10 rounded-[36px] bg-[#0E0A21]/90 border border-white/15 backdrop-blur-xl shadow-2xl text-center space-y-6 max-w-sm w-full">
+            <div className="card-3d p-8 sm:p-10 shadow-[0_10px_0_#0A0618] backdrop-blur-xl text-center space-y-6 max-w-sm w-full">
               
               <div className="space-y-1">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#A88BFF] font-mono">
