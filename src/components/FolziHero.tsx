@@ -123,12 +123,12 @@ export default function FolziHero() {
             {t.hero.subtitle}
           </p>
 
-          {/* Big Tactile 3D Action Buttons */}
+          {/* Big Tactile 3D Action Buttons - Identical Size */}
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/folzi-ai.apk"
               download="Folzi-AI.apk"
-              className="btn-tactile-3d w-full sm:w-auto px-10 py-4 text-base font-black tracking-wide uppercase font-mono"
+              className="btn-tactile-3d w-full sm:w-auto h-14 px-8 sm:px-10 text-sm sm:text-base font-bold tracking-wide uppercase font-mono"
             >
               <span>{t.hero.ctaDownload}</span>
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -136,7 +136,7 @@ export default function FolziHero() {
 
             <a
               href="#scanner"
-              className="btn-tactile-dark w-full sm:w-auto px-8 py-4 text-sm font-bold tracking-wide uppercase font-mono"
+              className="btn-tactile-dark w-full sm:w-auto h-14 px-8 sm:px-10 text-sm sm:text-base font-bold tracking-wide uppercase font-mono"
             >
               <span>{t.hero.ctaDemo}</span>
             </a>
