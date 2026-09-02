@@ -1,45 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Sparkles, Download, ArrowRight, CheckCircle2, ChevronDown, Menu, X, Star, ShieldCheck, Zap } from "lucide-react";
-
-/* Real Vector SVG Flags */
-function FranceFlag({ className = "w-5 h-3.5" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 900 600" className={`${className} rounded-[2px] overflow-hidden shrink-0 shadow-sm border border-black/10`}>
-      <rect width="300" height="600" fill="#002654" />
-      <rect x="300" width="300" height="600" fill="#FFFFFF" />
-      <rect x="600" width="300" height="600" fill="#ED2939" />
-    </svg>
-  );
-}
-
-function UKFlag({ className = "w-5 h-3.5" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 60 30" className={`${className} rounded-[2px] overflow-hidden shrink-0 shadow-sm border border-black/10`}>
-      <clipPath id="uk-clip-hero">
-        <path d="M0,0 v30 h60 v-30 z"/>
-      </clipPath>
-      <g clipPath="url(#uk-clip-hero)">
-        <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
-        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6"/>
-        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="4"/>
-        <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10"/>
-        <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6"/>
-      </g>
-    </svg>
-  );
-}
-
-function SpainFlag({ className = "w-5 h-3.5" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 750 500" className={`${className} rounded-[2px] overflow-hidden shrink-0 shadow-sm border border-black/10`}>
-      <rect width="750" height="500" fill="#AA151B" />
-      <rect y="125" width="750" height="250" fill="#F1BF00" />
-      <circle cx="200" cy="250" r="40" fill="#AA151B" opacity="0.8" />
-    </svg>
-  );
-}
 
 function LaurelSmall({ className = "w-8 h-12 fill-[#A88BFF]" }: { className?: string }) {
   return (
@@ -54,6 +16,20 @@ function LaurelSmall({ className = "w-8 h-12 fill-[#A88BFF]" }: { className?: st
 export default function FolziHero() {
   const [lang, setLang] = useState<"fr" | "en" | "es">("fr");
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Auto-detect browser language
+  useEffect(() => {
+    if (typeof window !== "undefined" && navigator.language) {
+      const userLang = navigator.language.toLowerCase();
+      if (userLang.startsWith("en")) {
+        setLang("en");
+      } else if (userLang.startsWith("es")) {
+        setLang("es");
+      } else {
+        setLang("fr");
+      }
+    }
+  }, []);
 
   const navLinks = [
     { label: "Vinted IA", href: "/vinted" },
@@ -97,35 +73,12 @@ export default function FolziHero() {
             ))}
           </nav>
 
-          {/* Right Actions: Lang Switcher + 3D CTA Button */}
+          {/* Right Action: 3D CTA Button */}
           <div className="hidden md:flex items-center gap-3">
-            <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1 shadow-inner">
-              <button
-                type="button"
-                onClick={() => setLang("fr")}
-                className={`badge-3d px-2.5 py-1 text-xs font-bold ${
-                  lang === "fr" ? "bg-white text-black shadow-[0_3px_0_#CBD5E1]" : "text-slate-300 hover:text-white bg-transparent shadow-none"
-                }`}
-              >
-                <FranceFlag className="w-3.5 h-2.5" />
-                <span>FR</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setLang("en")}
-                className={`badge-3d px-2.5 py-1 text-xs font-bold ${
-                  lang === "en" ? "bg-white text-black shadow-[0_3px_0_#CBD5E1]" : "text-slate-300 hover:text-white bg-transparent shadow-none"
-                }`}
-              >
-                <UKFlag className="w-3.5 h-2.5" />
-                <span>EN</span>
-              </button>
-            </div>
-
             <a
               href="/folzi-ai.apk"
               download="Folzi-AI.apk"
-              className="btn-tactile-3d px-5 py-2.5 text-xs font-bold tracking-wider uppercase font-mono"
+              className="btn-tactile-3d px-6 py-2.5 text-xs font-bold tracking-wider uppercase font-mono"
             >
               <span>Essayer maintenant</span>
             </a>
