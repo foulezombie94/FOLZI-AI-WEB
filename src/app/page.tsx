@@ -20,11 +20,26 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    if (typeof window !== "undefined" && navigator.language) {
-      const userLang = navigator.language.toLowerCase();
+    if (typeof window !== "undefined") {
+      const browserLangs = navigator.languages?.length ? navigator.languages : [navigator.language || "fr"];
       let target = "fr";
-      if (userLang.startsWith("en")) target = "en";
-      else if (userLang.startsWith("es")) target = "es";
+
+      for (const lang of browserLangs) {
+        const code = (lang || "").toLowerCase().split("-")[0];
+        if (code === "fr") {
+          target = "fr";
+          break;
+        }
+        if (code === "es") {
+          target = "es";
+          break;
+        }
+        if (code === "en") {
+          target = "en";
+          break;
+        }
+      }
+
       router.replace(`/${target}`);
     }
   }, [router]);
