@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import dynamic from "next/dynamic";
@@ -6,7 +6,6 @@ import FolziHero from "@/components/FolziHero";
 import FolziBenefits from "@/components/FolziBenefits";
 import FolziKeyFigures from "@/components/FolziKeyFigures";
 import FolziSuccessStory from "@/components/FolziSuccessStory";
-import FolziMoreFeatures from "@/components/FolziMoreFeatures";
 
 // Dynamically split interactive tools & below-the-fold sections
 const LiveAiDemo = dynamic(() => import("@/components/LiveAiDemo"), { ssr: true });
@@ -14,9 +13,7 @@ const FeaturesGrid = dynamic(() => import("@/components/FeaturesGrid"), { ssr: t
 const EarningsCalculator = dynamic(() => import("@/components/EarningsCalculator"), { ssr: true });
 const MarketplaceTabs = dynamic(() => import("@/components/MarketplaceTabs"), { ssr: true });
 const Testimonials = dynamic(() => import("@/components/Testimonials"), { ssr: true });
-const PricingSection = dynamic(() => import("@/components/PricingSection"), { ssr: true });
 const FaqSection = dynamic(() => import("@/components/FaqSection"), { ssr: true });
-const DownloadCta = dynamic(() => import("@/components/DownloadCta"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 
 export default function Home() {
@@ -50,19 +47,10 @@ export default function Home() {
       {/* 9. Verified Seller Reviews with 5 Gold Stars & Store Badges */}
       <Testimonials />
 
-      {/* 10. Secondary Discovery Features: Smart adding, Keywords database, Multi-platform */}
-      <FolziMoreFeatures />
-
-      {/* 11. Transparent Pricing & Credits */}
-      <PricingSection />
-
-      {/* 12. Frequently Asked Questions Accordion */}
+      {/* 10. Frequently Asked Questions Accordion */}
       <FaqSection />
 
-      {/* 13. Grand Finale Download CTA with 3D Button & QR Code */}
-      <DownloadCta />
-
-      {/* 14. Luxury Modern Footer with App Store & Google Play badges */}
+      {/* 11. Luxury Modern Footer with App Store & Google Play badges */}
       <Footer />
 
     </main>

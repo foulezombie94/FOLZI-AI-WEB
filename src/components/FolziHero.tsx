@@ -60,7 +60,6 @@ export default function FolziHero() {
     { label: "Leboncoin IA", href: "/leboncoin" },
     { label: "Argus Prix", href: "/estimation-prix" },
     { label: "Guides Vendeurs", href: "/guides" },
-    { label: "Tarifs", href: "#pricing" },
   ];
 
   return (
