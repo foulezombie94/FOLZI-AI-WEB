@@ -10,8 +10,6 @@ import FolziSuccessStory from "@/components/FolziSuccessStory";
 // Dynamically split interactive tools & below-the-fold sections
 const LiveAiDemo = dynamic(() => import("@/components/LiveAiDemo"), { ssr: true });
 const FeaturesGrid = dynamic(() => import("@/components/FeaturesGrid"), { ssr: true });
-const EarningsCalculator = dynamic(() => import("@/components/EarningsCalculator"), { ssr: true });
-const MarketplaceTabs = dynamic(() => import("@/components/MarketplaceTabs"), { ssr: true });
 const Testimonials = dynamic(() => import("@/components/Testimonials"), { ssr: true });
 const FaqSection = dynamic(() => import("@/components/FaqSection"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
@@ -38,19 +36,13 @@ export default function Home() {
       {/* 6. Success Story: Split Photo Transformation Card (+1 840 €) */}
       <FolziSuccessStory />
 
-      {/* 7. Wardrobe Earnings Calculator with Slider & WebMCP */}
-      <EarningsCalculator />
-
-      {/* 8. Marketplace Specific Strategies (Vinted vs Leboncoin with 1-click copy) */}
-      <MarketplaceTabs />
-
-      {/* 9. Verified Seller Reviews with 5 Gold Stars & Store Badges */}
+      {/* 7. Verified Seller Reviews with 5 Gold Stars & Store Badges */}
       <Testimonials />
 
-      {/* 10. Frequently Asked Questions Accordion */}
+      {/* 8. Frequently Asked Questions Accordion */}
       <FaqSection />
 
-      {/* 11. Luxury Modern Footer with App Store & Google Play badges */}
+      {/* 9. Luxury Modern Footer with App Store & Google Play badges */}
       <Footer />
 
     </main>
