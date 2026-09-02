@@ -2,8 +2,13 @@
 
 import React from "react";
 import { Quote, CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { TRANSLATIONS } from "@/data/translations";
 
 export default function FolziSuccessStory() {
+  const { locale } = useLanguage();
+  const t = TRANSLATIONS[locale] || TRANSLATIONS.fr;
+
   return (
     <section id="success-story" className="py-24 bg-[#06040A] relative overflow-hidden border-t border-white/10">
       {/* Background ambient lighting */}
@@ -14,10 +19,11 @@ export default function FolziSuccessStory() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Sarah a encaissé <span className="text-[#34D399]">+1 840 €</span> en 14 jours avec Folzi AI
+            {t.successStory.titlePart1}
+            <span className="text-[#34D399]">{t.successStory.titleHighlight}</span>
           </h2>
           <p className="text-slate-300 text-sm sm:text-base font-normal">
-            Découvrez comment une vendeuse a désencombré son dressing et rentabilisé chaque pièce sans stress.
+            {t.successStory.subtitle}
           </p>
         </div>
 
@@ -36,10 +42,10 @@ export default function FolziSuccessStory() {
                   className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="badge-3d absolute top-3 left-3 px-2.5 py-1 text-[10px] font-bold font-mono text-rose-300 uppercase bg-black/80 border border-rose-500/30">
-                  Avant
+                  {t.successStory.beforeTag}
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-[11px] font-medium text-slate-300 bg-black/60 backdrop-blur-sm p-2 rounded-lg">
-                  Placard encombré (45 articles)
+                  {t.successStory.beforeText}
                 </div>
               </div>
 
@@ -51,10 +57,10 @@ export default function FolziSuccessStory() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="badge-3d absolute top-3 right-3 px-2.5 py-1 text-[10px] font-bold font-mono text-black uppercase bg-[#34D399] shadow-[0_3px_0_#059669]">
-                  Après
+                  {t.successStory.afterTag}
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-[11px] font-medium text-[#D4C9FF] bg-black/60 backdrop-blur-sm p-2 rounded-lg">
-                  100% vendu en 14 jours ⚡
+                  {t.successStory.afterText}
                 </div>
               </div>
 
@@ -74,22 +80,25 @@ export default function FolziSuccessStory() {
               <Quote className="w-10 h-10 text-[#A88BFF] opacity-60" />
               
               <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
-                &ldquo;À 32 ans, maman de deux enfants, je n&apos;avais jamais le temps de rédiger 40 annonces sur Vinted... Folzi AI a tout changé !&rdquo;
+                &ldquo;{t.successStory.quote}&rdquo;
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed font-normal">
-                &ldquo;Je prenais une photo pendant ma pause café, et en 2 secondes, le titre avec les bons hashtags et le prix parfait étaient prêts. J&apos;ai tout vendu sans la moindre négociation pénible. C&apos;est le meilleur investissement de l&apos;année.&rdquo;
+                {t.successStory.storyParagraph1}
+              </p>
+              <p className="text-sm text-slate-300 leading-relaxed font-normal">
+                {t.successStory.storyParagraph2}
               </p>
             </div>
 
             <div className="pt-4 border-t border-white/10 flex items-center justify-between">
               <div>
                 <div className="font-bold text-white text-base flex items-center gap-1.5">
-                  <span>Sarah D.</span>
+                  <span>{t.successStory.authorName}</span>
                   <CheckCircle2 className="w-4 h-4 text-[#34D399]" />
                 </div>
                 <div className="text-xs text-slate-400 font-mono">
-                  Vendeuse Vinted & Leboncoin (Lyon, France)
+                  {t.successStory.authorRole}
                 </div>
               </div>
 
@@ -98,7 +107,7 @@ export default function FolziSuccessStory() {
                 download="Folzi-AI.apk"
                 className="btn-tactile-3d px-5 py-3 text-xs font-bold uppercase font-mono tracking-wider"
               >
-                <span>Faire comme Sarah</span>
+                <span>{t.nav.tryNow}</span>
               </a>
             </div>
 

@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { useLanguage } from "@/context/LanguageContext";
+import { TRANSLATIONS } from "@/data/translations";
 
 function LaurelLeft() {
   return (
@@ -23,23 +25,10 @@ function LaurelRight() {
 }
 
 export default function FolziKeyFigures() {
-  const figures = [
-    {
-      stat: "98,7%",
-      title: "Précision de reconnaissance IA",
-      desc: "Reconnaissance exacte du modèle et de la coupe sans faute",
-    },
-    {
-      stat: "1,8 s",
-      title: "Temps moyen par annonce",
-      desc: "De la photo au texte prêt à publier en un instant",
-    },
-    {
-      stat: "+240%",
-      title: "Augmentation des vues & clics",
-      desc: "Grâce aux mots-clés algorithmiques optimisés SEO",
-    }
-  ];
+  const { locale } = useLanguage();
+  const t = TRANSLATIONS[locale] || TRANSLATIONS.fr;
+
+  const figures = t.keyFigures.figures;
 
   return (
     <section id="key-figures" className="py-24 bg-[#090614] relative overflow-hidden border-t border-white/10">
@@ -48,10 +37,11 @@ export default function FolziKeyFigures() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Meilleure appli de vente sur <span className="gradient-emerald-text">smartphone</span>
+            {t.keyFigures.titlePart1}
+            <span className="gradient-emerald-text">{t.keyFigures.titleHighlight}</span>
           </h2>
           <p className="text-slate-300 text-sm sm:text-base font-normal">
-            Des performances prouvées sur des milliers de ventes réelles à travers l&apos;Europe.
+            {t.keyFigures.subtitle}
           </p>
         </div>
 

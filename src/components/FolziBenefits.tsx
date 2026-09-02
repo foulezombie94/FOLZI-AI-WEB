@@ -2,27 +2,32 @@
 
 import React from "react";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { TRANSLATIONS } from "@/data/translations";
 
 export default function FolziBenefits() {
+  const { locale } = useLanguage();
+  const t = TRANSLATIONS[locale] || TRANSLATIONS.fr;
+
   const benefits = [
     {
-      title: "Prenez 1 seule photo pour identifier instantanément marque, matière et coupe",
-      tag: "1,8 seconde",
+      title: t.benefits.items[0].title,
+      tag: t.benefits.items[0].tag,
       image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&auto=format&fit=crop&q=80",
-      description: "Notre vision IA analyse la silhouette, le textile, le motif et l'usure de votre article en un éclair sans rien taper."
+      description: t.benefits.items[0].description,
     },
     {
-      title: "Remplacez les descriptions bâclées par des annonces professionnelles persuasives",
-      tag: "Zéro effort",
+      title: t.benefits.items[1].title,
+      tag: t.benefits.items[1].tag,
       image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&auto=format&fit=crop&q=80",
-      description: "Folzi AI rédige le titre SEO parfait, les détails techniques et les hashtags viraux recherchés par les acheteurs."
+      description: t.benefits.items[1].description,
     },
     {
-      title: "Atteignez votre objectif de gains et videz votre dressing en 24h à 48h",
-      tag: "+240% de vues",
+      title: t.benefits.items[2].title,
+      tag: t.benefits.items[2].tag,
       image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&auto=format&fit=crop&q=80",
-      description: "L'argus en temps réel calcule le juste prix pour vendre vite au meilleur tarif sans subir les négociations agressives."
-    }
+      description: t.benefits.items[2].description,
+    },
   ];
 
   return (
@@ -35,11 +40,12 @@ export default function FolziBenefits() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Lancez le studio Folzi AI <span className="gradient-purple-text">dès aujourd&apos;hui !</span>
+            {t.benefits.titlePart1}
+            <span className="gradient-purple-text">{t.benefits.titleHighlight}</span>
           </h2>
 
           <p className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto">
-            Adoptez la méthode la plus rapide et rentable pour transformer vos placards en revenus réguliers.
+            {t.benefits.subtitle}
           </p>
 
           <div className="pt-2">
@@ -48,7 +54,7 @@ export default function FolziBenefits() {
               download="Folzi-AI.apk"
               className="btn-tactile-3d px-8 py-4 text-sm sm:text-base font-bold shadow-xl tracking-wide uppercase font-mono"
             >
-              <span>Essayer maintenant (Gratuit)</span>
+              <span>{t.nav.tryNow}</span>
               <ArrowRight className="w-4 h-4 ml-2" />
             </a>
           </div>

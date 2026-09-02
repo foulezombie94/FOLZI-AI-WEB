@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Sparkles, Download, ArrowRight, CheckCircle2, ChevronDown, Menu, X, Star, ShieldCheck, Zap } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { TRANSLATIONS } from "@/data/translations";
 
 function LaurelSmall({ className = "w-8 h-12 fill-[#A88BFF]" }: { className?: string }) {
   return (
@@ -14,28 +16,15 @@ function LaurelSmall({ className = "w-8 h-12 fill-[#A88BFF]" }: { className?: st
 }
 
 export default function FolziHero() {
-  const [lang, setLang] = useState<"fr" | "en" | "es">("fr");
+  const { locale } = useLanguage();
+  const t = TRANSLATIONS[locale] || TRANSLATIONS.fr;
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Auto-detect browser language
-  useEffect(() => {
-    if (typeof window !== "undefined" && navigator.language) {
-      const userLang = navigator.language.toLowerCase();
-      if (userLang.startsWith("en")) {
-        setLang("en");
-      } else if (userLang.startsWith("es")) {
-        setLang("es");
-      } else {
-        setLang("fr");
-      }
-    }
-  }, []);
-
   const navLinks = [
-    { label: "Vinted IA", href: "/vinted" },
-    { label: "Leboncoin IA", href: "/leboncoin" },
-    { label: "Argus Prix", href: "/estimation-prix" },
-    { label: "Guides Vendeurs", href: "/guides" },
+    { label: t.nav.vinted, href: "/vinted" },
+    { label: t.nav.leboncoin, href: "/leboncoin" },
+    { label: t.nav.priceGuide, href: "/estimation-prix" },
+    { label: t.nav.sellerGuides, href: "/guides" },
   ];
 
   return (
@@ -80,7 +69,7 @@ export default function FolziHero() {
               download="Folzi-AI.apk"
               className="btn-tactile-3d px-6 py-2.5 text-xs font-bold tracking-wider uppercase font-mono"
             >
-              <span>Essayer maintenant</span>
+              <span>{t.nav.tryNow}</span>
             </a>
           </div>
 
@@ -115,7 +104,7 @@ export default function FolziHero() {
                 download="Folzi-AI.apk"
                 className="btn-tactile-3d w-full py-3.5 text-sm font-bold uppercase font-mono"
               >
-                <span>Télécharger l&apos;application (APK)</span>
+                <span>{t.hero.ctaDownload}</span>
               </a>
             </div>
           </div>
@@ -125,11 +114,13 @@ export default function FolziHero() {
         <div className="text-center max-w-4xl mx-auto space-y-6 pt-6 pb-12">
           
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08]">
-            Appli pour booster vos ventes <span className="gradient-purple-text">Vinted & Leboncoin</span>
+            {t.hero.headlinePart1}
+            <span className="gradient-purple-text">{t.hero.headlineHighlight}</span>
+            {t.hero.headlinePart2}
           </h1>
 
           <p className="text-slate-300 text-lg sm:text-xl max-w-2xl mx-auto font-normal leading-relaxed">
-            La meilleure appli de scan visuel et de rédaction automatique sur smartphone pour vendre en 24h sans négocier.
+            {t.hero.subtitle}
           </p>
 
           {/* Big Tactile 3D Action Buttons */}
@@ -139,7 +130,7 @@ export default function FolziHero() {
               download="Folzi-AI.apk"
               className="btn-tactile-3d w-full sm:w-auto px-10 py-4 text-base font-black tracking-wide uppercase font-mono"
             >
-              <span>Essayer maintenant (APK Gratuit)</span>
+              <span>{t.hero.ctaDownload}</span>
               <ArrowRight className="w-5 h-5 ml-2" />
             </a>
 
@@ -147,7 +138,7 @@ export default function FolziHero() {
               href="#scanner"
               className="btn-tactile-dark w-full sm:w-auto px-8 py-4 text-sm font-bold tracking-wide uppercase font-mono"
             >
-              <span>Tester le simulateur en direct</span>
+              <span>{t.hero.ctaDemo}</span>
             </a>
           </div>
 
@@ -249,11 +240,11 @@ export default function FolziHero() {
               <div className="flex items-center gap-2">
                 <LaurelSmall />
                 <span className="text-2xl sm:text-3xl font-black font-mono text-white group-hover:text-[#A88BFF] transition-colors">
-                  15 000+
+                  {t.hero.metricMoney}
                 </span>
                 <LaurelSmall className="w-8 h-12 fill-[#A88BFF] transform -scale-x-100" />
               </div>
-              <span className="text-xs text-slate-300 font-medium mt-1">Vendeurs satisfaits</span>
+              <span className="text-xs text-slate-300 font-medium mt-1">{t.hero.metricMoneyDesc}</span>
             </div>
 
             {/* Stat 2 */}
@@ -261,11 +252,11 @@ export default function FolziHero() {
               <div className="flex items-center gap-2">
                 <LaurelSmall />
                 <span className="text-2xl sm:text-3xl font-black font-mono text-white group-hover:text-[#A88BFF] transition-colors">
-                  4,9 ★
+                  {t.hero.metricRating}
                 </span>
                 <LaurelSmall className="w-8 h-12 fill-[#A88BFF] transform -scale-x-100" />
               </div>
-              <span className="text-xs text-slate-300 font-medium mt-1">Note de l&apos;App Store & Play</span>
+              <span className="text-xs text-slate-300 font-medium mt-1">{t.hero.metricRatingDesc}</span>
             </div>
 
             {/* Stat 3 */}
@@ -273,11 +264,11 @@ export default function FolziHero() {
               <div className="flex items-center gap-2">
                 <LaurelSmall />
                 <span className="text-2xl sm:text-3xl font-black font-mono text-white group-hover:text-[#A88BFF] transition-colors">
-                  250K+
+                  {t.hero.metricAccuracy}
                 </span>
                 <LaurelSmall className="w-8 h-12 fill-[#A88BFF] transform -scale-x-100" />
               </div>
-              <span className="text-xs text-slate-300 font-medium mt-1">Annonces optimisées</span>
+              <span className="text-xs text-slate-300 font-medium mt-1">{t.hero.metricAccuracyDesc}</span>
             </div>
 
           </div>
@@ -286,7 +277,7 @@ export default function FolziHero() {
         {/* Press / Platforms 3D Tactile Badges */}
         <div className="text-center space-y-4">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
-            Compatible avec vos plateformes préférées :
+            {t.hero.compatiblePlatforms}
           </span>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <div className="badge-3d px-5 py-2.5 rounded-2xl bg-[#09B1BA]/15 border border-[#09B1BA]/40 border-b-2 border-b-[#09B1BA] text-white font-bold text-xs sm:text-sm shadow-[0_4px_0_rgba(9,177,186,0.35)]">

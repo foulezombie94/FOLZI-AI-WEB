@@ -1,7 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
+import { LanguageProvider } from "@/context/LanguageContext";
 import FolziHero from "@/components/FolziHero";
 import FolziBenefits from "@/components/FolziBenefits";
 import FolziKeyFigures from "@/components/FolziKeyFigures";
@@ -15,11 +17,24 @@ const FaqSection = dynamic(() => import("@/components/FaqSection"), { ssr: true 
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && navigator.language) {
+      const userLang = navigator.language.toLowerCase();
+      let target = "fr";
+      if (userLang.startsWith("en")) target = "en";
+      else if (userLang.startsWith("es")) target = "es";
+      router.replace(`/${target}`);
+    }
+  }, [router]);
+
   return (
-    <main id="main-content" className="min-h-screen bg-[#06040A] text-white">
-      
-      {/* 1. Hero: Capsule Navbar + Punchy Headline + 3D CTA + Triple Phone App Showcase + Laurel Metrics + Platform Badges */}
-      <FolziHero />
+    <LanguageProvider locale="fr">
+      <main id="main-content" className="min-h-screen bg-[#06040A] text-white">
+        
+        {/* 1. Hero: Capsule Navbar + Punchy Headline + 3D CTA + Triple Phone App Showcase + Laurel Metrics + Platform Badges */}
+        <FolziHero />
 
       {/* 2. Benefits: 3 Large Cards with Green Checkmark Icons & Lifestyle Imagery */}
       <FolziBenefits />
@@ -46,5 +61,6 @@ export default function Home() {
       <Footer />
 
     </main>
+    </LanguageProvider>
   );
 }
